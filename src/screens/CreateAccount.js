@@ -1,11 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 
-const LoginScreen = () => {
+const CreateAccount = () => {
     return (
         <View>
-            <Text>Login</Text>
-            <Button>Create Account</Button>
+            <Text>Create Account</Text>
         </View>
     )
 };
@@ -14,4 +13,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default LoginScreen;
+export default CreateAccount;

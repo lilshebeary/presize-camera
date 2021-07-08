@@ -1,32 +1,26 @@
-import React from "react";
+import React from 'react';
 import { Image, StyleSheet, View, Button, Text, SafeAreaView } from "react-native";
 import logo from '../../assets/monoPSCam.png';
-import { ButtonRow } from '../components/buttonRow';
 
-const HomeScreen = ({ navigation }) => {
-  return (
-	<SafeAreaView style={styles.safeArea}>
-		<View style={styles.viewStyle}>
-			<View>
-				<Image source={logo} style={styles.logo} />
+
+export const ButtonRow = (props) => {
+    return (
+        <View style={styles.buttonRow}>
+				<View>
+					<Image source={props.icon || logo} style={styles.buttonImage}/>
+				</View>
+				<View>
+				<View>
+					<Text style={styles.buttonHeading}>{props.heading}</Text>
+				</View>
+				<View style={styles.buttonLabel}>
+					<Text style={styles.buttonBody}>{props.line1}</Text>
+					<Text style={styles.buttonBody}>{props.line2}</Text>
+				</View>
+				</View>
 			</View>
-			<ButtonRow
-				icon={require('../../assets/cameraicon.png')}  
-				heading="presize"
-				line1="size your photos in popular print sizes"
-				line2="before you take them"
-			/>
-			<ButtonRow
-				icon={require('../../assets/cameraicon.png')}  
-				heading="presize"
-				line1="size your photos in popular print sizes"
-				line2="before you take them"
-			/>
-			
-		</View>
-	</SafeAreaView>
-	); 
-};
+    );
+}
 
 const styles = StyleSheet.create({
 	buttonHeading: { 
@@ -84,5 +78,3 @@ const styles = StyleSheet.create({
 		color: 'white'
 	}
 });
-
-export default HomeScreen;

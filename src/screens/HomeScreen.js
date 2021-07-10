@@ -13,14 +13,33 @@ const HomeScreen = ({ navigation }) => {
 			<ButtonRow
 				icon={require('../../assets/cameraicon.png')}  
 				heading="presize"
-				line1="size your photos in popular print sizes"
-				line2="before you take them"
+				line1="size your photos in popular print "
+				line2="sizes before you take them"
+				style={styles.cameraStyle}
+				
 			/>
 			<ButtonRow
 				icon={require('../../assets/cameraicon.png')}  
-				heading="presize"
-				line1="size your photos in popular print sizes"
-				line2="before you take them"
+				heading="organize"
+				line1="your pictures into albums"
+				style={styles.folderStyle}
+			/>
+			<ButtonRow
+				icon={require('../../assets/cameraicon.png')}  
+				heading="share"
+				line1="your photo albums with family"
+				line2="and friends"
+				style={styles.shareStyle}
+				
+			/>
+			<ButtonRow
+				icon={require('../../assets/cameraicon.png')}  
+				heading="print"
+				line1="your photos with popular print"
+				line2="shops or print from home"
+				style={styles.printStyle}
+
+				
 			/>
 			
 		</View>
@@ -29,40 +48,16 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-	buttonHeading: { 
-		color: '#aa2211',
-		marginBottom: 10
-	},
-	buttonLabel: {
-		flexDirection: 'column'
-	},
-	buttonImage: {
-		width: 40,
-		height: 40,
-		marginRight: 20,
-		marginTop:10
-	},
-
-	buttonRow: { 
-		flex:1, 
-		flexDirection: 'row',
-		width: '70%'
-	},
-	buttonBody: {
-		color: '#aa2211',
-		fontSize: 15
-
-	},
-	logo: {
-		width: 300,
-		height: 300,
+  	logo: {
+		width: 220,
+		height: 220,
+		marginBottom: 30,
+		marginTop: 20
 	},
 	viewStyle: {
 		flex: 1,
-		
 		alignItems: 'center',
 		backgroundColor: 'black',
-		
 	},
 
 	safeArea: {
@@ -71,18 +66,25 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	  },
 
-	buttonStyle: {
-		fontSize: 80,
-		color: 'black'
-	},
+	// 
 	presizeStyle: {
 		display: 'flex',
 		alignSelf: 'center'
 	},
-
-	textStyle: {
-		color: 'white'
+	cameraStyle: {
+		color: "#E91E63"
+	},
+	folderStyle: {
+		color: "#FF9800"
+	},
+	shareStyle: {
+		color: "#FFEB3B"
+	},
+	printStyle: {
+		color: "#8BC34A"
 	}
+
+
 });
 
 export default HomeScreen;

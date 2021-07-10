@@ -24,8 +24,9 @@ export const ButtonRow = (props) => {
 
 const styles = StyleSheet.create({
 	buttonHeading: { 
-		color: '#aa2211',
-		marginBottom: 10
+		color: '#E91E63',
+		marginBottom: 5,
+		fontSize: 9
 	},
 	buttonLabel: {
 		flexDirection: 'column'
@@ -34,23 +35,20 @@ const styles = StyleSheet.create({
 		width: 40,
 		height: 40,
 		marginRight: 20,
-		marginTop:10
+		marginTop: 10
 	},
 
 	buttonRow: { 
 		flex:1, 
 		flexDirection: 'row',
-		width: '70%'
+		width: '80%'
 	},
 	buttonBody: {
-		color: '#aa2211',
-		fontSize: 15
+		color: '#E91E63',
+		fontSize: 9
 
 	},
-	logo: {
-		width: 300,
-		height: 300,
-	},
+
 	viewStyle: {
 		flex: 1,
 		
@@ -65,16 +63,9 @@ const styles = StyleSheet.create({
 		justifyContent: 'center'
 	  },
 
-	buttonStyle: {
-		fontSize: 80,
-		color: 'black'
-	},
 	presizeStyle: {
 		display: 'flex',
 		alignSelf: 'center'
 	},
 
-	textStyle: {
-		color: 'white'
-	}
 });

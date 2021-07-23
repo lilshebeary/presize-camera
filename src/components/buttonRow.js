@@ -4,6 +4,7 @@ import logo from '../../assets/monoPSCam.png';
 
 
 export const ButtonRow = (props) => {
+	const rowColor = {color: props.color || '#E91E63'}
     return (
         <View style={styles.buttonRow}>
 				<View>
@@ -11,11 +12,11 @@ export const ButtonRow = (props) => {
 				</View>
 				<View>
 				<View>
-					<Text style={styles.buttonHeading}>{props.heading}</Text>
+					<Text style={{...styles.buttonHeading, ...rowColor}}>{props.heading}</Text>
 				</View>
 				<View style={styles.buttonLabel}>
-					<Text style={styles.buttonBody}>{props.line1}</Text>
-					<Text style={styles.buttonBody}>{props.line2}</Text>
+					<Text style={{...styles.buttonBody, ...rowColor}}>{props.line1}</Text>
+					<Text style={{...styles.buttonBody, ...rowColor}}>{props.line2}</Text>
 				</View>
 				</View>
 			</View>
@@ -26,7 +27,7 @@ const styles = StyleSheet.create({
 	buttonHeading: { 
 		color: '#E91E63',
 		marginBottom: 5,
-		fontSize: 9
+		fontSize: 16
 	},
 	buttonLabel: {
 		flexDirection: 'column'
@@ -35,7 +36,8 @@ const styles = StyleSheet.create({
 		width: 40,
 		height: 40,
 		marginRight: 20,
-		marginTop: 10
+		marginTop: 5,
+	
 	},
 
 	buttonRow: { 
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
 	},
 	buttonBody: {
 		color: '#E91E63',
-		fontSize: 9
+		fontSize: 14
 
 	},
 

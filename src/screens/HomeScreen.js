@@ -19,10 +19,11 @@ const HomeScreen = ({ navigation }) => {
 				
 			/>
 			<ButtonRow
-				icon={require('../../assets/cameraicon.png')}  
+				icon={require('../../assets/folder-icon.png')}  
 				heading="organize"
 				line1="your pictures into albums"
 				style={styles.folderStyle}
+				color={"#FF9800"}
 			/>
 			<ButtonRow
 				icon={require('../../assets/cameraicon.png')}  
@@ -30,6 +31,7 @@ const HomeScreen = ({ navigation }) => {
 				line1="your photo albums with family"
 				line2="and friends"
 				style={styles.shareStyle}
+				color="#FFEB3B"
 				
 			/>
 			<ButtonRow
@@ -38,7 +40,7 @@ const HomeScreen = ({ navigation }) => {
 				line1="your photos with popular print"
 				line2="shops or print from home"
 				style={styles.printStyle}
-
+				color= "#8BC34A"
 				
 			/>
 			
@@ -51,8 +53,9 @@ const styles = StyleSheet.create({
   	logo: {
 		width: 220,
 		height: 220,
-		marginBottom: 30,
-		marginTop: 20
+		marginBottom: 20,
+		marginTop: 10
+
 	},
 	viewStyle: {
 		flex: 1,
@@ -62,8 +65,10 @@ const styles = StyleSheet.create({
 
 	safeArea: {
 		flex: 1,
-		backgroundColor: 'black',
-		justifyContent: 'center'
+		backgroundColor: '#212121',
+		justifyContent: 'center',
+		borderColor: 'white',
+		borderWidth: 1
 	  },
 
 	// 

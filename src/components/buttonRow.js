@@ -26,11 +26,12 @@ export const ButtonRow = (props) => {
 const styles = StyleSheet.create({
 	buttonHeading: { 
 		color: '#E91E63',
-		marginBottom: 5,
-		fontSize: 16
+		marginBottom: 3,
+		fontSize: 14
 	},
 	buttonLabel: {
-		flexDirection: 'column'
+		flexDirection: 'column',
+		marginBottom: -14,
 	},
 	buttonImage: {
 		width: 40,
@@ -41,22 +42,24 @@ const styles = StyleSheet.create({
 	},
 
 	buttonRow: { 
-		flex:1, 
 		flexDirection: 'row',
-		width: '80%'
+		width: '80%',
+		justifyContent: 'flex-start',
+		padding: 0,
+		margin: 0,
+		height: 90
 	},
 	buttonBody: {
 		color: '#E91E63',
-		fontSize: 14
-
+		fontSize: 12,
+		marginTop: 0,
 	},
 
 	viewStyle: {
 		flex: 1,
 		
 		alignItems: 'center',
-		backgroundColor: 'black',
-		
+		backgroundColor: 'black',	
 	},
 
 	safeArea: {

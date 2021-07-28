@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View, Button, Text, SafeAreaView } from "react-native";
+import { Image, StyleSheet, View, TouchableOpacity, Text, SafeAreaView } from "react-native";
 import logo from '../../assets/monoPSCam.png';
 import { ButtonRow } from '../components/buttonRow';
 
@@ -10,6 +10,7 @@ const HomeScreen = ({ navigation }) => {
 			<View>
 				<Image source={logo} style={styles.logo} />
 			</View>
+			<View style={styles.buttonsStyle}>
 			<ButtonRow
 				icon={require('../../assets/cameraicon.png')}  
 				heading="presize"
@@ -26,7 +27,7 @@ const HomeScreen = ({ navigation }) => {
 				color={"#FF9800"}
 			/>
 			<ButtonRow
-				icon={require('../../assets/cameraicon.png')}  
+				icon={require('../../assets/groupIcon.png')}  
 				heading="share"
 				line1="your photo albums with family"
 				line2="and friends"
@@ -35,15 +36,22 @@ const HomeScreen = ({ navigation }) => {
 				
 			/>
 			<ButtonRow
-				icon={require('../../assets/cameraicon.png')}  
+				icon={require('../../assets/printicon.png')}  
 				heading="print"
 				line1="your photos with popular print"
 				line2="shops or print from home"
 				style={styles.printStyle}
 				color= "#8BC34A"
-				
 			/>
-			
+			</View>
+			<View style={styles.accountStyle}>
+				<TouchableOpacity style={styles.loginStyle}>
+					<Text style={styles.loginTextStyle}>Login</Text>
+				</TouchableOpacity>
+				<TouchableOpacity style={styles.createStyle}>
+					<Text style={styles.createTextStyle}>Create</Text>
+				</TouchableOpacity>
+			</View>
 		</View>
 	</SafeAreaView>
 	); 
@@ -51,16 +59,17 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   	logo: {
-		width: 220,
-		height: 220,
+		width: 180,
+		height: 180,
 		marginBottom: 20,
-		marginTop: 10
+		marginTop: 15
 
 	},
 	viewStyle: {
 		flex: 1,
 		alignItems: 'center',
-		backgroundColor: 'black',
+		backgroundColor: '#212121',
+	
 	},
 
 	safeArea: {
@@ -71,13 +80,20 @@ const styles = StyleSheet.create({
 		borderWidth: 1
 	  },
 
+	buttonsStyle: {
+		flex: 1,
+		
+	},
+
 	// 
 	presizeStyle: {
 		display: 'flex',
 		alignSelf: 'center'
 	},
 	cameraStyle: {
-		color: "#E91E63"
+		color: "#E91E63",
+	
+	
 	},
 	folderStyle: {
 		color: "#FF9800"
@@ -86,7 +102,42 @@ const styles = StyleSheet.create({
 		color: "#FFEB3B"
 	},
 	printStyle: {
-		color: "#8BC34A"
+		color: "#8BC34A",
+	},
+
+	accountStyle: {
+		flexDirection: 'row',
+		
+	},
+	
+	loginStyle: {
+		borderColor: 'white',
+		borderWidth: 1,
+		height: 40,
+		width: 100,
+		borderRadius: 5,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginBottom: 30,
+		marginRight: 15
+	
+	},
+	loginTextStyle: {
+		color:	'#00BCD4'
+	},
+	createStyle: {
+		borderColor: 'white',
+		borderWidth: 1,
+		height: 40,
+		width: 100,
+		borderRadius: 5,
+		alignItems: 'center',
+		justifyContent: 'center',
+		marginLeft: 15
+	
+	},
+	createTextStyle: {
+		color:	'#9C27B0'
 	}
 
 

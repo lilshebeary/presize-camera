@@ -9,16 +9,20 @@ const HomeScreen = ({ navigation }) => {
 		<View style={styles.viewStyle}>
 			<View>
 				<Image source={logo} style={styles.logo} />
+				<Text style={styles.logoTextStyle1}>reSize</Text>
+				<Text style={styles.logoTextStyle2}>Camera</Text>
 			</View>
 			<View style={styles.buttonsStyle}>
-			<ButtonRow
-				icon={require('../../assets/cameraicon.png')}  
-				heading="presize"
-				line1="size your photos in popular print "
-				line2="sizes before you take them"
-				style={styles.cameraStyle}
-				
-			/>
+			<TouchableOpacity>
+				<ButtonRow
+					icon={require('../../assets/cameraicon.png')}  
+					heading="presize"
+					line1="size your photos in popular print "
+					line2="sizes before you take them"
+					style={styles.cameraStyle}
+				/>
+			</TouchableOpacity>
+		
 			<ButtonRow
 				icon={require('../../assets/folder-icon.png')}  
 				heading="organize"
@@ -45,7 +49,10 @@ const HomeScreen = ({ navigation }) => {
 			/>
 			</View>
 			<View style={styles.accountStyle}>
-				<TouchableOpacity style={styles.loginStyle}>
+				<TouchableOpacity 
+					style={styles.loginStyle}
+					onPress={() => navigation.navigate("Login")}
+				>
 					<Text style={styles.loginTextStyle}>Login</Text>
 				</TouchableOpacity>
 				<TouchableOpacity style={styles.createStyle}>
@@ -61,10 +68,25 @@ const styles = StyleSheet.create({
   	logo: {
 		width: 180,
 		height: 180,
-		marginBottom: 20,
+		marginBottom: 30,
 		marginTop: 15
 
 	},
+	logoTextStyle1:{
+		position: 'absolute',
+		color: '#2196F3',
+		marginTop: 120,
+		marginLeft: 100
+
+	},	logoTextStyle2:{
+		position: 'absolute',
+		color: '#2196F3',
+		marginTop: 137,
+		marginLeft: 95
+
+	},
+
+
 	viewStyle: {
 		flex: 1,
 		alignItems: 'center',

@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 		padding: 0,
 		margin: 0,
-		height: 90
+		height: 85
 	},
 	buttonBody: {
 		color: '#E91E63',

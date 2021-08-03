@@ -13,7 +13,7 @@ const HomeScreen = ({ navigation }) => {
 				<Text style={styles.logoTextStyle2}>Camera</Text>
 			</View>
 			<View style={styles.buttonsStyle}>
-			<TouchableOpacity>
+			
 				<ButtonRow
 					icon={require('../../assets/cameraicon.png')}  
 					heading="presize"
@@ -21,7 +21,7 @@ const HomeScreen = ({ navigation }) => {
 					line2="sizes before you take them"
 					style={styles.cameraStyle}
 				/>
-			</TouchableOpacity>
+			
 		
 			<ButtonRow
 				icon={require('../../assets/folder-icon.png')}  

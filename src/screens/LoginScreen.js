@@ -59,13 +59,6 @@ const styles = StyleSheet.create({
 		backgroundColor: '#212121',
 	
 	},
-    safeArea: {
-		flex: 1,
-		backgroundColor: '#212121',
-		justifyContent: 'center',
-		borderColor: 'white',
-		borderWidth: 1
-	  },
 
     logo: {
 		width: 180,

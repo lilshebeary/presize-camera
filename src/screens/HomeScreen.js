@@ -1,11 +1,15 @@
 import React from "react";
-import { Image, StyleSheet, View, TouchableOpacity, Text, SafeAreaView } from "react-native";
+import { Image, StyleSheet, View, TouchableOpacity, Text, SafeAreaView, StatusBar } from "react-native";
 import logo from '../../assets/monoPSCam.png';
 import { ButtonRow } from '../components/buttonRow';
 
 const HomeScreen = ({ navigation }) => {
   return (
-	<SafeAreaView style={styles.safeArea}>
+	// <SafeAreaView style={styles.safeArea}>
+
+		<SafeAreaView style={[styles.safeArea, { backgroundColor: '#212121' }]}>
+            <StatusBar barStyle="light-content" backgroundColor="#212121" />
+
 		<View style={styles.viewStyle}>
 			<View>
 				<Image source={logo} style={styles.logo} />
@@ -69,7 +73,7 @@ const styles = StyleSheet.create({
 		width: 180,
 		height: 180,
 		marginBottom: 25,
-		marginTop: 15
+		marginTop: 25
 
 	},
 	logoTextStyle1:{
@@ -97,11 +101,9 @@ const styles = StyleSheet.create({
 	safeArea: {
 		flex: 1,
 		backgroundColor: '#212121',
-		justifyContent: 'center',
-		borderColor: 'white',
-		borderWidth: 1
+		alignItems: 'center',
 	  },
-
+	 
 	buttonsStyle: {
 		flex: 1,
 		

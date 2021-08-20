@@ -59,7 +59,10 @@ const HomeScreen = ({ navigation }) => {
 				>
 					<Text style={styles.loginTextStyle}>Login</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.createStyle}>
+				<TouchableOpacity 
+					style={styles.createStyle}
+					onPress={() => navigation.navigate("Create")}
+				>
 					<Text style={styles.createTextStyle}>Create</Text>
 				</TouchableOpacity>
 			</View>
@@ -79,15 +82,14 @@ const styles = StyleSheet.create({
 	logoTextStyle1:{
 		position: 'absolute',
 		color: '#2196F3',
-		marginTop: 120,
+		marginTop: 125,
 		marginLeft: 100
 
 	},	logoTextStyle2:{
 		position: 'absolute',
 		color: '#2196F3',
-		marginTop: 137,
+		marginTop: 138,
 		marginLeft: 95
-
 	},
 
 
@@ -106,6 +108,7 @@ const styles = StyleSheet.create({
 	 
 	buttonsStyle: {
 		flex: 1,
+		justifyContent: 'center'
 		
 	},
 
@@ -131,6 +134,8 @@ const styles = StyleSheet.create({
 
 	accountStyle: {
 		flexDirection: 'row',
+		alignContent: 'center',
+		justifyContent: 'center'
 		
 	},
 	

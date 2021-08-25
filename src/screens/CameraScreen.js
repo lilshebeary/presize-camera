@@ -3,6 +3,10 @@ import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-na
 import { Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons';
+import { Entypo } from '@expo/vector-icons';
 
 const CameraScreen = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -24,13 +28,43 @@ const CameraScreen = ({ navigation }) => {
   return (
       <SafeAreaView style={styles.safeArea}>
     <View style={styles.container}>
+{/* navbar */}
         <View style={styles.navigationStyle}>
+{/* friends */}
         <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate("Home")}>
               <SimpleLineIcons name="people" size={32} color="white" />
-            
           </TouchableOpacity>
+{/* files */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Home")}>
+            <AntDesign name="folderopen" size={32} color="white" />
+          </TouchableOpacity>
+{/* print */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Home")}>
+          <AntDesign name="printer" size={32} color="white" />
+          </TouchableOpacity>
+{/* space */}
+          <View></View>
+          <View></View>
+          <View></View>
+{/* flash */}
+          <TouchableOpacity
+             style={styles.button}
+             onPress={() => navigation.navigate("Home")}>
+            <FontAwesome name="flash" size={32} color="white" />
+          </TouchableOpacity>
+{/* HDR */}
+          <TouchableOpacity
+             style={styles.button}
+             onPress={() => navigation.navigate("Home")}>
+               <MaterialIcons name="hdr-off" size={32} color="white" />
+          </TouchableOpacity>
+{/* camera angle */}
         <TouchableOpacity
             style={styles.button}
             onPress={() => {
@@ -46,8 +80,37 @@ const CameraScreen = ({ navigation }) => {
         </View>
       <Camera style={styles.camera} type={type}>
       </Camera>
-        <View style={styles.buttonContainer}>
-         
+
+{/* camera size */}
+        <View style={styles.buttonContainer1}>
+            <TouchableOpacity
+              style={styles.sizeStyle}
+            >
+                <Text style={styles.sizeStyle}>SQUARE</Text> 
+                <Text style={styles.sizeStyle}>4x6</Text> 
+                <Text style={styles.sizeStyle}>5x7</Text> 
+                <Text style={styles.sizeStyle}>8x10</Text> 
+            </TouchableOpacity>
+
+            {/* <View></View> */}
+
+            <View></View>
+            <View></View>
+        </View>
+{/* camera actions */}
+        <View style={styles.buttonContainer2}>
+            <TouchableOpacity style={styles.pictureStyle}>
+              <AntDesign name="picture" size={50} color="white" />  
+            </TouchableOpacity>
+
+            {/* <View></View> */}
+  
+            <TouchableOpacity style={styles.shootStyle}>
+            <Entypo name="circle" size={50} color="black"  style={{padding: 5}} />
+            </TouchableOpacity>
+
+            <View></View>
+            <View></View>
         </View>
       
     </View>
@@ -71,7 +134,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         alignItems: 'center',
         height: 80,
-        // alignSelf: 'flex-start',
         backgroundColor: '#212121',
       },
       camera: {
@@ -80,21 +142,41 @@ const styles = StyleSheet.create({
         borderColor: 'white',
         borderWidth: 1
       },
-      buttonContainer: {
+      buttonContainer1: {
         flex: 1,
         backgroundColor: '#212121',
         flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        
+      },
+      sizeStyle: {
+        flex: 1,
+        flexDirection: 'row',
+        color: 'white',
+        justifyContent: 'space-between',
+        marginLeft: 20
+      },
+      buttonContainer2: {
+        flex: 1,
+        backgroundColor: '#212121',
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between'
        
       },
-      button: {
-        // flex: 1,
-        // // justifyContent: 'flex-end',
-        // alignItems: 'center',
+      shootStyle: {
+        height: 60,
+        width: 60,
+        backgroundColor: 'white',
+        borderRadius: 50,
+        borderColor: 'black',
+        marginBottom: 15
       },
-      text: {
-        fontSize: 18,
-        color: 'white',
-      },
+      pictureStyle: {
+        marginHorizontal: 20
+      }
+
 }); 
 
 export default CameraScreen;

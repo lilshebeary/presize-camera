@@ -1,14 +1,17 @@
 import React from 'react';
-import { Image, StyleSheet, View, Button, Text, SafeAreaView } from "react-native";
+import { Image, StyleSheet, View, Text, TouchableOpacity } from "react-native";
 import logo from '../../assets/monoPSCam.png';
 
 
 export const ButtonRow = (props) => {
 	const rowColor = {color: props.color || '#E91E63'}
     return (
-        <View style={styles.buttonRow}>
+        <TouchableOpacity 
+			style={styles.buttonRow}
+			onPress={props.onPress}>
 				<View>
-					<Image source={props.icon || logo} style={styles.buttonImage}/>
+					{ props.icon && <Image source={props.icon || logo} style={styles.buttonImage}/> }
+					{ props.iconComponent }
 				</View>
 				<View>
 				<View>
@@ -19,7 +22,7 @@ export const ButtonRow = (props) => {
 					<Text style={{...styles.buttonBody, ...rowColor}}>{props.line2}</Text>
 				</View>
 				</View>
-			</View>
+			</TouchableOpacity>
     );
 }
 

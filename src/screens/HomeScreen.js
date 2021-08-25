@@ -2,6 +2,7 @@ import React from "react";
 import { Image, StyleSheet, View, TouchableOpacity, Text, SafeAreaView, StatusBar } from "react-native";
 import logo from '../../assets/monoPSCam.png';
 import { ButtonRow } from '../components/buttonRow';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
 const HomeScreen = ({ navigation }) => {
   return (
@@ -24,6 +25,7 @@ const HomeScreen = ({ navigation }) => {
 					line1="size your photos in popular print "
 					line2="sizes before you take them"
 					style={styles.cameraStyle}
+					onPress={() => navigation.navigate("Camera")}
 				/>
 			
 		
@@ -35,7 +37,7 @@ const HomeScreen = ({ navigation }) => {
 				color={"#FF9800"}
 			/>
 			<ButtonRow
-				icon={require('../../assets/groupIcon.png')}  
+				iconComponent=<SimpleLineIcons name="people" size={37} color="white" style={{ marginRight:25}} /> 
 				heading="share"
 				line1="your photo albums with family"
 				line2="and friends"
@@ -96,6 +98,7 @@ const styles = StyleSheet.create({
 	viewStyle: {
 		flex: 1,
 		alignItems: 'center',
+		justifyContent: 'center',
 		backgroundColor: '#212121',
 	
 	},

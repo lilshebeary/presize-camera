@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native';
 import { Camera } from 'expo-camera';
+// import { RNCamera } from 'react-native-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
+
 
 const CameraScreen = ({ navigation }) => {
   const [hasPermission, setHasPermission] = useState(null);
@@ -78,8 +80,28 @@ const CameraScreen = ({ navigation }) => {
             
           </TouchableOpacity>
         </View>
-      <Camera style={styles.camera} type={type}>
+      <Camera 
+        style={styles.camera} 
+        type={type}>
+        
       </Camera>
+    
+    {/* <RNCamera
+          ref={ref => {
+            this.camera = ref;
+          }}
+          captureAudio={false}
+          style={Platform.OS === "ios" ? createPostStyle.previewIOS : createPostStyle.previewAndroid}
+          type={RNCamera.Constants.Type.back}
+          flashMode={this.state.flash}
+          ratio={'2:3'}
+          androidCameraPermissionOptions={{
+            title: string.alert.CameraPermissionTitle,
+            message: string.alert.CameraPermissionNote,
+            buttonPositive: string.alert.buttonOk,
+            buttonNegative: string.alert.buttonDontAllow,
+          }}
+        /> */}
 
 {/* camera size */}
         <View style={styles.buttonContainer1}>

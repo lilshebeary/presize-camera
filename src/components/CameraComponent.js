@@ -8,7 +8,7 @@ class CameraComponent extends Component {
     state = {}
 
     prepareRatio = async () => {
-        if (Platform.OS === 'android' && this.cam) {
+        if (Platform.OS === 'ios' && this.cam) {
              const ratios = await this.cam.getSupportedRatiosAsync();
 
              // See if the current device has your desired ratio, otherwise get the maximum supported one

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, ImageuseWindowDimensions,  } from 'react-native';
 import { Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
@@ -13,6 +13,9 @@ const CameraScreen = ({ navigation }) => {
 	const [ hasPermission, setHasPermission ] = useState(null);
 	const [ lastImage, setLastImage ] = useState(null);
 	const [ type, setType ] = useState(Camera.Constants.Type.back);
+	const [ ratio, setRatio ] = useState([ 2, 3 ]);
+
+	const window = useWindowDimensions();
 
 	useEffect(() => {
 		(async () => {
@@ -80,10 +83,16 @@ const CameraScreen = ({ navigation }) => {
 
 				{/* camera size */}
 				<View style={styles.buttonContainer1}>
-					<TouchableOpacity style={styles.sizeStyle}>
-						<Text style={styles.sizeStyle}>SQUARE</Text>
+					<TouchableOpacity onPress={() => setRatio(window([ 1, 1 ]))}>
+						<Text style={styles.sizeStyle}>1x1</Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={() => setRatio(window([ 2, 3 ]))}>
 						<Text style={styles.sizeStyle}>4x6</Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={() => setRatio(window([ 5, 7 ]))}>
 						<Text style={styles.sizeStyle}>5x7</Text>
+					</TouchableOpacity>
+					<TouchableOpacity onPress={() => setRatio(window([ 4, 5 ]))}>
 						<Text style={styles.sizeStyle}>8x10</Text>
 					</TouchableOpacity>
 
@@ -92,9 +101,10 @@ const CameraScreen = ({ navigation }) => {
 					<View />
 					<View />
 				</View>
+
 				{/* camera actions */}
 				<View style={styles.buttonContainer2}>
-					<TouchableOpacity style={styles.imageWindowStyle}>
+					<TouchableOpacity style={styles.imageWindowStyle} onPress={() => navigation.navigate('PhotoEdit')}>
 						<Image style={styles.pictureStyle} source={lastImage} />
 					</TouchableOpacity>
 
@@ -106,7 +116,7 @@ const CameraScreen = ({ navigation }) => {
 							if (this.camera) {
 								let photo = await this.camera.takePictureAsync();
 								setLastImage(photo);
-                await SecureStore.setItemAsync('lastImage', photo);
+								await SecureStore.setItemAsync('lastImage', JSON.stringify(photo));
 							}
 						}}
 					>
@@ -155,9 +165,11 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'row',
 		color: 'white',
-		justifyContent: 'space-between',
-		marginLeft: 20
+		// justifyContent: 'space-between',
+		marginLeft: 40,
+		marginTop: 15
 	},
+
 	buttonContainer2: {
 		flex: 1,
 		backgroundColor: '#212121',
@@ -176,13 +188,12 @@ const styles = StyleSheet.create({
 	imageWindowStyle: {
 		marginHorizontal: 20
 	},
-  pictureStyle: {
-    height: 50,
-    width: 50,
-    marginBottom: 10,
-    marginLeft: 10
-
-  }
+	pictureStyle: {
+		height: 50,
+		width: 50,
+		marginBottom: 10,
+		marginLeft: 10
+	}
 });
 
 export default CameraScreen;

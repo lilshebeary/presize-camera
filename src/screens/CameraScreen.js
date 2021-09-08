@@ -76,12 +76,13 @@ const CameraScreen = ({ navigation }) => {
 				<Camera
 					style={styles.camera}
 					type={type}
+// doesn't like this.camera
 					ref={(ref) => {
 						this.camera = ref;
 					}}
 				/>
 
-				{/* camera size */}
+{/* camera size need to crop photos and establish image view size */}
 				<View style={styles.buttonContainer1}>
 					<TouchableOpacity onPress={() => setRatio(window([ 1, 1 ]))}>
 						<Text style={styles.sizeStyle}>1x1</Text>
@@ -104,7 +105,7 @@ const CameraScreen = ({ navigation }) => {
 
 				{/* camera actions */}
 				<View style={styles.buttonContainer2}>
-					<TouchableOpacity style={styles.imageWindowStyle} onPress={() => navigation.navigate('PhotoEdit')}>
+					<TouchableOpacity style={styles.imageWindowStyle} onPress={() => navigation.navigate('Photo')}>
 						<Image style={styles.pictureStyle} source={lastImage} />
 					</TouchableOpacity>
 
@@ -113,6 +114,7 @@ const CameraScreen = ({ navigation }) => {
 					<TouchableOpacity
 						style={styles.shootStyle}
 						onPress={async () => {
+// doesn't like this.camera
 							if (this.camera) {
 								let photo = await this.camera.takePictureAsync();
 								setLastImage(photo);

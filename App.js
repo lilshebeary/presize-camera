@@ -7,6 +7,7 @@ import LoginScreen from "./src/screens/LoginScreen";
 import CreateScreen from './src/screens/CreateScreen';
 import CameraScreen from './src/screens/CameraScreen';
 import PhotoScreen from './src/screens/PhotoScreen';
+import EditScreen from './src/screens/EditScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ function App() {
         <Stack.Screen name="Create" component={CreateScreen} />
         <Stack.Screen name="Camera" component={CameraScreen} />
         <Stack.Screen name="Photo" component={PhotoScreen} />
+        <Stack.Screen name="Edit" component={EditScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>

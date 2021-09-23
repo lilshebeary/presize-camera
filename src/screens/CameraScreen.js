@@ -13,9 +13,17 @@ const CameraScreen = ({ navigation }) => {
 	const [ hasPermission, setHasPermission ] = useState(null);
 	const [ lastImage, setLastImage ] = useState(null);
 	const [ type, setType ] = useState(Camera.Constants.Type.back);
-	const [ ratio, setRatio ] = useState([ 2, 3 ]);
+	const [ ratio, setRatio ] = useState([ 1, 1 ]);
+	const [ cameraHeight, setCameraHeight ] = useState();
 
-	const window = useWindowDimensions();
+	const { width, height } = useWindowDimensions();
+
+// portrait x = width
+	useEffect(() => {
+		const [x, y] = ratio;
+		setCameraHeight(width * y/x);
+		
+	})
 
 	useEffect(() => {
 		(async () => {
@@ -73,27 +81,28 @@ const CameraScreen = ({ navigation }) => {
 						<Ionicons name="camera-reverse-outline" size={35} color="white" />
 					</TouchableOpacity>
 				</View>
+				
 				<Camera
-					style={styles.camera}
+					style={{ ...styles.camera, height: cameraHeight }}
 					type={type}
-// doesn't like this.camera
 					ref={(ref) => {
 						this.camera = ref;
 					}}
 				/>
+			
 
 {/* camera size need to crop photos and establish image view size */}
 				<View style={styles.buttonContainer1}>
-					<TouchableOpacity onPress={() => setRatio(window([ 1, 1 ]))}>
+					<TouchableOpacity onPress={() => setRatio([ 1, 1 ])}>
 						<Text style={styles.sizeStyle}>1x1</Text>
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => setRatio(window([ 2, 3 ]))}>
+					<TouchableOpacity onPress={() => setRatio([ 2, 3 ])}>
 						<Text style={styles.sizeStyle}>4x6</Text>
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => setRatio(window([ 5, 7 ]))}>
+					<TouchableOpacity onPress={() => setRatio([ 5, 7 ])}>
 						<Text style={styles.sizeStyle}>5x7</Text>
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => setRatio(window([ 4, 5 ]))}>
+					<TouchableOpacity onPress={() => setRatio([ 4, 5 ])}>
 						<Text style={styles.sizeStyle}>8x10</Text>
 					</TouchableOpacity>
 
@@ -114,7 +123,7 @@ const CameraScreen = ({ navigation }) => {
 					<TouchableOpacity
 						style={styles.shootStyle}
 						onPress={async () => {
-// doesn't like this.camera
+
 							if (this.camera) {
 								let photo = await this.camera.takePictureAsync();
 								setLastImage(photo);
@@ -150,6 +159,7 @@ const styles = StyleSheet.create({
 		height: 80,
 		backgroundColor: '#212121'
 	},
+	
 	camera: {
 		height: 560,
 		backgroundColor: '#212121',

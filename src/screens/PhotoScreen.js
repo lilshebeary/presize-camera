@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
 	},
 	imageStyle: {
 		flex: 1,
-		height: 500,
+
 		width: '100%'
 	},
 	buttonContainer1: {

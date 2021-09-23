@@ -6,8 +6,6 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
-import { Icons8 } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
 import * as SecureStore from 'expo-secure-store';
 
 const PhotoEditScreen = ({ navigation }) => {

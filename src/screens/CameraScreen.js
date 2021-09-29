@@ -81,7 +81,7 @@ const CameraScreen = ({ navigation }) => {
 						<Ionicons name="camera-reverse-outline" size={35} color="white" />
 					</TouchableOpacity>
 				</View>
-				
+{/* camera */}
 				<Camera
 					style={{ ...styles.camera, height: cameraHeight }}
 					type={type}
@@ -119,7 +119,7 @@ const CameraScreen = ({ navigation }) => {
 					</TouchableOpacity>
 
 					{/* <View></View> */}
-
+{/* take picture and store */}
 					<TouchableOpacity
 						style={styles.shootStyle}
 						onPress={async () => {

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, TouchableOpacity, SafeAreaView, Image, useWindowDimensions, Text } from 'react-native';
-import { Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
@@ -10,8 +9,9 @@ import * as SecureStore from 'expo-secure-store';
 
 const PhotoEditScreen = ({ navigation }) => {
 	const [ lastImage, setLastImage ] = useState(null);
-
-	// const window = useWindowDimensions();
+	const [ imageWidth, setImageWidth ] = useState();
+	const [ imageHeight, setImageHeight ] = useState();
+	const window = useWindowDimensions();
 
 	useEffect(() => {
 		SecureStore.getItemAsync('lastImage').then((image) => {
@@ -21,10 +21,20 @@ const PhotoEditScreen = ({ navigation }) => {
 		});
 	});
 
+	useEffect(
+		() => {
+			if (lastImage && lastImage.width && lastImage.height) {
+				const ratio = lastImage.width / lastImage.height;
+				setImageHeight(window.width * 1 / ratio);
+			}
+		},
+		[ lastImage ]
+	);
+
 	return (
 		<SafeAreaView style={styles.safeArea}>
-			<View style={styles.container}>
-				{/* navbar */}
+			
+	{/* navbar */}
 				<View style={styles.navigationStyle}>
 					{/* friends */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
@@ -38,6 +48,7 @@ const PhotoEditScreen = ({ navigation }) => {
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
 						<AntDesign name="printer" size={32} color="white" />
 					</TouchableOpacity>
+
 					{/* space */}
 					<View />
 					<View />
@@ -51,22 +62,25 @@ const PhotoEditScreen = ({ navigation }) => {
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
 						<Ionicons name="paper-plane-outline" size={32} color="white" />
 					</TouchableOpacity>
-					
+
 					{/* camera angle */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
 						<Ionicons name="ios-camera-outline" size={32} color="white" />
 					</TouchableOpacity>
 				</View>
 
+				{/* date */}
 				<View style={styles.dateContainer}>
 					<Text style={styles.dateStyle}>Date</Text>
 				</View>
-
-				{/* image */}
+			<View style={styles.container}>
+	{/* image */}
 				<View style={styles.imageContainer}>
-					<Image source={lastImage} style={styles.imageStyle} />
+					<Image source={lastImage} style={{ ...styles.imageStyle, ...{ height: imageHeight } }} />
 				</View>
 			</View>
+
+			{/* actions */}
 			<View style={styles.buttonContainer1}>
 				<View style={styles.buttons}>
 					<TouchableOpacity onPress={() => navigation.navigate('Edit')}>
@@ -118,13 +132,13 @@ const styles = StyleSheet.create({
 		backgroundColor: '#212121'
 	},
 	imageContainer: {
-		backgroundColor: 'black',
+		backgroundColor: '#212121',
+		justifyContent: 'center',
 		height: '100%',
 		width: '100%'
 	},
 	imageStyle: {
-		flex: 1,
-
+		// flex: 1,
 		width: '100%'
 	},
 	buttonContainer1: {

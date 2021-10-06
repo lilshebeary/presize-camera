@@ -60,6 +60,9 @@ PODS:
     - DoubleConversion
     - glog
   - glog (0.3.5)
+  - imglyKit (10.27.0)
+  - PhotoEditorSDK (10.27.0):
+    - imglyKit (= 10.27.0)
   - RCTRequired (0.63.4)
   - RCTTypeSafety (0.63.4):
     - FBLazyVector (= 0.63.4)
@@ -300,6 +303,10 @@ PODS:
     - React
   - RNGestureHandler (1.10.3):
     - React-Core
+  - RNPhotoEditorSDK (2.10.1):
+    - PhotoEditorSDK (~> 10.24)
+    - React
+    - React-RCTImage
   - RNReanimated (2.1.0):
     - DoubleConversion
     - FBLazyVector
@@ -404,6 +411,7 @@ DEPENDENCIES:
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - "RNCMaskedView (from `../node_modules/@react-native-community/masked-view`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNPhotoEditorSDK (from `../node_modules/react-native-photoeditorsdk`)
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
@@ -426,6 +434,8 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - boost-for-react-native
+    - imglyKit
+    - PhotoEditorSDK
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -512,6 +522,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/masked-view"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNPhotoEditorSDK:
+    :path: "../node_modules/react-native-photoeditorsdk"
   RNReanimated:
     :path: "../node_modules/react-native-reanimated"
   RNScreens:
@@ -569,6 +581,8 @@ SPEC CHECKSUMS:
   FBReactNativeSpec: f2c97f2529dd79c083355182cc158c9f98f4bd6e
   Folly: b73c3869541e86821df3c387eb0af5f65addfab4
   glog: 40a13f7840415b9a77023fbcae0f1e6f43192af3
+  imglyKit: 0fb6b12eb581649fab112e9718cef18eab3a8504
+  PhotoEditorSDK: 9e1498160e7bc4cfef614f22921231aad2d8758a
   RCTRequired: 082f10cd3f905d6c124597fd1c14f6f2655ff65e
   RCTTypeSafety: 8c9c544ecbf20337d069e4ae7fd9a377aadf504b
   React: b0a957a2c44da4113b0c4c9853d8387f8e64e615
@@ -593,6 +607,7 @@ SPEC CHECKSUMS:
   ReactCommon: 73d79c7039f473b76db6ff7c6b159c478acbbb3b
   RNCMaskedView: f5c7d14d6847b7b44853f7acb6284c1da30a3459
   RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNPhotoEditorSDK: 7047ac8e366ceb63d17a8302f108cca4b9c8ff13
   RNReanimated: 70f662b5232dd5d19ccff581e919a54ea73df51c
   RNScreens: e8e8dd0588b5da0ab57dcca76ab9b2d8987757e0
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f

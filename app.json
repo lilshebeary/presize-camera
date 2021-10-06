@@ -24,7 +24,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/monoPSCam.png",
         "backgroundColor": "#212121"
-      }
+      },
+      "package": "com.beary.presizecamera"
     },
     "web": {
       "favicon": "./assets/favicon.png"

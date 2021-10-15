@@ -1,13 +1,15 @@
 import React from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, StatusBar, SafeAreaView } from 'react-native'
-import logo from '../../assets/psCam.png';
+import logo from '../../assets/logoBlue.png';
 
 
 const LoginScreen = ({ navigation }) => {
    
     return (
-        <SafeAreaView style={[styles.container, { backgroundColor: '#212121' }]}>
-            <StatusBar barStyle="light-content" backgroundColor="#212121" />
+		<>
+		<SafeAreaView></SafeAreaView>
+        <SafeAreaView style={[styles.container, { backgroundColor: '##26CE7D' }]}>
+            <StatusBar barStyle="dark-content" backgroundColor="#fff" />
 
         <View style={styles.viewStyle}>
 
@@ -16,6 +18,7 @@ const LoginScreen = ({ navigation }) => {
                     source={logo} 
                     style={styles.logo} 
                 />
+				<Text style={styles.appName}>Presize Camera</Text>
             </TouchableOpacity>
 
             <View>
@@ -42,13 +45,12 @@ const LoginScreen = ({ navigation }) => {
 				>
 					<Text style={styles.loginTextStyle}>Login</Text>
 				</TouchableOpacity>
-				<TouchableOpacity style={styles.createStyle}>
-					<Text style={styles.createTextStyle}>Create</Text>
-				</TouchableOpacity>
+				
 			</View>
 
         </View>
         </SafeAreaView>
+		</>
     )
 };
 
@@ -56,40 +58,29 @@ const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		alignItems: 'center',
-		backgroundColor: '#212121',
-	
+		backgroundColor: '#fff',
 	},
-
     logo: {
-		width: 180,
-		height: 180,
-		marginBottom: 35,
-		marginTop: 95
-
+		width: 120,
+		height: 100,
+		marginBottom: 25,
+		marginTop: 170,
+		alignSelf: 'center'
 	},
-	// logoTextStyle1:{
-	// 	position: 'absolute',
-	// 	color: '#2196F3',
-	// 	marginTop: 210,
-	// 	marginLeft: 100
-
-	// },	logoTextStyle2:{
-	// 	position: 'absolute',
-	// 	color: '#2196F3',
-	// 	marginTop: 227,
-	// 	marginLeft: 95
-
-	// },
+	appName: {
+		color: '#189BF3',
+		fontSize: 40,
+		fontWeight: '700',
+		marginBottom: 80
+	},
     viewStyle: {
 		flex: 1,
 		alignItems: 'center',
-		backgroundColor: '#212121',
-	
+		backgroundColor: '#fff',
 	},
 
 	safeArea: {
 		flex: 1,
-		backgroundColor: '#212121',
 		justifyContent: 'center',
 		borderColor: 'white',
 		borderWidth: 1
@@ -98,49 +89,35 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		
 	},
-    input: {
-        height: 35,
-        width: 250,
+	input: {
+        height: 40,
+        width: 320,
         margin: 12,
         borderWidth: 1,
+		borderRadius: 6,
         padding: 10,
         backgroundColor: "white",
-        marginBottom: 20
+        marginBottom: 10,
+		color: '#eee'
       },
-	loginStyle: {
-        marginTop: 20,
-        backgroundColor: '#F2BB35',
+	  loginStyle: {
+        marginTop: 50,
+        backgroundColor: '#26CE7D',
 		height: 45,
-		width: 105,
-		borderRadius: 5,
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginBottom: 30,
-		marginRight: 15
-	
-	},
-	loginTextStyle: {
-		color:	'black',
-        fontSize: 20
-
-	},
-	createStyle: {
-        marginTop: 20,
-        backgroundColor: '#00BCD4',
-		height: 45,
-		width: 105,
-		borderRadius: 5,
+		width: 320,
+		borderRadius: 6,
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginLeft: 15,
      fontSize: 20
 	
 	},
-	createTextStyle: {
+	loginTextStyle: {
 		color:	'black',
         fontSize: 20
 
 	}
+	
 });
 
 export default LoginScreen;

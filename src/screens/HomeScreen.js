@@ -10,11 +10,12 @@ const HomeScreen = ({ navigation }) => {
 	<SafeAreaView style={styles.safeAreaTop} />
 		<SafeAreaView style={styles.safeAreaBottom}>
             <StatusBar barStyle="light-content" backgroundColor="#FB2A5C" />
+			<TouchableOpacity style={styles.touchableStyle} onPress={() => navigation.navigate('Camera')}>
 			<View style={styles.redViewStyle}>
 				<Image source={logo} style={styles.logo} />
 				<Text style={styles.appName}>Presize Camera</Text>
 			</View>	
-
+			</TouchableOpacity>
 			<View style={styles.blueViewArch}></View>
 
 			<View style={styles.accountStyle}>
@@ -57,9 +58,14 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		backgroundColor: '#FB2A5C',
 		width: '100%',
-		height: '65%',
-		
-		
+		height: '100%',	
+	},
+	touchableStyle: {
+		alignItems: 'center',
+		justifyContent: 'center',
+		backgroundColor: '#FB2A5C',
+		width: '100%',
+		height: '65%',	
 	},
 	blueViewArch: {
 		textAlign: 'center',

@@ -114,7 +114,7 @@ const CameraScreen = ({ navigation }) => {
 
 				{/* camera actions */}
 				<View style={styles.buttonContainer2}>
-					<TouchableOpacity style={styles.imageWindowStyle} onPress={() => navigation.navigate('Photo')}>
+					<TouchableOpacity style={styles.imageWindowStyle} onPress={() => navigation.navigate('Gallery')}>
 						<Image style={styles.pictureStyle} source={lastImage} />
 					</TouchableOpacity>
 

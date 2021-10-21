@@ -8,13 +8,14 @@ import CreateScreen from './src/screens/CreateScreen';
 import CameraScreen from './src/screens/CameraScreen';
 import PhotoScreen from './src/screens/PhotoScreen';
 import EditScreen from './src/screens/EditScreen';
+import GalleryScreen from './src/screens/GalleryScreen';
 
 const Stack = createNativeStackNavigator();
 
 function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Camera" screenOptions={{
+      <Stack.Navigator initialRouteName="Gallery" screenOptions={{
         headerShown: false
       }}>
         <Stack.Screen name="Home" component={HomeScreen} />
@@ -23,6 +24,7 @@ function App() {
         <Stack.Screen name="Camera" component={CameraScreen} />
         <Stack.Screen name="Photo" component={PhotoScreen} />
         <Stack.Screen name="Edit" component={EditScreen} />
+        <Stack.Screen name="Gallery" component={GalleryScreen} />
 
       </Stack.Navigator>
     </NavigationContainer>

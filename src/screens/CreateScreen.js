@@ -1,13 +1,15 @@
 import React from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, StatusBar, SafeAreaView } from 'react-native'
-import logo from '../../assets/psCam.png';
+import logo from '../../assets/blueLogo.png';
 
 
 const CreateScreen = ({ navigation }) => {
    
     return (
-        <SafeAreaView style={[styles.container, { backgroundColor: '#212121' }]}>
-            <StatusBar barStyle="light-content" backgroundColor="#212121" />
+		<>
+		<SafeAreaView></SafeAreaView>
+        <SafeAreaView style={[styles.container, { backgroundColor: '#fff' }]}>
+            <StatusBar barStyle="light-content" backgroundColor="#fff" />
 
         <View style={styles.viewStyle}>
 
@@ -16,141 +18,127 @@ const CreateScreen = ({ navigation }) => {
                     source={logo} 
                     style={styles.logo} 
                 />
+				<Text style={styles.nameApp}>Presize Camera</Text>
             </TouchableOpacity>
+		</View>
 
             <View>
+				<Text style={styles.label}>First Name</Text>
 			<TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
-                    placeholder="First Name"
+                    placeholder="Jane"
                 />
+				<Text style={styles.label}>Second Name</Text>
 				<TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
-                    placeholder="Last Name"
+                    placeholder="Doe"
                 />
+				<Text style={styles.label}>Email</Text>
 				<TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
-                    placeholder="Email"
+                    placeholder="jane@email.com"
                 />
+				<Text style={styles.label}>Phone</Text>
             <TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
-                    placeholder="Username"
+                    placeholder="1+___ ___ ____"
                 />
+				<Text style={styles.label}>Password</Text>
+            <TextInput
+                style={styles.input}
+                    // onChangeText={onChangeText}
+                    // value={text}
+                    placeholder="*******"
+                />
+				<Text style={styles.label}>Re Enter Password</Text>
             <TextInput
                 style={styles.input}
                 // onChangeText={onChangeNumber}
                 // value={number}
-                placeholder="Password"
+                placeholder="*******"
                 keyboardType="numeric"
             />
             </View>
-            
+          
             <View style={styles.accountStyle}>
                 
-				<TouchableOpacity 
-					style={styles.loginStyle}
-					onPress={() => navigation.navigate("Login")}
-				>
-					<Text style={styles.loginTextStyle}>Login</Text>
-				</TouchableOpacity>
+				
 				<TouchableOpacity 
 					style={styles.createStyle}
-
 				>
-					<Text style={styles.createTextStyle}>Create</Text>
+					<Text style={styles.createTextStyle}>Continue</Text>
 				</TouchableOpacity>
 			</View>
-
-        </View>
+			 
+    
         </SafeAreaView>
+		</>
     )
 };
 
 const styles = StyleSheet.create({
-    container: {
-		flex: 1,
-		alignItems: 'center',
-		backgroundColor: '#212121',
-	
-	},
-
-    logo: {
-		width: 120,
-		height: 120,
-		marginBottom: 25,
-		marginTop: 25
-
-	},
-	// logoTextStyle1:{
-	// 	position: 'absolute',
-	// 	color: '#2196F3',
-	// 	marginTop: 210,
-	// 	marginLeft: 100
-
-	// },	logoTextStyle2:{
-	// 	position: 'absolute',
-	// 	color: '#2196F3',
-	// 	marginTop: 227,
-	// 	marginLeft: 95
-
-	// },
-    viewStyle: {
-		flex: 1,
-		alignItems: 'center',
-		backgroundColor: '#212121',
-	
-	},
-
 	safeArea: {
 		flex: 1,
-		backgroundColor: '#212121',
+		backgroundColor: '#fff',
 		justifyContent: 'center',
 		borderColor: 'white',
 		borderWidth: 1
 	  },
+    container: {
+		flex: 1,
+		alignItems: 'center',
+		backgroundColor: '#fff',
+	},
+    logo: {
+		marginBottom: 15,
+		marginTop: 35,
+		alignSelf: 'center',
+		color: '#189BF3'
+	},
+	nameApp: {
+		color: '#189BF3',
+		fontSize: 40, 
+		fontWeight: '700',
+		marginBottom: 20
+	},
+    viewStyle: {
+		flex: 1,
+		alignItems: 'center',
+		backgroundColor: '#fff',
+	},
       accountStyle: {
 		flexDirection: 'row',
-		
+	},
+	label: {
+		marginLeft: 14,
+		color: '#212121'
 	},
     input: {
-        height: 35,
-        width: 250,
+        height: 40,
+        width: 320,
         margin: 12,
         borderWidth: 1,
+		borderRadius: 6,
         padding: 10,
         backgroundColor: "white",
-        marginBottom: 20
+        marginBottom: 10,
+		color: '#eee'
       },
-	loginStyle: {
-        marginTop: 20,
-        backgroundColor: '#F2BB35',
-		height: 45,
-		width: 105,
-		borderRadius: 5,
-		alignItems: 'center',
-		justifyContent: 'center',
-		marginBottom: 30,
-		marginRight: 15
 	
-	},
-	loginTextStyle: {
-		color:	'black',
-        fontSize: 20
-
-	},
 	createStyle: {
-        marginTop: 20,
-        backgroundColor: '#00BCD4',
+        marginTop: 50,
+        backgroundColor: '#189BF3',
 		height: 45,
-		width: 105,
-		borderRadius: 5,
+		width: 320,
+		borderRadius: 6,
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginLeft: 15,
@@ -160,7 +148,6 @@ const styles = StyleSheet.create({
 	createTextStyle: {
 		color:	'black',
         fontSize: 20
-
 	}
 });
 

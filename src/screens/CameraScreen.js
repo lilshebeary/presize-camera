@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image, useWindowDimensions  } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image, useWindowDimensions } from 'react-native';
 import { Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
@@ -8,8 +8,10 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 import * as SecureStore from 'expo-secure-store';
+import { useGallery } from '../hooks/gallery/local';
 
 const CameraScreen = ({ navigation }) => {
+	const { photos, addPhoto, replacePhoto, removePhoto } = useGallery();
 	const [ hasPermission, setHasPermission ] = useState(null);
 	const [ lastImage, setLastImage ] = useState(null);
 	const [ type, setType ] = useState(Camera.Constants.Type.back);
@@ -18,12 +20,11 @@ const CameraScreen = ({ navigation }) => {
 
 	const { width, height } = useWindowDimensions();
 
-// portrait x = width
+	// portrait x = width
 	useEffect(() => {
-		const [x, y] = ratio;
-		setCameraHeight(width * y/x);
-		
-	})
+		const [ x, y ] = ratio;
+		setCameraHeight(width * y / x);
+	});
 
 	useEffect(() => {
 		(async () => {
@@ -81,7 +82,7 @@ const CameraScreen = ({ navigation }) => {
 						<Ionicons name="camera-reverse-outline" size={35} color="white" />
 					</TouchableOpacity>
 				</View>
-{/* camera */}
+				{/* camera */}
 				<Camera
 					style={{ ...styles.camera, height: cameraHeight }}
 					type={type}
@@ -89,9 +90,8 @@ const CameraScreen = ({ navigation }) => {
 						this.camera = ref;
 					}}
 				/>
-			
 
-{/* camera size need to crop photos and establish image view size */}
+				{/* camera size need to crop photos and establish image view size */}
 				<View style={styles.buttonContainer1}>
 					<TouchableOpacity onPress={() => setRatio([ 1, 1 ])}>
 						<Text style={styles.sizeStyle}>1x1</Text>
@@ -119,15 +119,15 @@ const CameraScreen = ({ navigation }) => {
 					</TouchableOpacity>
 
 					{/* <View></View> */}
-{/* take picture and store */}
+					{/* take picture and store */}
 					<TouchableOpacity
 						style={styles.shootStyle}
 						onPress={async () => {
-
 							if (this.camera) {
 								let photo = await this.camera.takePictureAsync();
 								setLastImage(photo);
 								await SecureStore.setItemAsync('lastImage', JSON.stringify(photo));
+								addPhoto(photo);
 							}
 						}}
 					>
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
 		height: 80,
 		backgroundColor: '#212121'
 	},
-	
+
 	camera: {
 		height: 560,
 		backgroundColor: '#212121',

@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as SecureStore from 'expo-secure-store';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import 'react-native-get-random-values';
 import { v4 as uuidv4 } from 'uuid';
 
 export function useGallery() {
@@ -7,7 +9,7 @@ export function useGallery() {
 
 	useEffect(() => {
 		if (Object.keys(photos).length === 0) {
-			SecureStore.getItemAsync('photos').then((data) => {
+			AsyncStorage.getItem('photos').then((data) => {
 				setPhotos({ ...JSON.parse(data) });
 			});
 		}
@@ -15,7 +17,7 @@ export function useGallery() {
 
 	const savePhotos = () => {
 		setPhotos({ ...photos });
-		SecureStore.setItemAsync('photos', JSON.stringify(photos)).then(() => {});
+		AsyncStorage.setItem('photos', JSON.stringify(photos)).then(() => {});
 	};
 
 	return {

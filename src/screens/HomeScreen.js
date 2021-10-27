@@ -41,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   	logo: {
-		color: '#fff',
+		// color: '#fff',
 		backgroundColor: '#FB2A5C',
 		width: '30%',
 		height: '20%',

@@ -6,9 +6,9 @@
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
-      "image": "./assets/monoPSCam.png",
+      "image": "./assets/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#212121"
+      "backgroundColor": "#FB2A5C"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

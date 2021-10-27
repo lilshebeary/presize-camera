@@ -6,13 +6,18 @@ import * as SecureStore from 'expo-secure-store';
 
 const EditScreen = ({ navigation }) => {
 	const [ lastImage, setLastImage ] = useState(null);
+	const [ counter, setCounter ] = useState(0);
 
 	useEffect(() => {
+		const unsubscribe = navigation.addListener('focus', () => {
+			if (lastImage) PESDK.openEditor(lastImage);
+		});
 		SecureStore.getItemAsync('lastImage').then((image) => {
 			if (image) {
 				setLastImage(JSON.parse(image));
 			}
 		});
+		return unsubscribe;
 	});
 
 	return (
@@ -21,7 +26,7 @@ const EditScreen = ({ navigation }) => {
 				<TouchableOpacity style={styles.navigationStyle} onPress={() => navigation.navigate('Home')}>
 					<Feather name="x" size={32} color="white" />
 				</TouchableOpacity>
-				<Text>{JSON.stringify(lastImage)}</Text>
+
 				{lastImage && (
 					<PhotoEditorModal
 						onExport={(e) => {

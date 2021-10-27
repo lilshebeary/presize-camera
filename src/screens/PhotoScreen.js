@@ -5,6 +5,7 @@ import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
+import { PESDK, PhotoEditorModal, Configuration } from 'react-native-photoeditorsdk';
 import * as SecureStore from 'expo-secure-store';
 
 const PhotoEditScreen = ({ navigation }) => {
@@ -33,48 +34,47 @@ const PhotoEditScreen = ({ navigation }) => {
 
 	return (
 		<SafeAreaView style={styles.safeArea}>
-			
-	{/* navbar */}
-				<View style={styles.navigationStyle}>
-					{/* friends */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<SimpleLineIcons name="people" size={32} color="white" />
-					</TouchableOpacity>
-					{/* files */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<AntDesign name="folderopen" size={32} color="white" />
-					</TouchableOpacity>
-					{/* print */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<AntDesign name="printer" size={32} color="white" />
-					</TouchableOpacity>
+			{/* navbar */}
+			<View style={styles.navigationStyle}>
+				{/* friends */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<SimpleLineIcons name="people" size={32} color="white" />
+				</TouchableOpacity>
+				{/* files */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<AntDesign name="folderopen" size={32} color="white" />
+				</TouchableOpacity>
+				{/* print */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<AntDesign name="printer" size={32} color="white" />
+				</TouchableOpacity>
 
-					{/* space */}
-					<View />
-					<View />
-					<View />
-					{/* flash */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<Ionicons name="ios-add-sharp" size={32} color="white" />
-					</TouchableOpacity>
+				{/* space */}
+				<View />
+				<View />
+				<View />
+				{/* flash */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<Ionicons name="ios-add-sharp" size={32} color="white" />
+				</TouchableOpacity>
 
-					{/* HDR */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<Ionicons name="paper-plane-outline" size={32} color="white" />
-					</TouchableOpacity>
+				{/* HDR */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<Ionicons name="paper-plane-outline" size={32} color="white" />
+				</TouchableOpacity>
 
-					{/* camera angle */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
-						<Ionicons name="ios-camera-outline" size={32} color="white" />
-					</TouchableOpacity>
-				</View>
+				{/* camera angle */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
+					<Ionicons name="ios-camera-outline" size={32} color="white" />
+				</TouchableOpacity>
+			</View>
 
-				{/* date */}
-				<View style={styles.dateContainer}>
-					<Text style={styles.dateStyle}>Date</Text>
-				</View>
+			{/* date */}
+			<View style={styles.dateContainer}>
+				<Text style={styles.dateStyle}>Date</Text>
+			</View>
 			<View style={styles.container}>
-	{/* image */}
+				{/* image */}
 				<View style={styles.imageContainer}>
 					<Image source={lastImage} style={{ ...styles.imageStyle, ...{ height: imageHeight } }} />
 				</View>
@@ -83,7 +83,11 @@ const PhotoEditScreen = ({ navigation }) => {
 			{/* actions */}
 			<View style={styles.buttonContainer1}>
 				<View style={styles.buttons}>
-					<TouchableOpacity onPress={() => navigation.navigate('Edit')}>
+					<TouchableOpacity
+						onPress={() => {
+							PESDK.openEditor(lastImage);
+						}}
+					>
 						<Text style={styles.editStyle}>Edit</Text>
 					</TouchableOpacity>
 

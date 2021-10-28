@@ -46,15 +46,15 @@ const CameraScreen = ({ navigation }) => {
 				<View style={styles.navigationStyle}>
 					{/* friends */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<SimpleLineIcons name="people" size={32} color="white" />
+						<SimpleLineIcons name="people" size={34} color="white" />
 					</TouchableOpacity>
 					{/* files */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<AntDesign name="folderopen" size={32} color="white" />
+						<AntDesign name="folderopen" size={34} color="white" />
 					</TouchableOpacity>
 					{/* print */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<AntDesign name="printer" size={32} color="white" />
+						<AntDesign name="printer" size={34} color="white" />
 					</TouchableOpacity>
 					{/* space */}
 					<View />
@@ -62,11 +62,11 @@ const CameraScreen = ({ navigation }) => {
 					<View />
 					{/* flash */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<FontAwesome name="flash" size={32} color="white" />
+						<FontAwesome name="flash" size={34} color="white" />
 					</TouchableOpacity>
 					{/* HDR */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<MaterialIcons name="hdr-off" size={32} color="white" />
+						<MaterialIcons name="hdr-off" size={34} color="white" />
 					</TouchableOpacity>
 					{/* camera angle */}
 					<TouchableOpacity
@@ -131,9 +131,10 @@ const CameraScreen = ({ navigation }) => {
 							}
 						}}
 					>
-						<Entypo name="circle" size={50} color="black" style={{ padding: 5 }} />
+						
 					</TouchableOpacity>
 
+					<View />
 					<View />
 					<View />
 				</View>
@@ -145,7 +146,7 @@ const CameraScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 	safeArea: {
 		flex: 1,
-		backgroundColor: 'white'
+		backgroundColor: '#111'
 		// alignItems: 'center',
 	},
 	container: {
@@ -154,21 +155,22 @@ const styles = StyleSheet.create({
 	},
 	navigationStyle: {
 		flexDirection: 'row',
+		flex: 1,
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: 80,
-		backgroundColor: '#212121'
+		backgroundColor: '#111'
 	},
 
 	camera: {
 		height: 560,
-		backgroundColor: '#212121',
+		backgroundColor: '#111',
 		borderColor: 'white',
 		borderWidth: 1
 	},
 	buttonContainer1: {
 		flex: 1,
-		backgroundColor: '#212121',
+		backgroundColor: '#111',
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'space-between'
@@ -177,32 +179,34 @@ const styles = StyleSheet.create({
 		flex: 1,
 		flexDirection: 'row',
 		color: 'white',
-		// justifyContent: 'space-between',
+		fontSize: 25,
 		marginLeft: 40,
 		marginTop: 15
 	},
 
 	buttonContainer2: {
 		flex: 1,
-		backgroundColor: '#212121',
+		backgroundColor: '#111',
 		flexDirection: 'row',
 		alignItems: 'center',
 		justifyContent: 'space-between'
 	},
 	shootStyle: {
-		height: 60,
-		width: 60,
-		backgroundColor: 'white',
+		height: 80,
+		width: 80,
+		backgroundColor: '#FEFBF3',
 		borderRadius: 50,
 		borderColor: 'black',
-		marginBottom: 15
+		marginBottom: 15,
+		alignSelf: 'center'
+		
 	},
 	imageWindowStyle: {
 		marginHorizontal: 20
 	},
 	pictureStyle: {
-		height: 50,
-		width: 50,
+		height: 80,
+		width: 80,
 		marginBottom: 10,
 		marginLeft: 10
 	}

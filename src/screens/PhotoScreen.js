@@ -50,7 +50,7 @@ const PhotoEditScreen = ({ navigation }) => {
 				</TouchableOpacity>
 
 				{/* space */}
-				<View />
+				<View/>
 				<View />
 				<View />
 				{/* flash */}
@@ -115,28 +115,28 @@ const styles = StyleSheet.create({
 	},
 	container: {
 		flexDirection: 'column',
-		flex: 1
+		flex: 1,
 	},
 	navigationStyle: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: 80,
-		backgroundColor: '#212121'
+		backgroundColor: '#111'
 	},
 	dateContainer: {
 		display: 'flex',
 		flexDirection: 'row',
 		justifyContent: 'center',
-		backgroundColor: '#212121'
+		backgroundColor: '#000'
 	},
 	dateStyle: {
 		color: 'white',
 		fontSize: 18,
-		backgroundColor: '#212121'
+		backgroundColor: '#000'
 	},
 	imageContainer: {
-		backgroundColor: '#212121',
+		backgroundColor: '#000',
 		justifyContent: 'center',
 		height: '100%',
 		width: '100%'
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
 	},
 	buttonContainer1: {
 		height: 100,
-		backgroundColor: '#212121'
+		backgroundColor: '#111'
 		// flexDirection: 'row',
 		// alignItems: 'space-between',
 		// justifyContent: 'center',

@@ -20,7 +20,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/logoBlue.png",
+        "foregroundImage": "./assets/logoAdaptive.png",
         "backgroundColor": "#212121"
       },
       "package": "com.beary.presizecamera"

@@ -13,16 +13,14 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true,
       "bundleIdentifier": "com.beary.presize-camera"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/monoPSCam.png",
+        "foregroundImage": "./assets/logoBlue.png",
         "backgroundColor": "#212121"
       },
       "package": "com.beary.presizecamera"

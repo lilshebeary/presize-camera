@@ -9,14 +9,13 @@ const HomeScreen = ({ navigation }) => {
 	<>
 	<SafeAreaView style={styles.safeAreaTop} />
 		<SafeAreaView style={styles.safeAreaBottom}>
-            <StatusBar barStyle="light-content" backgroundColor="#FB2A5C" />
+            <StatusBar barStyle="light-content" backgroundColor="#189BF3" />
 			<TouchableOpacity style={styles.touchableStyle} onPress={() => navigation.navigate('Camera')}>
-			<View style={styles.redViewStyle}>
+			<View style={styles.ViewStyle}>
 				<Image source={logo} style={styles.logo} />
 				<Text style={styles.appName}>Presize Camera</Text>
 			</View>	
 			</TouchableOpacity>
-			<View style={styles.blueViewArch}></View>
 
 			<View style={styles.accountStyle}>
 				<TouchableOpacity 
@@ -42,7 +41,7 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   	logo: {
 		// color: '#fff',
-		backgroundColor: '#FB2A5C',
+		backgroundColor: '#189BF3',
 		width: '30%',
 		height: '20%',
 		marginBottom: 25,
@@ -53,32 +52,21 @@ const styles = StyleSheet.create({
 		fontSize: 35,
 		fontWeight: '700'
 	},
-	redViewStyle: {
+	ViewStyle: {
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: '#FB2A5C',
+		backgroundColor: '#189BF3',
 		width: '100%',
 		height: '100%',	
 	},
 	touchableStyle: {
 		alignItems: 'center',
 		justifyContent: 'center',
-		backgroundColor: '#FB2A5C',
+		backgroundColor: '#189BF3',
 		width: '100%',
 		height: '65%',	
 	},
-	blueViewArch: {
-		textAlign: 'center',
-		width: '30%',
-		height: '10%',
-		backgroundColor: '#189BF3',
-		borderBottomLeftRadius: 500,
-		borderBottomRightRadius: 500,
-		borderTopLeftRadius: 0,
-		borderTopRightRadius: 0,
-		transform: [{scaleX:4},{scaleY:1}],
-		marginBottom: 40
-	},
+	
 	safeAreaBottom: {
 		flex: 1,
 		backgroundColor: '#fff',
@@ -86,7 +74,7 @@ const styles = StyleSheet.create({
 	  },
 	safeAreaTop: {
 		flex: 0,
-		backgroundColor: '#FB2A5C',
+		backgroundColor: '#189BF3'
 	  },
 	buttonsStyle: {
 		flex: 1,
@@ -101,8 +89,8 @@ const styles = StyleSheet.create({
 	},
 	
 	loginStyle: {
-		borderColor: '#26CE7D',
-		backgroundColor: '#26CE7D',
+		borderColor: 'white',
+		backgroundColor: '#189BF3',
 		borderWidth: 1,
 		height: 45,
 		width: 300,
@@ -118,7 +106,7 @@ const styles = StyleSheet.create({
 		fontSize: 30
 	},
 	createStyle: {
-		borderColor: '#189BF3',
+		borderColor: 'white',
 		backgroundColor: '#189BF3',
 		borderWidth: 1,
 		height: 45,

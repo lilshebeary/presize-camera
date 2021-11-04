@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image, useWindo
 import { Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import  shootButton from '../../assets/shootButton.png'
@@ -46,16 +45,9 @@ const CameraScreen = ({ navigation }) => {
 				<View style={styles.navigationStyle}>
 					{/* friends */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<SimpleLineIcons name="people" size={30} color="white" />
+					<SimpleLineIcons name="home" size={30} color="white" />
 					</TouchableOpacity>
-					{/* files */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<AntDesign name="folderopen" size={30} color="white" />
-					</TouchableOpacity>
-					{/* print */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<AntDesign name="printer" size={30} color="white" />
-					</TouchableOpacity>
+					
 					{/* space */}
 					<View />
 					<View />
@@ -158,7 +150,8 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: 80,
-		backgroundColor: '#111'
+		backgroundColor: '#111',
+		marginHorizontal: 10
 	},
 
 	camera: {
@@ -175,7 +168,7 @@ const styles = StyleSheet.create({
 		justifyContent: 'space-between'
 	},
 	sizeStyle: {
-		flex: 1,
+		// flex: 1,
 		flexDirection: 'row',
 		color: 'white',
 		fontSize: 20,
@@ -190,14 +183,14 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'space-between'
 	},
-	shootStyle: {
-		
-	},
+	
 	shootButton: {
+		flex: 0,
 		height: 80,
 		width: 80
 	},
 	pictureStyle: {
+		flex: 0,
 		height: 80,
 		width: 80,
 		marginBottom: 10,

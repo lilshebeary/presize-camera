@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
-import * as SecureStore from 'expo-secure-store';
+// import * as SecureStore from 'expo-secure-store';
 
 const Gallery = () => {
 	return (
@@ -9,9 +9,9 @@ const Gallery = () => {
 				<View style={styles.photoStyle}>
 				<View style={styles.container}>
 				{/* image */}
-				<View style={styles.imageContainer}>
+				{/* <View style={styles.imageContainer}>
 					<Image source={lastImage} style={{ ...styles.imageStyle, ...{ height: imageHeight } }} />
-				</View>
+				</View> */}
 			</View>
 
                 </View>

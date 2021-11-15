@@ -64,6 +64,7 @@ const CameraScreen = ({ navigation }) => {
 					
 				</View>
 				{/* camera */}
+				<View style={styles.cameraContainer}>
 				<Camera
 					style={{ ...styles.camera, height: cameraHeight }}
 					type={type}
@@ -71,6 +72,7 @@ const CameraScreen = ({ navigation }) => {
 						this.camera = ref;
 					}}
 				/>
+				</View>
 
 				{/* camera size need to crop photos and establish image view size */}
 				<View style={styles.buttonContainer1}>
@@ -83,21 +85,21 @@ const CameraScreen = ({ navigation }) => {
 
 					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 2, 3 ])}>
-					<View style={styles.fourSixStyle} />
+						<View style={styles.fourSixStyle} />
 						<Text style={styles.sizeStyle}> 4:6 </Text>
 					</TouchableOpacity>
 					</View>
 
 					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 5, 7 ])}>
-					<View style={styles.fiveSevenStyle} />
+						<View style={styles.fiveSevenStyle} />
 						<Text style={styles.sizeStyle}> 5:7 </Text>
 					</TouchableOpacity>
 					</View>
 
 					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 4, 5 ])}>
-					<View style={styles.eightTenStyle} />
+						<View style={styles.eightTenStyle} />
 						<Text style={styles.sizeStyle}> 8:10 </Text>
 					</TouchableOpacity>
 					</View>
@@ -160,19 +162,24 @@ const styles = StyleSheet.create({
 	},
 	navigationStyle: {
 		flexDirection: 'row',
-		flex: 1,
+		flex: .5,
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: 80,
 		backgroundColor: '#111',
-		marginHorizontal: 10
+		marginBottom: 0
 	},
-
+	cameraContainer: {
+		flex: 6,
+		marginBottom: 10,
+		marginTop: 0
+	},
 	camera: {
-		height: 560,
+		flex: 6,
 		backgroundColor: '#111',
 		borderColor: 'grey',
-		borderWidth: 1
+		borderWidth: 1,
+		marginVertical: 10
 	},
 	buttonContainer1: {
 		flex: 1,
@@ -241,8 +248,8 @@ const styles = StyleSheet.create({
 	
 	shootButton: {
 		flex: 0,
-		height: 80,
-		width: 80
+		height: 75,
+		width: 75
 	},
 	pictureStyle: {
 		flex: 0,

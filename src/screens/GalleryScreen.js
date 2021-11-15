@@ -14,8 +14,13 @@ const GalleryScreen = ({ navigation }) => {
 	return (
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
-				<View>
+				<View style={styles.topStyle}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Photo')}>
+					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
+				</TouchableOpacity>
 					<Text style={styles.titleStyle}>All Photos</Text>
+					<View />
+					<View />
 				</View>
 {/* Sizes */}
 				<View style={styles.sizeButtons}>
@@ -80,10 +85,21 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
 		flex: 1
 	},
+	topStyle: {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'space-between'
+	},
+	backIcon: {
+		marginLeft:10,
+		marginTop: 10,
+		marginBottom: 0,
+
+	},
 	titleStyle: {
-		alignSelf: 'center',
-		marginTop: 25,
-		marginBottom: 25,
+		justifyContent: 'center',
+		marginTop: 10,
+		marginBottom: 10,
 		fontSize: 40,
 		fontWeight: 'bold'
 	},

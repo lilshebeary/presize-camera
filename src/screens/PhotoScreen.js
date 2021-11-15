@@ -41,8 +41,8 @@ const PhotoEditScreen = ({ navigation }) => {
 					<SimpleLineIcons name="people" size={32} color="white" />
 				</TouchableOpacity>
 				{/* files */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-					<AntDesign name="folderopen" size={32} color="white" />
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
+				<SimpleLineIcons name="picture" size={32} color="white" />
 				</TouchableOpacity>
 				{/* print */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
@@ -54,12 +54,12 @@ const PhotoEditScreen = ({ navigation }) => {
 				<View />
 				<View />
 				{/* flash */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Folder')}>
 					<Ionicons name="ios-add-sharp" size={32} color="white" />
 				</TouchableOpacity>
 
 				{/* HDR */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friends')}>
 					<Ionicons name="paper-plane-outline" size={32} color="white" />
 				</TouchableOpacity>
 

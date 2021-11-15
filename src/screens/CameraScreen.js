@@ -74,19 +74,33 @@ const CameraScreen = ({ navigation }) => {
 
 				{/* camera size need to crop photos and establish image view size */}
 				<View style={styles.buttonContainer1}>
+					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 1, 1 ])}>
-						<Text style={styles.sizeStyle}>[ 1:1 ]</Text>
+						<View style={styles.oneOneStyle} />
+						<Text style={styles.sizeStyle}> 1:1 </Text>
 					</TouchableOpacity>
-					<TouchableOpacity onPress={() => setRatio([ 2, 3 ])}>
-						<Text style={styles.sizeStyle}>[ 4:6 ]</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={() => setRatio([ 5, 7 ])}>
-						<Text style={styles.sizeStyle}>[ 5:7 ]</Text>
-					</TouchableOpacity>
-					<TouchableOpacity onPress={() => setRatio([ 4, 5 ])}>
-						<Text style={styles.sizeStyle}>[ 8:10 ]</Text>
-					</TouchableOpacity>
+					</View>
 
+					<View style={styles.boxStyle}>
+					<TouchableOpacity onPress={() => setRatio([ 2, 3 ])}>
+					<View style={styles.fourSixStyle} />
+						<Text style={styles.sizeStyle}> 4:6 </Text>
+					</TouchableOpacity>
+					</View>
+
+					<View style={styles.boxStyle}>
+					<TouchableOpacity onPress={() => setRatio([ 5, 7 ])}>
+					<View style={styles.fiveSevenStyle} />
+						<Text style={styles.sizeStyle}> 5:7 </Text>
+					</TouchableOpacity>
+					</View>
+
+					<View style={styles.boxStyle}>
+					<TouchableOpacity onPress={() => setRatio([ 4, 5 ])}>
+					<View style={styles.eightTenStyle} />
+						<Text style={styles.sizeStyle}> 8:10 </Text>
+					</TouchableOpacity>
+					</View>
 					{/* <View></View> */}
 
 					<View />
@@ -174,6 +188,47 @@ const styles = StyleSheet.create({
 		fontSize: 20,
 		marginLeft: 40,
 		marginTop: 15
+	},
+	
+	oneOneStyle:{
+		flexDirection: 'column',
+		alignSelf: 'center',
+		height: 40,
+		width: 40,
+		borderColor: 'grey',
+		borderStyle: 'solid',
+		borderWidth: 1,
+		marginLeft: 30
+	},
+	fourSixStyle:{
+		flexDirection: 'column',
+		alignSelf: 'center',
+		height: 40,
+		width: 60,
+		borderColor: 'grey',
+		borderStyle: 'solid',
+		borderWidth: 1,
+		marginLeft: 25
+	},
+	fiveSevenStyle:{
+		flexDirection: 'column',
+		alignSelf: 'center',
+		height: 40,
+		width: 56,
+		borderColor: 'grey',
+		borderStyle: 'solid',
+		borderWidth: 1,
+		marginLeft: 30
+	},
+	eightTenStyle:{
+		flexDirection: 'column',
+		alignSelf: 'center',
+		height: 50,
+		width: 40,
+		borderColor: 'grey',
+		borderStyle: 'solid',
+		borderWidth: 1,
+		marginLeft: 30
 	},
 
 	buttonContainer2: {

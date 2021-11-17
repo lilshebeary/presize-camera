@@ -45,7 +45,7 @@ const CameraScreen = ({ navigation }) => {
 				<View style={styles.navigationStyle}>
 					{/* friends */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-					<SimpleLineIcons name="home" size={30} color="white" />
+					<SimpleLineIcons name="home" size={25} color="white" />
 					</TouchableOpacity>
 					
 					{/* space */}
@@ -54,17 +54,17 @@ const CameraScreen = ({ navigation }) => {
 					<View />
 					{/* flash */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<FontAwesome name="flash" size={30} color="white" />
+						<FontAwesome name="flash" size={25} color="white" />
 					</TouchableOpacity>
 					{/* HDR */}
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-						<MaterialIcons name="hdr-off" size={30} color="white" />
+						<MaterialIcons name="hdr-off" size={25} color="white" />
 					</TouchableOpacity>
 					{/* camera angle */}
 					
 				</View>
-				{/* camera */}
-				<View style={styles.cameraContainer}>
+{/* camera */}
+				{/* <View style={styles.cameraContainer}> */}
 				<Camera
 					style={{ ...styles.camera, height: cameraHeight }}
 					type={type}
@@ -72,50 +72,52 @@ const CameraScreen = ({ navigation }) => {
 						this.camera = ref;
 					}}
 				/>
-				</View>
+				{/* </View> */}
 
 				{/* camera size need to crop photos and establish image view size */}
+				{/* <View style={styles.b2c2}> */}
+
 				<View style={styles.buttonContainer1}>
-					<View style={styles.boxStyle}>
-					<TouchableOpacity onPress={() => setRatio([ 1, 1 ])}>
-						<View style={styles.oneOneStyle} />
-						<Text style={styles.sizeStyle}> 1:1 </Text>
+					<TouchableOpacity onPress={() => setRatio([ 1, 1 ])}>	
+						<View style={styles.boxStyle}>
+							<View style={styles.oneOneStyle} />
+							<Text style={styles.sizeStyle} allowFontScaling={false}> 1:1 </Text>
+						</View>
 					</TouchableOpacity>
-					</View>
 
-					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 2, 3 ])}>
+					<View style={styles.boxStyle}>				
 						<View style={styles.fourSixStyle} />
-						<Text style={styles.sizeStyle}> 4:6 </Text>
-					</TouchableOpacity>
+						<Text style={styles.sizeStyle} allowFontScaling={false}> 4:6 </Text>
 					</View>
+					</TouchableOpacity>
 
-					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 5, 7 ])}>
+					<View style={styles.boxStyle}>					
 						<View style={styles.fiveSevenStyle} />
-						<Text style={styles.sizeStyle}> 5:7 </Text>
-					</TouchableOpacity>
+						<Text style={styles.sizeStyle} allowFontScaling={false}> 5:7 </Text>					
 					</View>
+					</TouchableOpacity>
 
-					<View style={styles.boxStyle}>
 					<TouchableOpacity onPress={() => setRatio([ 4, 5 ])}>
+					<View style={styles.boxStyle}>
 						<View style={styles.eightTenStyle} />
-						<Text style={styles.sizeStyle}> 8:10 </Text>
-					</TouchableOpacity>
+						<Text style={styles.sizeStyle} allowFontScaling={false}> 8:10 </Text>
 					</View>
+					</TouchableOpacity>
 					{/* <View></View> */}
 
 					<View />
-					<View />
+
 				</View>
 
-				{/* camera actions */}
+{/* camera actions */}
+			{/* <View style={styles.b2c2}> */}
 				<View style={styles.buttonContainer2}>
 					<TouchableOpacity style={styles.imageWindowStyle} onPress={() => navigation.navigate('Photo')}>
 						<Image style={styles.pictureStyle} source={lastImage} />
 					</TouchableOpacity>
 
-					{/* <View></View> */}
 					{/* take picture and store */}
 					<TouchableOpacity
 						style={styles.shootStyle}
@@ -143,8 +145,8 @@ const CameraScreen = ({ navigation }) => {
 					>
 						<Ionicons name="camera-reverse-outline" size={40} color="white" />
 					</TouchableOpacity>
-					
-				</View>
+					</View>	
+				{/* </View> */}
 			</View>
 		</SafeAreaView>
 	);
@@ -175,7 +177,7 @@ const styles = StyleSheet.create({
 		marginTop: 0
 	},
 	camera: {
-		flex: 6,
+		// flex: 6,
 		backgroundColor: '#111',
 		borderColor: 'grey',
 		borderWidth: 1,
@@ -194,14 +196,14 @@ const styles = StyleSheet.create({
 		color: 'white',
 		fontSize: 20,
 		marginLeft: 40,
-		marginTop: 15
+		marginTop: 10
 	},
 	
 	oneOneStyle:{
 		flexDirection: 'column',
 		alignSelf: 'center',
-		height: 40,
-		width: 40,
+		height: 20,
+		width: 20,
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
@@ -210,8 +212,8 @@ const styles = StyleSheet.create({
 	fourSixStyle:{
 		flexDirection: 'column',
 		alignSelf: 'center',
-		height: 40,
-		width: 60,
+		height: 20,
+		width: 30,
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
@@ -220,8 +222,8 @@ const styles = StyleSheet.create({
 	fiveSevenStyle:{
 		flexDirection: 'column',
 		alignSelf: 'center',
-		height: 40,
-		width: 56,
+		height: 20,
+		width: 28,
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
@@ -230,38 +232,46 @@ const styles = StyleSheet.create({
 	eightTenStyle:{
 		flexDirection: 'column',
 		alignSelf: 'center',
-		height: 50,
-		width: 40,
+		height: 25,
+		width: 20,
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
 		marginLeft: 30
 	},
+	b2c2: {
+		// flex:1
+		flexDirection: 'column',
+		height: 68,
+		backgroundColor: 'red'
 
+	},
 	buttonContainer2: {
-		flex: 1,
+		height: 68,
 		backgroundColor: '#111',
 		flexDirection: 'row',
 		alignItems: 'center',
-		justifyContent: 'space-between'
+		justifyContent: 'space-between',
+		marginTop: 5
 	},
 	
 	shootButton: {
 		flex: 0,
-		height: 75,
-		width: 75
+		height: 65,
+		width: 65,
+		marginLeft: 10
 	},
 	pictureStyle: {
 		flex: 0,
-		height: 80,
-		width: 80,
+		height: 50,
+		width: 50,
+		marginTop: 10,
 		marginBottom: 10,
 		marginLeft: 20
 	},
 	flipStyle: {
 		width: 80,
-		marginLeft: 20
-	
+		
 	},
 });
 

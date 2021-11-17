@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
 
   TextStyle: {
     color: "#fff",
-    fontSize: 25,
+    fontSize: 20,
   },
 });
 

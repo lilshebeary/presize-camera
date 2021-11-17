@@ -10,9 +10,8 @@ const CreateScreen = ({ navigation }) => {
 		<SafeAreaView></SafeAreaView>
         <SafeAreaView style={[styles.container, { backgroundColor: '#fff' }]}>
             <StatusBar barStyle="light-content" backgroundColor="#fff" />
-
+            
         <View style={styles.viewStyle}>
-
             <TouchableOpacity  onPress={() => navigation.navigate("Home")}>
                 <Image 
                     source={logo} 
@@ -21,8 +20,8 @@ const CreateScreen = ({ navigation }) => {
 				<Text style={styles.nameApp}>Presize Camera</Text>
             </TouchableOpacity>
 		</View>
-
-            <View>
+        <View style={styles.space} />
+            <View style={styles.formStyle}>
 				<Text style={styles.label}>First Name</Text>
 			<TextInput
                 style={styles.input}
@@ -67,10 +66,8 @@ const CreateScreen = ({ navigation }) => {
                 keyboardType="numeric"
             />
             </View>
-          
+         
             <View style={styles.accountStyle}>
-                
-				
 				<TouchableOpacity 
 					style={styles.createStyle}
 				>
@@ -78,8 +75,8 @@ const CreateScreen = ({ navigation }) => {
 				</TouchableOpacity>
 			</View>
 			 
-    
-        </SafeAreaView>
+            </SafeAreaView>
+        
 		</>
     )
 };
@@ -98,24 +95,34 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
     logo: {
-		marginBottom: 15,
-		marginTop: 35,
+        height: 60,
+        width: 65,
+		marginBottom: 10,
+		marginTop: 30,
 		alignSelf: 'center',
 		color: '#189BF3'
 	},
 	nameApp: {
 		color: '#189BF3',
-		fontSize: 40, 
+		fontSize: 27, 
 		fontWeight: '700',
 		marginBottom: 20
 	},
+    space: {
+        flex: .5
+    },
     viewStyle: {
 		flex: 1,
 		alignItems: 'center',
 		backgroundColor: '#fff',
 	},
+    formStyle: {
+        flex:5,
+        marginTop:30
+    },
       accountStyle: {
 		flexDirection: 'row',
+        marginTop: 0
 	},
 	label: {
 		marginLeft: 14,

@@ -10,6 +10,8 @@ import PhotoScreen from './src/screens/PhotoScreen';
 import EditScreen from './src/screens/EditScreen';
 import GalleryScreen from './src/screens/GalleryScreen';
 import SnapfishScreen from './src/screens/SnapfishScreen';
+import PrintShopScreen from './src/screens/PrintShopScreen';
+import PrintScreen from './src/screens/PrintScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -30,6 +32,8 @@ function App() {
 				<Stack.Screen name="Edit" component={EditScreen} />
 				<Stack.Screen name="Gallery" component={GalleryScreen} />
 				<Stack.Screen name="Snapfish" component={SnapfishScreen} />
+				<Stack.Screen name="PrintShop" component={PrintShopScreen} />
+				<Stack.Screen name="Print" component={PrintScreen} />
 				
 			</Stack.Navigator>
 		</NavigationContainer>

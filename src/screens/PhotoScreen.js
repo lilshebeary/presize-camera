@@ -42,10 +42,10 @@ const PhotoEditScreen = ({ navigation }) => {
 				</TouchableOpacity>
 				{/* files */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
-				<SimpleLineIcons name="picture" size={28} color="white" />
+					<SimpleLineIcons name="picture" size={28} color="white" />
 				</TouchableOpacity>
 				{/* print */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PrintShop')}>
 					<AntDesign name="printer" size={28} color="white" />
 				</TouchableOpacity>
 

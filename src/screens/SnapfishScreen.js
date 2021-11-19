@@ -1,20 +1,26 @@
 import React from 'react'
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native'
+import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native'
 import snapfishLogo from '../../assets/snapfish-logo.png';
+import { SimpleLineIcons } from '@expo/vector-icons';
 
-const SnapfishScreen = () => {
+const SnapfishScreen = ({ navigation }) => {
     return (
-        <SafeAreaView>
+        <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
-                <Image 
-                    source={snapfishLogo} 
-                    style={styles.snapfishLogo} 
-                />
-                <Text />
+                
+            <View style={styles.navigationStyle}>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+                    <SimpleLineIcons name="people" size={28} color="white" />
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
+				    <SimpleLineIcons name="picture" size={28} color="white" />
+				</TouchableOpacity>
+            </View>
+
             </View>
         </SafeAreaView>
-    )
-}
+    );
+};
 
 const styles = StyleSheet.create({
     safeArea: {
@@ -28,8 +34,15 @@ const styles = StyleSheet.create({
         backgroundColor: '#009DAE'
 	},
     snapfishLogo: {
-        
-    }
+
+    },
+    navigationStyle: {
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		height: 80,
+	
+	},
 });
 
 export default SnapfishScreen;

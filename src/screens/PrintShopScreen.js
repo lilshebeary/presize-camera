@@ -8,19 +8,15 @@ import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
 
-const PrintScreen = ({ navigation }) => {
+const PrintShopScreen = ({ navigation }) => {
 	return (
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
-                <Text style={styles.title}>Find Printer</Text>  
-            </View>
+                <Text style={styles.title}>Print Photos</Text>
 
-            <View style={styles.findPrint}> 
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PrintShop')}>
-                    <AntDesign name="printer" size={55} color="black" />
-                </TouchableOpacity>
+               
+                
             </View>
-           
             <View style={styles.navigationStyle}>
 				
                 {/* friends */}
@@ -32,7 +28,7 @@ const PrintScreen = ({ navigation }) => {
             <SimpleLineIcons name="picture" size={28} color="black" />
             </TouchableOpacity>
             {/* print */}
-            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PrintShop')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Print')}>
                 <AntDesign name="printer" size={28} color="black" />
             </TouchableOpacity>
 
@@ -72,11 +68,6 @@ const PrintScreen = ({ navigation }) => {
             alignSelf: 'center',
             fontSize: 18
         },
-        findPrint: {
-            flex: 2,
-            flexDirection: 'row',
-            marginLeft: 15
-        },
         navigationStyle: {
             flexDirection: 'row',
             justifyContent: 'space-between',
@@ -87,4 +78,4 @@ const PrintScreen = ({ navigation }) => {
         },
     });
 
-    export default PrintScreen;
+    export default PrintShopScreen;

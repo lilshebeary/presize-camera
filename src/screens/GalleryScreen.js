@@ -77,7 +77,7 @@ const GalleryScreen = ({ navigation }) => {
 				<SimpleLineIcons name="picture" size={28} color="black" />
 				</TouchableOpacity>
 				{/* print */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Snapfish')}>
 					<AntDesign name="printer" size={28} color="black" />
 				</TouchableOpacity>
 

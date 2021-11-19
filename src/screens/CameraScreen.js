@@ -169,7 +169,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		height: 80,
 		backgroundColor: '#111',
-		marginBottom: 0
+		marginBottom: 0,
+		marginHorizontal:15
 	},
 	cameraContainer: {
 		flex: 6,

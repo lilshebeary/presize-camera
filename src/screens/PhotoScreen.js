@@ -38,34 +38,34 @@ const PhotoEditScreen = ({ navigation }) => {
 			<View style={styles.navigationStyle}>
 				{/* friends */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-					<SimpleLineIcons name="people" size={32} color="white" />
+					<SimpleLineIcons name="people" size={28} color="white" />
 				</TouchableOpacity>
 				{/* files */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
-				<SimpleLineIcons name="picture" size={32} color="white" />
+				<SimpleLineIcons name="picture" size={28} color="white" />
 				</TouchableOpacity>
 				{/* print */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-					<AntDesign name="printer" size={32} color="white" />
+					<AntDesign name="printer" size={28} color="white" />
 				</TouchableOpacity>
 
 				{/* space */}
-				<View/>
+				
 				<View />
 				<View />
 				{/* flash */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Folder')}>
-					<Ionicons name="ios-add-sharp" size={32} color="white" />
+					<Ionicons name="ios-add-sharp" size={28} color="white" />
 				</TouchableOpacity>
 
 				{/* HDR */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friends')}>
-					<Ionicons name="paper-plane-outline" size={32} color="white" />
+					<Ionicons name="paper-plane-outline" size={28} color="white" />
 				</TouchableOpacity>
 
 				{/* camera angle */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
-					<Ionicons name="ios-camera-outline" size={32} color="white" />
+					<Ionicons name="ios-camera-outline" size={30} color="white" />
 				</TouchableOpacity>
 			</View>
 
@@ -92,14 +92,14 @@ const PhotoEditScreen = ({ navigation }) => {
 					</TouchableOpacity>
 
 					<TouchableOpacity>
-						<MaterialIcons name="favorite-border" size={32} color="white" fontWeight="200" />
+						<MaterialIcons name="favorite-border" size={30} color="white" fontWeight="200" />
 					</TouchableOpacity>
 					<View />
 					<View />
 					<View />
 					<View />
 					<TouchableOpacity>
-						<FontAwesome name="trash-o" size={32} color="white" />
+						<FontAwesome name="trash-o" size={30} color="white" />
 					</TouchableOpacity>
 				</View>
 			</View>
@@ -132,8 +132,10 @@ const styles = StyleSheet.create({
 	},
 	dateStyle: {
 		color: 'white',
-		fontSize: 18,
-		backgroundColor: '#000'
+		fontSize: 12,
+		backgroundColor: '#000',
+		marginTop: 15,
+		fontWeight: '300'
 	},
 	imageContainer: {
 		backgroundColor: '#000',
@@ -162,7 +164,7 @@ const styles = StyleSheet.create({
 	},
 	editStyle: {
 		color: 'white',
-		fontSize: 24,
+		fontSize: 16,
 		fontWeight: '300'
 	},
 	buttons: {

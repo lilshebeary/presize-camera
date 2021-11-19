@@ -195,6 +195,7 @@ const styles = StyleSheet.create({
 		flexDirection: 'row',
 		color: 'white',
 		fontSize: 20,
+		fontWeight: '300',
 		marginLeft: 40,
 		marginTop: 10
 	},
@@ -207,7 +208,7 @@ const styles = StyleSheet.create({
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
-		marginLeft: 30
+		marginLeft: 40
 	},
 	fourSixStyle:{
 		flexDirection: 'column',
@@ -217,7 +218,7 @@ const styles = StyleSheet.create({
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
-		marginLeft: 25
+		marginLeft: 35
 	},
 	fiveSevenStyle:{
 		flexDirection: 'column',
@@ -227,7 +228,7 @@ const styles = StyleSheet.create({
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
-		marginLeft: 30
+		marginLeft: 35
 	},
 	eightTenStyle:{
 		flexDirection: 'column',
@@ -237,7 +238,7 @@ const styles = StyleSheet.create({
 		borderColor: 'grey',
 		borderStyle: 'solid',
 		borderWidth: 1,
-		marginLeft: 30
+		marginLeft: 35
 	},
 	b2c2: {
 		// flex:1
@@ -267,11 +268,11 @@ const styles = StyleSheet.create({
 		width: 50,
 		marginTop: 10,
 		marginBottom: 10,
-		marginLeft: 20
+		marginLeft: 30
 	},
 	flipStyle: {
 		width: 80,
-		
+
 	},
 });
 

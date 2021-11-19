@@ -95,16 +95,15 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
     logo: {
-        height: 60,
-        width: 65,
+        height: 63,
+        width: 68,
 		marginBottom: 10,
 		marginTop: 30,
 		alignSelf: 'center',
-		color: '#189BF3'
 	},
 	nameApp: {
 		color: '#189BF3',
-		fontSize: 27, 
+		fontSize: 24, 
 		fontWeight: '700',
 		marginBottom: 20
 	},
@@ -126,7 +125,8 @@ const styles = StyleSheet.create({
 	},
 	label: {
 		marginLeft: 14,
-		color: '#212121'
+		color: '#212121',
+        fontSize: 13
 	},
     input: {
         height: 40,
@@ -137,7 +137,8 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: "white",
         marginBottom: 10,
-		color: '#eee'
+		color: '#eee',
+        fontSize: 12
       },
 	
 	createStyle: {
@@ -149,12 +150,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginLeft: 15,
-     fontSize: 20
 	
 	},
 	createTextStyle: {
 		color:	'black',
-        fontSize: 20
+        fontSize: 14
 	}
 });
 

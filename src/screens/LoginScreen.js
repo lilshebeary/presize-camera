@@ -9,7 +9,7 @@ const LoginScreen = ({ navigation }) => {
 		<>
 		<SafeAreaView></SafeAreaView>
         <SafeAreaView style={[styles.container, { backgroundColor: '##26CE7D' }]}>
-            <StatusBar barStyle="dark-content" backgroundColor="#fff" />
+            <StatusBar barStyle="dark-content" backgroundColor="white" />
 
         <View style={styles.viewStyle}>
 
@@ -58,25 +58,25 @@ const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		alignItems: 'center',
-		backgroundColor: '#fff',
+		backgroundColor: 'white',
 	},
     logo: {
-		width: 120,
-		height: 100,
+		width: 90,
+		height: 80,
 		marginBottom: 25,
 		marginTop: 170,
 		alignSelf: 'center'
 	},
 	appName: {
 		color: '#189BF3',
-		fontSize: 40,
+		fontSize: 27,
 		fontWeight: '700',
 		marginBottom: 80
 	},
     viewStyle: {
 		flex: 1,
 		alignItems: 'center',
-		backgroundColor: '#fff',
+		backgroundColor: 'white',
 	},
 
 	safeArea: {
@@ -98,7 +98,8 @@ const styles = StyleSheet.create({
         padding: 10,
         backgroundColor: "white",
         marginBottom: 10,
-		color: '#eee'
+		color: '#eee',
+		fontSize: 12
       },
 	  loginStyle: {
         marginTop: 50,
@@ -109,12 +110,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		marginLeft: 15,
-     fontSize: 20
-	
+    
 	},
 	loginTextStyle: {
 		color:	'black',
-        fontSize: 20
+        fontSize: 15
 
 	}
 	

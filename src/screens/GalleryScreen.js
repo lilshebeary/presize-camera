@@ -48,27 +48,58 @@ const GalleryScreen = ({ navigation }) => {
 				<View style={styles.galleryGrid}>
 					<Gallery />
 					<Gallery />
+					<Gallery />	
+				</View>
+				<View style={styles.galleryGrid}>
 					<Gallery />
-				
-					
+					<Gallery />
+					<Gallery />	
+				</View>
+				<View style={styles.galleryGrid}>
+					<Gallery />
+					<Gallery />
+					<Gallery />	
+				</View>
+				<View style={styles.galleryGrid}>
+					<Gallery />
+					<Gallery />
+					<Gallery />	
 				</View>
 {/* Navigation */}
 				<View style={styles.navigationStyle}>
-					<TouchableOpacity style={styles.printStyle} onPress={() => navigation.navigate('Camera')}>
-						<Text style={styles.text1}>8:10</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={styles.albumStyle}>
-						<Text style={styles.text1}>8:10</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={styles.camera}>
-						<Text style={styles.text1}>8:10</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={styles.friends}>
-						<Text style={styles.text1}>8:10</Text>
-					</TouchableOpacity>
-					<TouchableOpacity style={styles.settings}>
-						<Text style={styles.text1}>8:10</Text>
-					</TouchableOpacity>
+				
+					{/* friends */}
+					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<SimpleLineIcons name="people" size={28} color="black" />
+				</TouchableOpacity>
+				{/* files */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
+				<SimpleLineIcons name="picture" size={28} color="black" />
+				</TouchableOpacity>
+				{/* print */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+					<AntDesign name="printer" size={28} color="black" />
+				</TouchableOpacity>
+
+				{/* space */}
+				
+				<View />
+				<View />
+				{/* flash */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Folder')}>
+					<Ionicons name="ios-add-sharp" size={28} color="black" />
+				</TouchableOpacity>
+
+				{/* HDR */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friends')}>
+					<Ionicons name="paper-plane-outline" size={28} color="black" />
+				</TouchableOpacity>
+
+				{/* camera angle */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
+					<Ionicons name="ios-camera-outline" size={30} color="black" />
+				</TouchableOpacity>
+	
 				</View>	
 			</View>
 		</SafeAreaView>
@@ -100,61 +131,59 @@ const styles = StyleSheet.create({
 		justifyContent: 'center',
 		marginTop: 10,
 		marginBottom: 10,
-		fontSize: 40,
+		fontSize: 16,
 		fontWeight: 'bold'
 	},
 	sizeButtons: {
 		flexDirection: 'row',
-		justifyContent: 'center'
+		justifyContent: 'center',
+		marginBottom: 20
 	},
 	size1: {
-		height: 50,
-		width: 70,
+		height: 40,
+		width: 60,
 		backgroundColor: '#c4c4c4',
 		borderBottomLeftRadius: 20,
 		borderTopLeftRadius: 20,
 		justifyContent: 'center',
-		marginRight: 3
+		marginRight: 5
 	},
 	text1: {
 		alignSelf: 'center',
-		fontSize: 20
+		fontSize: 12
 	},
 	size2: {
-		height: 50,
-		width: 70,
+		height: 40,
+		width: 60,
 		backgroundColor: '#c4c4c4',
 		justifyContent: 'center',
-		marginRight: 3
+		marginRight: 5
 	},
-	text2: {
-		alignSelf: 'center',
-		fontSize: 20
-	},
+	
 	size3: {
-		height: 50,
-		width: 70,
+		height: 40,
+		width: 60,
 		backgroundColor: '#c4c4c4',
 		justifyContent: 'center',
-		marginRight: 3,
+		marginRight: 5,
 		borderTopRightRadius: 20,
 		borderBottomRightRadius: 20
 	},
-	text3: {
-		alignSelf: 'center',
-		fontSize: 20
-	},
+
 	galleryGrid: {
 		flexDirection: 'row',
 		flex: 6,
 		flexGrow: 6,
-		flexWrap: 'wrap'
+		flexWrap: 'wrap',
 	},
 	navigationStyle: {
 		flex: 1,
-		flexDirection:'row',
-		
-	}
+		flexDirection: 'row',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		height: 80,
+		marginHorizontal: 15
+	},
 });
 
 export default GalleryScreen;

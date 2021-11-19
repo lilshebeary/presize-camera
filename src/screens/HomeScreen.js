@@ -9,6 +9,7 @@ import {
   StatusBar,
 } from "react-native";
 import logo from "../../assets/logo7.png";
+import logo2 from '../../assets/logo.png';
 
 const HomeScreen = ({ navigation }) => {
   // constructor(props) {
@@ -28,7 +29,8 @@ const HomeScreen = ({ navigation }) => {
           onPress={() => navigation.navigate("Camera")}
         >
           <View style={styles.ViewStyle}>
-            <Image source={logo} style={styles.logo} />
+            <Image source={logo2} style={styles.logo} />
+            <Text style={styles.nameApp}>Presize Camera</Text>
           </View>
         </TouchableOpacity>
         {/* account buttons */}
@@ -54,14 +56,29 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  logo: {
+  // logo: {
+  //   flex: 0,
+  //   backgroundColor: "#189BF3",
+  //   width: "64%",
+  //   height: "31%",
+  //   marginBottom: 25,
+  //   marginTop: 55,
+  // },
+  logo2: {
     flex: 0,
-    backgroundColor: "#189BF3",
-    width: "64%",
-    height: "31%",
+    color: "white",
+    width: 120,
+    height: 100,
     marginBottom: 25,
     marginTop: 55,
   },
+  nameApp: {
+		color: 'white',
+		fontSize: 26, 
+		fontWeight: '700',
+		marginBottom: 20,
+    marginTop: 20
+	},
   ViewStyle: {
     flex: 1,
     alignItems: "center",
@@ -93,7 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#189BF3",
     borderWidth: 1,
     aspectRatio: 22 / 3,
-    height: 50,
+    height: 45,
     borderRadius: 2,
     alignItems: "center",
     justifyContent: "center",
@@ -108,7 +125,7 @@ const styles = StyleSheet.create({
 
   TextStyle: {
     color: "#fff",
-    fontSize: 20,
+    fontSize: 16,
   },
 });
 

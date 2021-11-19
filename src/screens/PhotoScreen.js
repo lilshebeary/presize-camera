@@ -37,7 +37,7 @@ const PhotoEditScreen = ({ navigation }) => {
 			{/* navbar */}
 			<View style={styles.navigationStyle}>
 				{/* friends */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<SimpleLineIcons name="people" size={28} color="white" />
 				</TouchableOpacity>
 				{/* files */}

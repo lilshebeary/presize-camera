@@ -261,7 +261,7 @@ const styles = StyleSheet.create({
 		flex: 0,
 		height: 65,
 		width: 65,
-		marginLeft: 10
+		marginLeft: 0
 	},
 	pictureStyle: {
 		flex: 0,

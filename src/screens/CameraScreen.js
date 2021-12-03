@@ -118,7 +118,7 @@ const CameraScreen = ({ navigation }) => {
 						<Image style={styles.pictureStyle} source={lastImage} />
 					</TouchableOpacity>
 
-					{/* take picture and store */}
+{/* take picture and store */}
 					<TouchableOpacity
 						style={styles.shootStyle}
 						onPress={async () => {

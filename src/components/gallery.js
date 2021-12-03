@@ -1,48 +1,33 @@
-import React from 'react';
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
-// import * as SecureStore from 'expo-secure-store';
+import React from 'react'
+import { View, StyleSheet, FlatList } from 'react-native'
+import GalleryRow from './GalleryRow'
 
-const Gallery = () => {
-	return (
-		<SafeAreaView style={styles.safeArea}>
-			<View style={styles.container}>
-				<View style={styles.photoStyle}>
-				<View style={styles.container}>
-				{/* image */}
-				{/* <View style={styles.imageContainer}>
-					<Image source={lastImage} style={{ ...styles.imageStyle, ...{ height: imageHeight } }} />
-				</View> */}
-			</View>
-
-                </View>
-			</View>
-		</SafeAreaView>
-	);
-};
+ const Gallery = ({ photos }) => {
+    //  console.error(photos);
+    // const images = Object.keys(photos).map((id) => photos.id).sort((a, b) => {})
+    return (
+        <FlatList 
+            style={styles.container}
+            data={[{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}]}
+            renderItem={GalleryRow}
+            keyExtractor={item => item.id}
+        >
+				
+        </FlatList>
+    )
+    
+}
 
 const styles = StyleSheet.create({
-	safeArea: {
-		flex: 1,
-		backgroundColor: 'white'
-		// alignItems: 'center',
-	},
-	container: {
-		flexDirection: 'column',
-		flex: 1
-	},
-    photoStyle: {
-        width: 120,
-        height: 120,
-        backgroundColor: 'green',
-        margin: 10,
-        borderRadius: 5
+    container: {
+        flex: 1
     },
-	imageContainer: {
-		backgroundColor: '#000',
-		justifyContent: 'center',
-		height: '100%',
-		width: '100%'
-	},
+    galleryGrid: {
+		flexDirection: 'row',
+		flex: 6,
+		flexGrow: 6,
+	
+	}
 });
 
 export default Gallery;

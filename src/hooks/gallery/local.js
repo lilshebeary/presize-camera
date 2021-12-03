@@ -24,7 +24,8 @@ export function useGallery() {
 		photos,
 		addPhoto: (photo) => {
 			const id = uuidv4();
-			photos[id] = { ...photo, id };
+			const date = new Date();
+			photos[id] = { ...photo, id, date };
 			savePhotos();
 		},
 		replacePhoto: (id, photo) => {
@@ -33,6 +34,10 @@ export function useGallery() {
 		},
 		removePhoto: (id) => {
 			delete photos[id];
+			savePhotos();
+		},
+		clearPhotos: () => {
+			setPhotos({});
 			savePhotos();
 		}
 	};

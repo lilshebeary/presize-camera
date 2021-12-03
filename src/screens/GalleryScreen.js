@@ -7,10 +7,12 @@ import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons';
-import * as SecureStore from 'expo-secure-store';
-import Gallery from '../components/gallery';
+import { useGallery } from '../hooks/gallery/local';
+import Gallery from '../components/Gallery';
 
 const GalleryScreen = ({ navigation }) => {
+	const { photos, removePhoto, clearPhotos } = useGallery();
+	// clearPhotos();
 	return (
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
@@ -45,25 +47,8 @@ const GalleryScreen = ({ navigation }) => {
 					</TouchableOpacity>
 				</View>
 {/* Gallery */}
-				<View style={styles.galleryGrid}>
-					<Gallery />
-					<Gallery />
-					<Gallery />	
-				</View>
-				<View style={styles.galleryGrid}>
-					<Gallery />
-					<Gallery />
-					<Gallery />	
-				</View>
-				<View style={styles.galleryGrid}>
-					<Gallery />
-					<Gallery />
-					<Gallery />	
-				</View>
-				<View style={styles.galleryGrid}>
-					<Gallery />
-					<Gallery />
-					<Gallery />	
+				<View style={styles.galleryStyle}>
+					<Gallery photos={photos} />
 				</View>
 {/* Navigation */}
 				<View style={styles.navigationStyle}>
@@ -169,13 +154,10 @@ const styles = StyleSheet.create({
 		borderTopRightRadius: 20,
 		borderBottomRightRadius: 20
 	},
-
-	galleryGrid: {
-		flexDirection: 'row',
-		flex: 6,
-		flexGrow: 6,
-		flexWrap: 'wrap',
+	galleryStyle:{
+		flex: 6
 	},
+
 	navigationStyle: {
 		flex: 1,
 		flexDirection: 'row',

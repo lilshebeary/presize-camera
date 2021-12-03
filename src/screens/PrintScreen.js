@@ -14,15 +14,23 @@ const PrintScreen = ({ navigation }) => {
             <View style={styles.container}>
                 <Text style={styles.title}>Find Printer</Text>  
             </View>
+            <View style={styles.buttonBox}>
+                <View style={styles.printIcon}>
+                    <AntDesign name="printer" size={85} color="black" />
+                </View>
+                <View style={styles.findPrint}> 
+                    <TouchableOpacity style={styles.scanButton} >
+                        <Text style={styles.textPrintStyle}>Find Printer</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.printButton} >
+                        <Text style={styles.textPrintStyle}>Find Printer</Text>
+                    </TouchableOpacity>
+                </View>
 
-            <View style={styles.findPrint}> 
-                <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('PrintShop')}>
-                    <AntDesign name="printer" size={55} color="black" />
-                </TouchableOpacity>
+               
             </View>
-           
+
             <View style={styles.navigationStyle}>
-				
                 {/* friends */}
                 <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
                 <SimpleLineIcons name="people" size={28} color="black" />
@@ -72,10 +80,38 @@ const PrintScreen = ({ navigation }) => {
             alignSelf: 'center',
             fontSize: 18
         },
+        buttonBox: {
+            flex: 3,
+            flexDirection:'row',
+        },
         findPrint: {
-            flex: 2,
-            flexDirection: 'row',
-            marginLeft: 15
+            flex: 1,
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginVertical: 10
+        },
+       
+        textPrintStyle: {
+            alignSelf: 'center'
+        },
+        printIcon: {
+            marginLeft: 20,
+           
+        },
+        scanButton: {
+            backgroundColor: '#189BF3',
+            height: 40,
+            width: '60%',
+            borderRadius: 10,
+            justifyContent: 'center',
+            marginBottom: 20
+        },
+        printButton: {
+            backgroundColor: '#26CE7D',
+            height: 40,
+            width: '60%',
+            borderRadius: 10,
+            justifyContent: 'center' 
         },
         navigationStyle: {
             flexDirection: 'row',

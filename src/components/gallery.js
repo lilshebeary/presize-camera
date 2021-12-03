@@ -1,33 +1,64 @@
-import React from 'react'
-import { View, StyleSheet, FlatList } from 'react-native'
-import GalleryRow from './GalleryRow'
+import React from "react";
+import { View, StyleSheet, FlatList } from "react-native";
+import GalleryRow from "./GalleryRow";
 
- const Gallery = ({ photos }) => {
-    //  console.error(photos);
-    // const images = Object.keys(photos).map((id) => photos.id).sort((a, b) => {})
-    return (
-        <FlatList 
-            style={styles.container}
-            data={[{id: 1}, {id: 2}, {id: 3}, {id: 4}, {id: 5}, {id: 6}, {id: 7}]}
-            renderItem={GalleryRow}
-            keyExtractor={item => item.id}
-        >
-				
-        </FlatList>
-    )
-    
-}
+const renderRow = ({ item }) => {
+  //   console.error(item);
+  return <GalleryRow row={item} />;
+};
+
+const Gallery = ({ photos }) => {
+  const imageList = Object.keys(photos)
+    .map((id) => photos[id])
+    .sort((a, b) => {
+      if (a.date < b.date) {
+        return -1;
+      }
+      if ((a.date = b.date)) {
+        return 0;
+      }
+      if (a.date > b.date) {
+        return 1;
+      }
+    });
+
+  const imageRows = [];
+  let currentRow = [];
+  let row = 0;
+  let index = 0;
+
+  for (const photo of imageList) {
+    let rowIndex = (index + 1) % 3;
+    if (rowIndex <= 2) {
+      currentRow.push(photo);
+    }
+    if ((rowIndex = 2)) {
+      imageRows.push(currentRow);
+      currentRow = [];
+      row++;
+    }
+    index++;
+  }
+    // console.error({ imageRows });
+  return (
+    <FlatList
+      style={styles.container}
+      data={imageRows}
+      renderItem={renderRow}
+      keyExtractor={(item) => item.id}
+    ></FlatList>
+  );
+};
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    galleryGrid: {
-		flexDirection: 'row',
-		flex: 6,
-		flexGrow: 6,
-	
-	}
+  container: {
+    flex: 1,
+  },
+  galleryGrid: {
+    flexDirection: "row",
+    flex: 6,
+    flexGrow: 6,
+  },
 });
 
 export default Gallery;

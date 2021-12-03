@@ -20,7 +20,7 @@ function App() {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator
-				initialRouteName="Camera"
+				initialRouteName="Gallery"
 				screenOptions={{
 					headerShown: false
 				}}

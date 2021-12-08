@@ -3,7 +3,7 @@ import { View, StyleSheet, FlatList } from "react-native";
 import GalleryRow from "./GalleryRow";
 
 const renderRow = ({ item }) => {
-  //   console.error(item);
+  // console.error(item);
   return <GalleryRow row={item} />;
 };
 
@@ -28,18 +28,20 @@ const Gallery = ({ photos }) => {
   let index = 0;
 
   for (const photo of imageList) {
-    let rowIndex = (index + 1) % 3;
+    // console.error(photo)
+    let rowIndex = (index) % 3;
+  
     if (rowIndex <= 2) {
       currentRow.push(photo);
     }
-    if ((rowIndex = 2)) {
+    if ((rowIndex === 2)) {
       imageRows.push(currentRow);
       currentRow = [];
       row++;
     }
     index++;
   }
-    // console.error({ imageRows });
+  
   return (
     <FlatList
       style={styles.container}

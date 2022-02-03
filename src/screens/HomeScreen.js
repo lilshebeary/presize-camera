@@ -8,17 +8,11 @@ import {
   SafeAreaView,
   StatusBar,
 } from "react-native";
-import logo from "../../assets/logo7.png";
 import logo2 from '../../assets/logo.png';
 
 const HomeScreen = ({ navigation }) => {
-  // constructor(props) {
-  // 	super(props);
-  // 	this.state = {
-  // 	  width: Dimensions.get('window').width
-  // 	};
+
   return (
-    // <SafeAreaView style={styles.safeArea}>
     <>
       <SafeAreaView style={styles.safeAreaTop} />
       <SafeAreaView style={styles.safeAreaBottom}>
@@ -30,7 +24,7 @@ const HomeScreen = ({ navigation }) => {
         >
           <View style={styles.ViewStyle}>
             <Image source={logo2} style={styles.logo} />
-            <Text style={styles.nameApp}>Presize Camera</Text>
+            <Text style={styles.nameApp} allowFontScaling={false}>Presize Camera</Text>
           </View>
         </TouchableOpacity>
         {/* account buttons */}
@@ -39,15 +33,15 @@ const HomeScreen = ({ navigation }) => {
             style={styles.buttonStyle}
             onPress={() => navigation.navigate("Login")}
           >
-            <Text style={styles.TextStyle}>Sign In</Text>
+            <Text style={styles.TextStyle} allowFontScaling={false} >Sign In</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.buttonStyle}
             onPress={() => navigation.navigate("Create")}
-            // {this.state.width < 320 ? <Text>width of the past</Text> : <Text>how big is big enough?</Text>}
+            
           >
-            <Text style={styles.TextStyle}>Sign Up</Text>
+            <Text style={styles.TextStyle} allowFontScaling={false}>Sign Up</Text>
           </TouchableOpacity>
         </View>
       </SafeAreaView>
@@ -56,14 +50,6 @@ const HomeScreen = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  // logo: {
-  //   flex: 0,
-  //   backgroundColor: "#189BF3",
-  //   width: "64%",
-  //   height: "31%",
-  //   marginBottom: 25,
-  //   marginTop: 55,
-  // },
   logo2: {
     flex: 0,
     color: "white",

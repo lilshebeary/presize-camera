@@ -17,47 +17,48 @@ const CreateScreen = ({ navigation }) => {
                     source={logo} 
                     style={styles.logo} 
                 />
-				<Text style={styles.nameApp}>Presize Camera</Text>
+				<Text allowFontScaling={false} style={styles.nameApp}>Presize Camera</Text>
             </TouchableOpacity>
 		</View>
         <View style={styles.space} />
             <View style={styles.formStyle}>
-				<Text style={styles.label}>First Name</Text>
+				<Text allowFontScaling={false} style={styles.label}>First Name</Text>
 			<TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
                     placeholder="Jane"
+                   
                 />
-				<Text style={styles.label}>Second Name</Text>
+				<Text style={styles.label} allowFontScaling={false}>Second Name</Text>
 				<TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
                     placeholder="Doe"
                 />
-				<Text style={styles.label}>Email</Text>
+				<Text style={styles.label} allowFontScaling={false}>Email</Text>
 				<TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
                     placeholder="jane@email.com"
                 />
-				<Text style={styles.label}>Phone</Text>
+				<Text style={styles.label} allowFontScaling={false}>Phone</Text>
             <TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
                     placeholder="1+___ ___ ____"
                 />
-				<Text style={styles.label}>Password</Text>
+				<Text style={styles.label} allowFontScaling={false}>Password</Text>
             <TextInput
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
                     placeholder="*******"
                 />
-				<Text style={styles.label}>Re Enter Password</Text>
+				<Text style={styles.label} allowFontScaling={false}>Re Enter Password</Text>
             <TextInput
                 style={styles.input}
                 // onChangeText={onChangeNumber}
@@ -71,7 +72,7 @@ const CreateScreen = ({ navigation }) => {
 				<TouchableOpacity 
 					style={styles.createStyle}
 				>
-					<Text style={styles.createTextStyle}>Continue</Text>
+					<Text style={styles.createTextStyle} allowFontScaling={false}>Continue</Text>
 				</TouchableOpacity>
 			</View>
 			 

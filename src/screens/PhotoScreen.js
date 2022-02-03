@@ -116,13 +116,14 @@ const styles = StyleSheet.create({
 	container: {
 		flexDirection: 'column',
 		flex: 1,
+		
 	},
 	navigationStyle: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: 80,
-		backgroundColor: '#111'
+		backgroundColor: '#111'	
 	},
 	dateContainer: {
 		display: 'flex',

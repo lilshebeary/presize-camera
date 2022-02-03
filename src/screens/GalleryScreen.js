@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image, useWindowDimensions } from 'react-native';
-import { Camera } from 'expo-camera';
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
 import { useGallery } from '../hooks/gallery/local';
 import Gallery from '../components/Gallery';
 
@@ -122,7 +118,8 @@ const styles = StyleSheet.create({
 	sizeButtons: {
 		flexDirection: 'row',
 		justifyContent: 'center',
-		marginBottom: 20
+		marginBottom: 20,
+		
 	},
 	size1: {
 		height: 40,
@@ -131,7 +128,8 @@ const styles = StyleSheet.create({
 		borderBottomLeftRadius: 20,
 		borderTopLeftRadius: 20,
 		justifyContent: 'center',
-		marginRight: 5
+		marginRight: 5,
+		marginLeft: 5
 	},
 	text1: {
 		alignSelf: 'center',

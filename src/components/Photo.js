@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-// import * as SecureStore from 'expo-secure-store';
+
 
 const Photo = ({ uri }) => {
-  // console.error(uri)
+  console.error(uri)
   return (
     <View style={styles.container}>
       {/* <View style={styles.photoStyle}> */}

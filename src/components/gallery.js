@@ -3,7 +3,7 @@ import { StyleSheet, FlatList } from "react-native";
 import GalleryRow from "./GalleryRow";
 
 const renderRow = ({ item }) => {
-  console.error(item);
+  // console.error(item);
   return <GalleryRow row={item} />;
 };
 

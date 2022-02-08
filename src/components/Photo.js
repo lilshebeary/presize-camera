@@ -3,12 +3,10 @@ import { View, Text, StyleSheet, Image } from "react-native";
 
 
 const Photo = ({ uri }) => {
-  console.error(uri)
+  // console.error(uri)
   return (
     <View style={styles.container}>
-      {/* <View style={styles.photoStyle}> */}
         <Image style={styles.photoStyle} source={{uri}} />
-      {/* </View> */}
     </View>
   );
 };

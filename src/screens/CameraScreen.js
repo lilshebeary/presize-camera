@@ -16,7 +16,7 @@ import { MaterialIcons } from "@expo/vector-icons";
 import shootButton from "../../assets/shootButton.png";
 import * as SecureStore from "expo-secure-store";
 import { useGallery } from "../hooks/gallery/local";
-import * as Orientation from "expo-screen-orientation";
+
 
 const CameraScreen = ({ navigation }) => {
   const { photos, addPhoto, replacePhoto, removePhoto } = useGallery();
@@ -38,7 +38,7 @@ const CameraScreen = ({ navigation }) => {
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
       setHasPermission(status === "granted");
-      Orientation.OrientationLock(Orientation.OrientationLock.PORTRAIT);
+      // Orientation.OrientationLock(Orientation.OrientationLock.PORTRAIT);
     })();
   }, []);
 

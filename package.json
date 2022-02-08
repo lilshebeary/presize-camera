@@ -15,7 +15,6 @@
     "@reduxjs/toolkit": "^1.6.1",
     "expo": "~41.0.1",
     "expo-camera": "~11.0.2",
-    "expo-screen-orientation": "^3.3.0",
     "expo-secure-store": "~10.1.0",
     "expo-splash-screen": "~0.10.2",
     "expo-status-bar": "~1.0.4",

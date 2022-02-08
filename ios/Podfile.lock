@@ -31,9 +31,6 @@ PODS:
   - EXPermissions (12.0.1):
     - UMCore
     - UMPermissionsInterface
-  - EXScreenOrientation (3.3.0):
-    - React-Core
-    - UMCore
   - EXSecureStore (10.1.0):
     - UMCore
   - EXSplashScreen (0.10.3):
@@ -384,7 +381,6 @@ DEPENDENCIES:
   - EXImageLoader (from `../node_modules/expo-image-loader/ios`)
   - EXKeepAwake (from `../node_modules/expo-keep-awake/ios`)
   - EXPermissions (from `../node_modules/expo-permissions/ios`)
-  - EXScreenOrientation (from `../node_modules/expo-screen-orientation/ios`)
   - EXSecureStore (from `../node_modules/expo-secure-store/ios`)
   - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
   - EXStructuredHeaders (from `../node_modules/expo-structured-headers/ios`)
@@ -468,8 +464,6 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-keep-awake/ios"
   EXPermissions:
     :path: "../node_modules/expo-permissions/ios"
-  EXScreenOrientation:
-    :path: "../node_modules/expo-screen-orientation/ios"
   EXSecureStore:
     :path: "../node_modules/expo-secure-store/ios"
   EXSplashScreen:
@@ -589,7 +583,6 @@ SPEC CHECKSUMS:
   EXImageLoader: 1ad8b491fd0f3200b57b37ecb1801abeb6549926
   EXKeepAwake: da3b8472c2739a1edcd63b121ae4ab751aa325d4
   EXPermissions: ea8d63dd052737765bd350b2ca7cee9bcfd5e18e
-  EXScreenOrientation: 4aa417372b47cc55c2a6157fef227765b071b5f8
   EXSecureStore: bc0d9a2796109886ba55e25e0e7db5587c584a61
   EXSplashScreen: f7a3aa117248375f1f2e8558e756794f052ff9fa
   EXStructuredHeaders: 0c3b4c8030ec5ed2c3bc0b64f5af81005b9cb5c8

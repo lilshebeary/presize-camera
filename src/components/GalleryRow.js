@@ -3,12 +3,12 @@ import { View, StyleSheet } from "react-native";
 import Photo from "./Photo";
 
 const GalleryRow = ({ row }) => {
-    console.error(row);
+    // console.error(row);
   return (
     <View style={styles.container}>
       <View style={styles.rowStyle}>
         {row.map((photo) => (
-          <Photo uri={photo.uri} />
+          <Photo uri={photo.uri} key={photo.id} />
         ))}
       </View>
     </View>

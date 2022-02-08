@@ -1,8 +1,8 @@
-import React from "react";
 import { configureStore } from '@reduxjs/toolkit';
+import photoReducer from './photo';
 
-const Store = configureStore({ 
-    reducer: {}
+export const Store = configureStore({ 
+    reducer: {
+        photos: photoReducer
+    }
 })
-
-export default Store;

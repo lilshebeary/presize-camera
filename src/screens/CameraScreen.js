@@ -15,11 +15,12 @@ import { FontAwesome } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
 import shootButton from "../../assets/shootButton.png";
 import * as SecureStore from "expo-secure-store";
-import { useGallery } from "../hooks/gallery/local";
-
+import { useDispatch, useSelector } from "react-redux";
+import { addPhoto } from "../store/gallerySlice";
 
 const CameraScreen = ({ navigation }) => {
-  const { photos, addPhoto, replacePhoto, removePhoto } = useGallery();
+  const { photos } = useSelector((state) => state.gallery);
+  const dispatch = useDispatch();
   const [hasPermission, setHasPermission] = useState(null);
   const [lastImage, setLastImage] = useState(null);
   const [type, setType] = useState(Camera.Constants.Type.back);
@@ -161,7 +162,7 @@ const CameraScreen = ({ navigation }) => {
                   "lastImage",
                   JSON.stringify(photo)
                 );
-                addPhoto(photo);
+                dispatch(addPhoto(photo));
               }
             }}
           >

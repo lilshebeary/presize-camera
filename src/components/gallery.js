@@ -28,20 +28,24 @@ const Gallery = ({ photos }) => {
   let index = 0;
 
   for (const photo of imageList) {
-    // console.error(photo)
-    let rowIndex = (index) % 3;
-  
+    // console.error(photo);
+    let rowIndex = index % 3;
+
     if (rowIndex <= 2) {
       currentRow.push(photo);
     }
-    if ((rowIndex === 2)) {
+    if (rowIndex === 2) {
       imageRows.push(currentRow);
       currentRow = [];
       row++;
     }
     index++;
   }
-  
+
+  if (currentRow.length > 0) {
+    imageRows.push(currentRow);
+  }
+
   return (
     <FlatList
       style={styles.container}

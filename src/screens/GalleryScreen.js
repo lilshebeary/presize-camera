@@ -11,11 +11,12 @@ import {
 import { Ionicons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
-import { useGallery } from "../hooks/gallery/local";
+import { useSelector, useDispatch } from "react-redux";
 import Gallery from "../components/Gallery";
+import { addPhoto } from "../store/gallerySlice";
 
 const GalleryScreen = ({ navigation }) => {
-  const { photos, removePhoto } = useGallery();
+  const { photos } = useSelector((state) => state.gallery);
   //   clearPhotos();
   return (
     <SafeAreaView style={styles.safeArea}>

@@ -10,9 +10,10 @@ export const gallerySlice = createSlice({
   initialState,
   reducers: {
     addPhoto: (state, action) => {
-      const { photo } = action;
+      // console.error(state);
+      const photo = action.payload;
       const id = uuidv4();
-      const date = new Date();
+      const date = new Date().getTime();
       const myPhotos = { ...state.photos };
       myPhotos[id] = { ...photo, id, date };
       state.photos = myPhotos;

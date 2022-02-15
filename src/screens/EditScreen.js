@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, SafeAreaView, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 import { PESDK, PhotoEditorModal, Configuration } from 'react-native-photoeditorsdk';
 import * as SecureStore from 'expo-secure-store';

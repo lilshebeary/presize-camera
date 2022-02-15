@@ -2,7 +2,7 @@ import * as React from "react";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Store } from "./src/store";
+import Store from "./src/store";
 import { Provider } from "react-redux";
 import HomeScreen from "./src/screens/HomeScreen";
 import LoginScreen from "./src/screens/LoginScreen";

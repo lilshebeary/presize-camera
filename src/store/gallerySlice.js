@@ -30,4 +30,4 @@ export const gallerySlice = createSlice({
 });
 
 export const { addPhoto, removePhoto, clearPhotos } = gallerySlice.actions;
-export default gallerySlice;
+export default gallerySlice.reducer;

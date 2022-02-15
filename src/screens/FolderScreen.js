@@ -13,7 +13,7 @@ import * as SecureStore from 'expo-secure-store';
         <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Photo')}>
             <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
         </TouchableOpacity>
-            <Text style={styles.titleStyle}>Folders</Text>
+            <Text allowFontScaling={false} style={styles.titleStyle}>Folders</Text>
             <View />
             <View />
         </View>

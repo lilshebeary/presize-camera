@@ -14,7 +14,7 @@ const FriendScreen = ({ navigation }) => {
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Photo')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
 				</TouchableOpacity>
-					<Text style={styles.titleStyle}>Friends</Text>
+					<Text allowFontScaling={false} style={styles.titleStyle}>Friends</Text>
 					<View />
 					<View />
 				</View>

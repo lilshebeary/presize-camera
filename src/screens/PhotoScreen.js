@@ -37,6 +37,7 @@ const PhotoEditScreen = ({ navigation }) => {
 			{/* navbar */}
 			<View style={styles.navigationStyle}>
 				{/* friends */}
+				
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<SimpleLineIcons name="people" size={28} color="white" />
 				</TouchableOpacity>
@@ -67,11 +68,12 @@ const PhotoEditScreen = ({ navigation }) => {
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
 					<Ionicons name="ios-camera-outline" size={30} color="white" />
 				</TouchableOpacity>
+				
 			</View>
-
+			
 			{/* date */}
 			<View style={styles.dateContainer}>
-				<Text style={styles.dateStyle}>Date</Text>
+				<Text allowFontScaling={false} style={styles.dateStyle}>Date</Text>
 			</View>
 			<View style={styles.container}>
 				{/* image */}
@@ -88,7 +90,7 @@ const PhotoEditScreen = ({ navigation }) => {
 							PESDK.openEditor(lastImage);
 						}}
 					>
-						<Text style={styles.editStyle}>Edit</Text>
+						<Text allowFontScaling={false} style={styles.editStyle}>Edit</Text>
 					</TouchableOpacity>
 
 					<TouchableOpacity>
@@ -110,20 +112,21 @@ const PhotoEditScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
 	safeArea: {
 		flex: 1,
-		backgroundColor: 'white'
-		// alignItems: 'center',
+		backgroundColor: 'white',
 	},
 	container: {
 		flexDirection: 'column',
 		flex: 1,
-		
 	},
 	navigationStyle: {
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
 		height: 80,
-		backgroundColor: '#111'	
+		backgroundColor: '#111',	
+	},
+	button: {
+		marginHorizontal: 10
 	},
 	dateContainer: {
 		display: 'flex',
@@ -145,15 +148,11 @@ const styles = StyleSheet.create({
 		width: '100%'
 	},
 	imageStyle: {
-		// flex: 1,
 		width: '100%'
 	},
 	buttonContainer1: {
 		height: 100,
 		backgroundColor: '#111'
-		// flexDirection: 'row',
-		// alignItems: 'space-between',
-		// justifyContent: 'center',
 	},
 
 	buttonContainer2: {
@@ -173,7 +172,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		alignContent: 'center',
-		marginHorizontal: 10,
+		marginHorizontal: 15,
 		marginTop: 30
 	}
 });

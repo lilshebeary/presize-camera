@@ -44,19 +44,19 @@ const GalleryScreen = ({ navigation }) => {
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1}>1:1</Text>
+            <Text allowFontScaling={false} style={styles.text1}>1:1</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1}>4:6</Text>
+            <Text allowFontScaling={false} style={styles.text1}>4:6</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1}>5:7</Text>
+            <Text allowFontScaling={false} style={styles.text1}>5:7</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size3}>
-            <Text style={styles.text1}>8:10</Text>
+            <Text allowFontScaling={false} style={styles.text1}>8:10</Text>
           </TouchableOpacity>
         </View>
         {/* Gallery */}

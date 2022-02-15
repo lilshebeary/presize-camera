@@ -12,7 +12,7 @@ const PrintScreen = ({ navigation }) => {
 	return (
         <SafeAreaView style={styles.safeArea}>
             <View style={styles.container}>
-                <Text style={styles.title}>Find Printer</Text>  
+                <Text allowFontScaling={false} style={styles.title}>Find Printer</Text>  
             </View>
             <View style={styles.buttonBox}>
                 <View style={styles.printIcon}>
@@ -20,10 +20,10 @@ const PrintScreen = ({ navigation }) => {
                 </View>
                 <View style={styles.findPrint}> 
                     <TouchableOpacity style={styles.scanButton} >
-                        <Text style={styles.textPrintStyle}>Find Printer</Text>
+                        <Text allowFontScaling={false} style={styles.textPrintStyle}>Find Printer</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.printButton} >
-                        <Text style={styles.textPrintStyle}>Find Printer</Text>
+                        <Text allowFontScaling={false} style={styles.textPrintStyle}>Find Printer</Text>
                     </TouchableOpacity>
                 </View>
 

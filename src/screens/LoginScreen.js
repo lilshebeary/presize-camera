@@ -18,7 +18,7 @@ const LoginScreen = ({ navigation }) => {
                     source={logo} 
                     style={styles.logo} 
                 />
-				<Text style={styles.appName}>Presize Camera</Text>
+				<Text allowFontScaling={false} style={styles.appName}>Presize Camera</Text>
             </TouchableOpacity>
 
             <View>
@@ -43,7 +43,7 @@ const LoginScreen = ({ navigation }) => {
 					style={styles.loginStyle}
 					onPress={() => navigation.navigate("Login")}
 				>
-					<Text style={styles.loginTextStyle}>Login</Text>
+					<Text allowFontScaling={false} style={styles.loginTextStyle}>Login</Text>
 				</TouchableOpacity>
 				
 			</View>

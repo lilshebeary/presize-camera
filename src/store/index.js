@@ -1,8 +1,12 @@
-import { configureStore } from '@reduxjs/toolkit';
-import photoReducer from './photo';
+import { configureStore } from "@reduxjs/toolkit";
+import gallerySlice from "./gallerySlice";
+import photoReducer from "./photo";
 
-export const Store = configureStore({ 
-    reducer: {
-        photos: photoReducer
-    }
-})
+const Store = configureStore({
+  reducer: {
+    photos: photoReducer,
+    gallery: gallerySlice,
+  },
+});
+
+export default Store;

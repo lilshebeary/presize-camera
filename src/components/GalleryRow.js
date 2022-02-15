@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import Photo from "./Photo";
 
 const GalleryRow = ({ row }) => {
-    // console.error(row);
+  // console.error(row);
   return (
     <View style={styles.container}>
       <View style={styles.rowStyle}>

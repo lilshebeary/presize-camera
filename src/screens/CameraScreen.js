@@ -34,7 +34,7 @@ const CameraScreen = ({ navigation }) => {
     const [x, y] = ratio;
     setCameraHeight((width * y) / x);
   });
-
+// permissions to access camera
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
@@ -49,8 +49,10 @@ const CameraScreen = ({ navigation }) => {
   if (hasPermission === false) {
     return <Text>No access to camera</Text>;
   }
+  // render camera
   return (
     <SafeAreaView style={styles.safeArea}>
+      {/* top navigation */}
       <View style={styles.container}>
         {/* navbar */}
         <View style={styles.navigationStyle}>
@@ -82,6 +84,8 @@ const CameraScreen = ({ navigation }) => {
           </TouchableOpacity>
           {/* camera angle */}
         </View>
+
+        
         {/* camera */}
         {/* <View style={styles.cameraContainer}> */}
         <Camera
@@ -217,7 +221,7 @@ const styles = StyleSheet.create({
     // flex: 6,
     backgroundColor: "#111",
     borderColor: "grey",
-    borderWidth: 1,
+    borderWidth: 0,
     marginVertical: 10,
   },
   buttonContainer1: {

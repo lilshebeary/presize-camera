@@ -8,6 +8,7 @@ const renderRow = ({ item }) => {
 };
 
 const Gallery = ({ photos }) => {
+  // orders photos by date taken so that they are ordered last, I may change so the first goes to the top
   const imageList = Object.keys(photos)
     .map((id) => photos[id])
     .sort((a, b) => {
@@ -20,12 +21,14 @@ const Gallery = ({ photos }) => {
       if (a.date > b.date) {
         return 1;
       }
-    });
+    }).reverse();
 
   const imageRows = [];
   let currentRow = [];
   let row = 0;
   let index = 0;
+
+  // puts 3 photos per row
 
   for (const photo of imageList) {
     // console.error(photo);
@@ -41,11 +44,11 @@ const Gallery = ({ photos }) => {
     }
     index++;
   }
-
+  // makes sure that less than one photo can be in a row
   if (currentRow.length > 0) {
     imageRows.push(currentRow);
   }
-
+  // render photo gallery on the screen
   return (
     <FlatList
       style={styles.container}

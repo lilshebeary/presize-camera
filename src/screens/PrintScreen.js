@@ -4,9 +4,7 @@ import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView, Image } from 'r
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
-import { Entypo } from '@expo/vector-icons';
+
 
 const PrintScreen = ({ navigation }) => {
 	return (

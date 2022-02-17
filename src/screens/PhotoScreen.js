@@ -14,6 +14,7 @@ const PhotoEditScreen = ({ navigation }) => {
 	const [ imageHeight, setImageHeight ] = useState();
 	const window = useWindowDimensions();
 
+// stores and parses images
 	useEffect(() => {
 		SecureStore.getItemAsync('lastImage').then((image) => {
 			if (image) {
@@ -21,7 +22,7 @@ const PhotoEditScreen = ({ navigation }) => {
 			}
 		});
 	});
-
+// sets image size
 	useEffect(
 		() => {
 			if (lastImage && lastImage.width && lastImage.height) {

@@ -12,7 +12,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 import { useSelector, useDispatch } from "react-redux";
-import Gallery from "../components/Gallery";
+import Gallery from "../components/gallery";
 import { addPhoto } from "../store/gallerySlice";
 
 const GalleryScreen = ({ navigation }) => {
@@ -63,6 +63,11 @@ const GalleryScreen = ({ navigation }) => {
         <View style={styles.galleryStyle}>
           <Gallery photos={photos} />
         </View>
+
+
+        {/* bottom screen */}
+
+        
         {/* Navigation */}
         <View style={styles.navigationStyle}>
           {/* friends */}

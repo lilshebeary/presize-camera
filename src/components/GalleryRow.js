@@ -2,6 +2,7 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import Photo from "./Photo";
 
+// sets row to 3 pictures keeps space with a placeholder until filled
 const GalleryRow = ({ row }) => {
   const placeholders = [];
   for (let i = 0; i < 3; i++) {
@@ -9,7 +10,7 @@ const GalleryRow = ({ row }) => {
       placeholders.push(null);
     }
   }
-
+// returns photos in row
   return (
     <View style={styles.container}>
       <View style={styles.rowStyle}>
@@ -17,8 +18,8 @@ const GalleryRow = ({ row }) => {
           <Photo uri={photo.uri} key={photo.id} />
         ))}
 
-        {placeholders.map((photo) => (
-          <Photo placeholder={true} />
+        {placeholders.map((photo, i) => (
+          <Photo placeholder={true} key={i}/>
         ))}
       </View>
     </View>

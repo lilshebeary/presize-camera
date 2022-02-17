@@ -17,12 +17,13 @@ import shootButton from "../../assets/shootButton.png";
 import * as SecureStore from "expo-secure-store";
 import { useDispatch, useSelector } from "react-redux";
 import { addPhoto } from "../store/gallerySlice";
+import { setLastImage } from "../store/cameraSlice";
 
 const CameraScreen = ({ navigation }) => {
   const { photos } = useSelector((state) => state.gallery);
   const dispatch = useDispatch();
   const [hasPermission, setHasPermission] = useState(null);
-  const [lastImage, setLastImage] = useState(null);
+  const { lastImage } = useSelector((state) => state.camera);
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [ratio, setRatio] = useState([1, 1]);
   const [cameraHeight, setCameraHeight] = useState();
@@ -34,7 +35,7 @@ const CameraScreen = ({ navigation }) => {
     const [x, y] = ratio;
     setCameraHeight((width * y) / x);
   });
-// permissions to access camera
+  // permissions to access camera
   useEffect(() => {
     (async () => {
       const { status } = await Camera.requestPermissionsAsync();
@@ -85,7 +86,6 @@ const CameraScreen = ({ navigation }) => {
           {/* camera angle */}
         </View>
 
-        
         {/* camera */}
         {/* <View style={styles.cameraContainer}> */}
         <Camera
@@ -161,11 +161,7 @@ const CameraScreen = ({ navigation }) => {
             onPress={async () => {
               if (this.camera) {
                 let photo = await this.camera.takePictureAsync();
-                setLastImage(photo);
-                await SecureStore.setItemAsync(
-                  "lastImage",
-                  JSON.stringify(photo)
-                );
+                dispatch(setLastImage(photo));
                 dispatch(addPhoto(photo));
               }
             }}

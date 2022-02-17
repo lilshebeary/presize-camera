@@ -6,22 +6,15 @@ import { AntDesign } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialIcons } from '@expo/vector-icons';
 import { PESDK, PhotoEditorModal, Configuration } from 'react-native-photoeditorsdk';
-import * as SecureStore from 'expo-secure-store';
+
+import { useSelector } from 'react-redux';
 
 const PhotoEditScreen = ({ navigation }) => {
-	const [ lastImage, setLastImage ] = useState(null);
+	const {lastImage} = useSelector(state=>state.camera);
 	const [ imageWidth, setImageWidth ] = useState();
 	const [ imageHeight, setImageHeight ] = useState();
 	const window = useWindowDimensions();
 
-// stores and parses images
-	useEffect(() => {
-		SecureStore.getItemAsync('lastImage').then((image) => {
-			if (image) {
-				setLastImage(JSON.parse(image));
-			}
-		});
-	});
 // sets image size
 	useEffect(
 		() => {

@@ -18,31 +18,36 @@ import FriendScreen from "./src/screens/FriendScreen";
 import FolderScreen from "./src/screens/FolderScreen";
 
 const Stack = createNativeStackNavigator();
+import { PersistGate } from "redux-persist/es/integration/react";
+import { persistStore } from "redux-persist";
 
 function App() {
+  const persistor = persistStore(Store);
   return (
     <Provider store={Store}>
-      <NavigationContainer>
-        <Stack.Navigator
-          initialRouteName="Gallery"
-          screenOptions={{
-            headerShown: false,
-          }}
-        >
-          <Stack.Screen name="Home" component={HomeScreen} />
-          <Stack.Screen name="Login" component={LoginScreen} />
-          <Stack.Screen name="Create" component={CreateScreen} />
-          <Stack.Screen name="Camera" component={CameraScreen} />
-          <Stack.Screen name="Photo" component={PhotoScreen} />
-          <Stack.Screen name="Edit" component={EditScreen} />
-          <Stack.Screen name="Gallery" component={GalleryScreen} />
-          <Stack.Screen name="Snapfish" component={SnapfishScreen} />
-          <Stack.Screen name="PrintShop" component={PrintShopScreen} />
-          <Stack.Screen name="Print" component={PrintScreen} />
-          <Stack.Screen name="Friend" component={FriendScreen} />
-          <Stack.Screen name="Folder" component={FolderScreen} />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <PersistGate loading={null} persistor={persistor}>
+        <NavigationContainer>
+          <Stack.Navigator
+            initialRouteName="Gallery"
+            screenOptions={{
+              headerShown: false,
+            }}
+          >
+            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Login" component={LoginScreen} />
+            <Stack.Screen name="Create" component={CreateScreen} />
+            <Stack.Screen name="Camera" component={CameraScreen} />
+            <Stack.Screen name="Photo" component={PhotoScreen} />
+            <Stack.Screen name="Edit" component={EditScreen} />
+            <Stack.Screen name="Gallery" component={GalleryScreen} />
+            <Stack.Screen name="Snapfish" component={SnapfishScreen} />
+            <Stack.Screen name="PrintShop" component={PrintShopScreen} />
+            <Stack.Screen name="Print" component={PrintScreen} />
+            <Stack.Screen name="Friend" component={FriendScreen} />
+            <Stack.Screen name="Folder" component={FolderScreen} />
+          </Stack.Navigator>
+        </NavigationContainer>
+      </PersistGate>
     </Provider>
   );
 }

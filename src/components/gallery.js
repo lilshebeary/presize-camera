@@ -21,7 +21,8 @@ const Gallery = ({ photos }) => {
       if (a.date > b.date) {
         return 1;
       }
-    }).reverse();
+    })
+    .reverse();
 
   const imageRows = [];
   let currentRow = [];
@@ -54,7 +55,7 @@ const Gallery = ({ photos }) => {
       style={styles.container}
       data={imageRows}
       renderItem={renderRow}
-      keyExtractor={(item) => item.id}
+      keyExtractor={(item) => item[0]?.id}
     ></FlatList>
   );
 };

@@ -8,7 +8,7 @@ const Friend = () => {
 			<View style={styles.container}>
                 <View style={styles.person}>
 				    <View style={styles.photoStyle}></View>
-                    <Text>Name</Text>
+                    <Text>Username</Text>
                 </View>
                 </View>
 			

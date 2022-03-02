@@ -1,14 +1,18 @@
 import React from "react";
-import { View, Text, StyleSheet, Image } from "react-native";
+import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 
-const Photo = ({ uri, placeholder }) => {
+const Photo = ({ uri, placeholder, navigation, id }) => {
   // console.error(uri)
   return (
     <View style={styles.container}>
       {placeholder ? (
         <View style={styles.placeholderStyle}></View>
       ) : (
-        <Image style={styles.photoStyle} source={{ uri }} />
+        <TouchableOpacity
+          onPress={() => navigation.navigate("Photo", { imageId: id})}
+        >
+          <Image style={styles.photoStyle} source={{ uri }} />
+        </TouchableOpacity>
       )}
     </View>
   );

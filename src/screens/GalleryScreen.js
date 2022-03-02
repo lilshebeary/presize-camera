@@ -61,7 +61,10 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery photos={photos} />
+          <Gallery 
+            photos={photos} 
+            navigation = {navigation}
+          />
         </View>
 
 

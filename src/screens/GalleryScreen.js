@@ -76,7 +76,7 @@ const GalleryScreen = ({ navigation }) => {
           {/* friends */}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Friend")}
           >
             <SimpleLineIcons name="people" size={28} color="black" />
           </TouchableOpacity>

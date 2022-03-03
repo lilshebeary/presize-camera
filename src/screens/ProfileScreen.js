@@ -12,7 +12,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
 
-const EditUserScreen = ({ navigation }) => {
+const ProfileScreen = ({ navigation }) => {
   return (
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
@@ -68,4 +68,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default EditUserScreen;
+export default ProfileScreen;

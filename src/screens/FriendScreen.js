@@ -53,7 +53,7 @@ const FriendScreen = ({ navigation }) => {
 				</TouchableOpacity>
 
 				{/* HDR */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friends')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditUser')}>
 					<Ionicons name="paper-plane-outline" size={28} color="black" />
 				</TouchableOpacity>
 
@@ -92,8 +92,8 @@ const styles = StyleSheet.create({
 	titleStyle: {
 		justifyContent: 'center',
 		marginTop: 10,
-		marginBottom: 10,
-		fontSize: 16,
+		marginBottom: 40,
+		fontSize: 22,
 		fontWeight: 'bold'
 	},
 
@@ -101,6 +101,8 @@ const styles = StyleSheet.create({
 		flex: 6,
 		flexGrow: 6,
 		flexWrap: 'wrap',
+		marginLeft: 10,
+		
 	},
 	navigationStyle: {
 		flex: 1,

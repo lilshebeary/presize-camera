@@ -172,7 +172,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     alignSelf: "center",
-    fontSize: 12,
+    fontSize: 14,
   },
   size2: {
     height: 40,

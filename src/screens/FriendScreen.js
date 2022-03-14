@@ -11,9 +11,9 @@ const FriendScreen = ({ navigation }) => {
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
 				<View style={styles.topStyle}>
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friends')}>
+				{/* <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
-				</TouchableOpacity>
+				</TouchableOpacity> */}
 					<Text style={styles.titleStyle}>Friends</Text>
 					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditUser')}>
 					<Ionicons name="settings-outline" size={30} color="black" style={styles.settingsStyle} />
@@ -54,7 +54,7 @@ const FriendScreen = ({ navigation }) => {
 				<View />
 				<View />
 				{/* flash */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Folder')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FriendSearch')}>
 					<Ionicons name="ios-add-sharp" size={28} color="black" />
 				</TouchableOpacity>
 
@@ -104,6 +104,7 @@ const styles = StyleSheet.create({
 	titleStyle: {
 		justifyContent: 'center',
 		marginTop: 10,
+		marginLeft:30,
 		marginBottom: 40,
 		fontSize: 22,
 		fontWeight: 'bold'

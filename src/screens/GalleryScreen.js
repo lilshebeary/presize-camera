@@ -17,6 +17,8 @@ import { addPhoto } from "../store/gallerySlice";
 
 const GalleryScreen = ({ navigation }) => {
   const { photos } = useSelector((state) => state.gallery);
+  const { size, setSize } = useState();
+  
   //   clearPhotos();
   return (
     <SafeAreaView style={styles.safeArea}>

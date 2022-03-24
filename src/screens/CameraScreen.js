@@ -191,7 +191,7 @@ const CameraScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     // alignItems: 'center',
   },
   container: {
@@ -204,7 +204,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     height: 80,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     marginBottom: 0,
     marginHorizontal: 15,
   },
@@ -215,14 +215,15 @@ const styles = StyleSheet.create({
   },
   camera: {
     // flex: 6,
-    backgroundColor: "#111",
+    backgroundColor: "#000",
     borderColor: "grey",
     borderWidth: 0,
     marginVertical: 10,
+ 
   },
   buttonContainer1: {
     flex: 1,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -285,7 +286,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer2: {
     height: 68,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -297,6 +298,7 @@ const styles = StyleSheet.create({
     height: 65,
     width: 65,
     marginLeft: 0,
+   
   },
   pictureStyle: {
     flex: 0,

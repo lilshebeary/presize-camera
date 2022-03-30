@@ -161,6 +161,7 @@ const CameraScreen = ({ navigation }) => {
             onPress={async () => {
               if (this.camera) {
                 let photo = await this.camera.takePictureAsync();
+                photo.ratio = ratio;
                 dispatch(setLastImage(photo));
                 dispatch(addPhoto(photo));
               }
@@ -219,7 +220,6 @@ const styles = StyleSheet.create({
     borderColor: "grey",
     borderWidth: 0,
     marginVertical: 10,
- 
   },
   buttonContainer1: {
     flex: 1,
@@ -298,7 +298,6 @@ const styles = StyleSheet.create({
     height: 65,
     width: 65,
     marginLeft: 0,
-   
   },
   pictureStyle: {
     flex: 0,

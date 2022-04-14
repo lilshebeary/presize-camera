@@ -72,7 +72,7 @@ const CreateScreen = ({ navigation }) => {
 				<TouchableOpacity 
 					style={styles.createStyle}
 				>
-					<Text style={styles.createTextStyle} allowFontScaling={false}>Continue</Text>
+					<Text style={styles.createTextStyle} allowFontScaling={false}>Create Account</Text>
 				</TouchableOpacity>
 			</View>
 			 
@@ -96,15 +96,15 @@ const styles = StyleSheet.create({
 		backgroundColor: '#fff',
 	},
     logo: {
-        height: 63,
-        width: 68,
+        height: 68,
+        width: 74,
 		marginBottom: 10,
 		marginTop: 30,
 		alignSelf: 'center',
 	},
 	nameApp: {
 		color: '#189BF3',
-		fontSize: 24, 
+		fontSize: 30, 
 		fontWeight: '700',
 		marginBottom: 20
 	},
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
 	label: {
 		marginLeft: 14,
 		color: '#212121',
-        fontSize: 13
+        fontSize: 16
 	},
     input: {
         height: 40,
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         marginBottom: 10,
 		color: '#eee',
-        fontSize: 12
+        fontSize: 16
       },
 	
 	createStyle: {
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
 	},
 	createTextStyle: {
 		color:	'black',
-        fontSize: 14
+        fontSize: 18
 	}
 });
 

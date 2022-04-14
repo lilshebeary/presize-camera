@@ -8,7 +8,7 @@ const Friend = () => {
 			<View style={styles.container}>
                 <View style={styles.person}>
 				    <View style={styles.photoStyle}></View>
-                    <Text>Username</Text>
+                    <Text style={styles.user}>Username</Text>
                 </View>
                 </View>
 			
@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
         margin: 10,
         borderRadius: 5
     },
+    user: {
+        fontSize: 18
+    }
 
 });
 

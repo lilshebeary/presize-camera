@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
   TextStyle: {
     color: "#fff",
-    fontSize: 16,
+    fontSize: 18,
   },
 });
 

@@ -4,22 +4,28 @@ import Photo from "./Photo";
 
 // sets row to 3 pictures keeps space with a placeholder until filled
 const GalleryRow = ({ row, navigation }) => {
+  console.log(row);
   const placeholders = [];
   for (let i = 0; i < 3; i++) {
     if (i >= row.length) {
       placeholders.push(null);
     }
   }
-// returns photos in row
+  // returns photos in row
   return (
     <View style={styles.container}>
       <View style={styles.rowStyle}>
         {row.map((photo) => (
-          <Photo uri={photo.uri} key={photo.id} navigation={navigation} id={photo.id} />
+          <Photo
+            uri={photo.uri}
+            key={photo.id}
+            navigation={navigation}
+            id={photo.id}
+          />
         ))}
 
         {placeholders.map((photo, i) => (
-          <Photo placeholder={true} key={i}/>
+          <Photo placeholder={true} key={i} />
         ))}
       </View>
     </View>

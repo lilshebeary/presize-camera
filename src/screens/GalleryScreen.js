@@ -17,6 +17,8 @@ import { addPhoto } from "../store/gallerySlice";
 
 const GalleryScreen = ({ navigation }) => {
   const { photos } = useSelector((state) => state.gallery);
+  const { size, setSize } = useState();
+  
   //   clearPhotos();
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -33,30 +35,30 @@ const GalleryScreen = ({ navigation }) => {
               style={styles.backIcon}
             />
           </TouchableOpacity>
-          <Text style={styles.titleStyle}>All Photos</Text>
+          <Text style={styles.titleStyle} allowFontScaling={false}>All Photos</Text>
           <View />
           <View />
         </View>
         {/* Sizes */}
         <View style={styles.sizeButtons}>
           <TouchableOpacity style={styles.size1}>
-            <Text style={styles.text1}>ALL</Text>
+            <Text style={styles.text1} allowFontScaling={false}>ALL</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1}>1:1</Text>
+            <Text style={styles.text1} allowFontScaling={false}>1:1</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1}>4:6</Text>
+            <Text style={styles.text1} allowFontScaling={false}>4:6</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1}>5:7</Text>
+            <Text style={styles.text1} allowFontScaling={false}>5:7</Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size3}>
-            <Text style={styles.text1}>8:10</Text>
+            <Text style={styles.text1} allowFontScaling={false}>8:10</Text>
           </TouchableOpacity>
         </View>
         {/* Gallery */}
@@ -76,7 +78,7 @@ const GalleryScreen = ({ navigation }) => {
           {/* friends */}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => navigation.navigate("Friend")}
           >
             <SimpleLineIcons name="people" size={28} color="black" />
           </TouchableOpacity>
@@ -172,7 +174,7 @@ const styles = StyleSheet.create({
   },
   text1: {
     alignSelf: "center",
-    fontSize: 12,
+    fontSize: 14,
   },
   size2: {
     height: 40,

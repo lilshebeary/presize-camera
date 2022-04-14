@@ -11,10 +11,13 @@ const FriendScreen = ({ navigation }) => {
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
 				<View style={styles.topStyle}>
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Photo')}>
+				{/* <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
-				</TouchableOpacity>
+				</TouchableOpacity> */}
 					<Text style={styles.titleStyle}>Friends</Text>
+					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditUser')}>
+					<Ionicons name="settings-outline" size={30} color="black" style={styles.settingsStyle} />
+				</TouchableOpacity>
 					<View />
 					<View />
 				</View>
@@ -31,9 +34,12 @@ const FriendScreen = ({ navigation }) => {
 				<View style={styles.navigationStyle}>
 				
 					{/* friends */}
-					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-					<SimpleLineIcons name="people" size={28} color="black" />
-				</TouchableOpacity>
+				<TouchableOpacity
+            		style={styles.button}
+            		onPress={() => navigation.navigate("Home")}
+          		>
+            		<SimpleLineIcons name="home" size={28} color="black" />
+          		</TouchableOpacity>
 				{/* files */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
 				<SimpleLineIcons name="picture" size={28} color="black" />
@@ -48,18 +54,18 @@ const FriendScreen = ({ navigation }) => {
 				<View />
 				<View />
 				{/* flash */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Folder')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FriendSearch')}>
 					<Ionicons name="ios-add-sharp" size={28} color="black" />
 				</TouchableOpacity>
 
 				{/* HDR */}
-				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friends')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditUser')}>
 					<Ionicons name="paper-plane-outline" size={28} color="black" />
 				</TouchableOpacity>
 
 				{/* camera angle */}
 				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
-					<Ionicons name="ios-camera-outline" size={30} color="black" />
+					<Ionicons name="ios-camera-outline" size={34} color="black" />
 				</TouchableOpacity>
 	
 				</View>	
@@ -89,11 +95,18 @@ const styles = StyleSheet.create({
 		marginBottom: 0,
 
 	},
+	settingsStyle: {
+		marginLeft:210,
+		marginTop: 15,
+		marginBottom: 0,
+		marginRight: 10
+	},
 	titleStyle: {
 		justifyContent: 'center',
 		marginTop: 10,
-		marginBottom: 10,
-		fontSize: 16,
+		marginLeft:30,
+		marginBottom: 40,
+		fontSize: 22,
 		fontWeight: 'bold'
 	},
 
@@ -101,6 +114,8 @@ const styles = StyleSheet.create({
 		flex: 6,
 		flexGrow: 6,
 		flexWrap: 'wrap',
+		marginLeft: 10,
+		
 	},
 	navigationStyle: {
 		flex: 1,

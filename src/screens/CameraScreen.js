@@ -27,6 +27,7 @@ const CameraScreen = ({ navigation }) => {
   const [type, setType] = useState(Camera.Constants.Type.back);
   const [ratio, setRatio] = useState([1, 1]);
   const [cameraHeight, setCameraHeight] = useState();
+  const [flash, setFlash] = useState(Camera.Constants.FlashMode.off);
 
   const { width, height } = useWindowDimensions();
 
@@ -50,6 +51,15 @@ const CameraScreen = ({ navigation }) => {
   if (hasPermission === false) {
     return <Text>No access to camera</Text>;
   }
+  
+const toggleFlash = () => {
+  setFlash(
+    flash === Camera.Constants.FlashMode.off
+    ? Camera.Constants.FlashMode.on
+    : Camera.Constants.FlashMode.off
+  );
+};
+
   // render camera
   return (
     <SafeAreaView style={styles.safeArea}>
@@ -69,12 +79,13 @@ const CameraScreen = ({ navigation }) => {
           <View />
           <View />
           <View />
-          {/* flash */}
+    {/* flash */}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => toggleFlash()}
           >
-            <FontAwesome name="flash" size={25} color="white" />
+            {/* name={flash === Camera.Constants.FlashMode.on ? "flash-on" : "flash-off"} */}
+            <MaterialIcons name={flash === Camera.Constants.FlashMode.on ? "flash-on" : "flash-off"} size={25} color="white" />
           </TouchableOpacity>
           {/* HDR */}
           <TouchableOpacity
@@ -89,6 +100,7 @@ const CameraScreen = ({ navigation }) => {
         {/* camera */}
         {/* <View style={styles.cameraContainer}> */}
         <Camera
+          flashMode={flash}
           style={{ ...styles.camera, height: cameraHeight }}
           type={type}
           ref={(ref) => {
@@ -161,6 +173,7 @@ const CameraScreen = ({ navigation }) => {
             onPress={async () => {
               if (this.camera) {
                 let photo = await this.camera.takePictureAsync();
+                photo.ratio = ratio;
                 dispatch(setLastImage(photo));
                 dispatch(addPhoto(photo));
               }
@@ -191,7 +204,7 @@ const CameraScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     // alignItems: 'center',
   },
   container: {
@@ -204,7 +217,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     height: 80,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     marginBottom: 0,
     marginHorizontal: 15,
   },
@@ -215,14 +228,14 @@ const styles = StyleSheet.create({
   },
   camera: {
     // flex: 6,
-    backgroundColor: "#111",
+    backgroundColor: "#000",
     borderColor: "grey",
     borderWidth: 0,
     marginVertical: 10,
   },
   buttonContainer1: {
     flex: 1,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
@@ -285,7 +298,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer2: {
     height: 68,
-    backgroundColor: "#111",
+    backgroundColor: "#0c0c0c",
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",

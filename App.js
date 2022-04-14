@@ -16,6 +16,8 @@ import PrintShopScreen from "./src/screens/PrintShopScreen";
 import PrintScreen from "./src/screens/PrintScreen";
 import FriendScreen from "./src/screens/FriendScreen";
 import FolderScreen from "./src/screens/FolderScreen";
+import EditUserScreen from "./src/screens/EditUserScreen";
+import FriendSearchScreen from "./src/screens/FriendSearchScreen";
 
 const Stack = createNativeStackNavigator();
 import { PersistGate } from "redux-persist/es/integration/react";
@@ -45,6 +47,8 @@ function App() {
             <Stack.Screen name="Print" component={PrintScreen} />
             <Stack.Screen name="Friend" component={FriendScreen} />
             <Stack.Screen name="Folder" component={FolderScreen} />
+            <Stack.Screen name="EditUser" component={EditUserScreen} />
+            <Stack.Screen name="FriendSearch" component={FriendSearchScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>

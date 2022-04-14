@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
         backgroundColor: "white",
         marginBottom: 10,
 		color: '#eee',
-		fontSize: 12
+		fontSize: 16
       },
 	  loginStyle: {
         marginTop: 50,
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
 	},
 	loginTextStyle: {
 		color:	'black',
-        fontSize: 15
+        fontSize: 18
 
 	}
 	

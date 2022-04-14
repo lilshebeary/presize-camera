@@ -7,11 +7,8 @@ import {
   SafeAreaView,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
-import * as SecureStore from "expo-secure-store";
-import Friend from "../components/friend";
 import { TextInput } from "react-native-gesture-handler";
+import BottomNavbar from "../components/BottomNavbar";
 
 const FriendSearchScreen = ({ navigation }) => {
   return (
@@ -58,6 +55,7 @@ const FriendSearchScreen = ({ navigation }) => {
           </TouchableOpacity>
         </View>
         {/* Navigation */}
+        <BottomNavbar navigation={navigation} />
       </View>
     </SafeAreaView>
   );

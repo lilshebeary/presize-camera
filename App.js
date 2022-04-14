@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "react-native-gesture-handler";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
@@ -18,6 +18,7 @@ import FriendScreen from "./src/screens/FriendScreen";
 import FolderScreen from "./src/screens/FolderScreen";
 import EditUserScreen from "./src/screens/EditUserScreen";
 import FriendSearchScreen from "./src/screens/FriendSearchScreen";
+import ProfileScreen from "./src/screens/ProfileScreen";
 
 const Stack = createNativeStackNavigator();
 import { PersistGate } from "redux-persist/es/integration/react";
@@ -49,6 +50,7 @@ function App() {
             <Stack.Screen name="Folder" component={FolderScreen} />
             <Stack.Screen name="EditUser" component={EditUserScreen} />
             <Stack.Screen name="FriendSearch" component={FriendSearchScreen} />
+            <Stack.Screen name="Profile" component={ProfileScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PersistGate>

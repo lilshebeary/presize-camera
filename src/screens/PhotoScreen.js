@@ -145,6 +145,7 @@ const PhotoEditScreen = ({ navigation, route }) => {
           </TouchableOpacity>
         </View>
       </View>
+      
     </SafeAreaView>
   );
 };

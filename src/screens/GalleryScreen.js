@@ -1,130 +1,70 @@
 import React, { useState, useEffect } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TouchableOpacity,
-  SafeAreaView,
-  Image,
-  useWindowDimensions,
-} from "react-native";
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import { SimpleLineIcons } from "@expo/vector-icons";
-import { AntDesign } from "@expo/vector-icons";
 import { useSelector, useDispatch } from "react-redux";
 import Gallery from "../components/gallery";
 import { addPhoto } from "../store/gallerySlice";
+import BottomNavbar from "../components/BottomNavbar";
 
 const GalleryScreen = ({ navigation }) => {
   const { photos } = useSelector((state) => state.gallery);
   const { size, setSize } = useState();
-  
+
   //   clearPhotos();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.topStyle}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Photo")}
-          >
-            <Ionicons
-              name="chevron-back-outline"
-              size={45}
-              color="#189BF3"
-              style={styles.backIcon}
-            />
+          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Photo")}>
+            <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
           </TouchableOpacity>
-          <Text style={styles.titleStyle} allowFontScaling={false}>All Photos</Text>
+          <Text style={styles.titleStyle} allowFontScaling={false}>
+            All Photos
+          </Text>
           <View />
           <View />
         </View>
         {/* Sizes */}
         <View style={styles.sizeButtons}>
           <TouchableOpacity style={styles.size1}>
-            <Text style={styles.text1} allowFontScaling={false}>ALL</Text>
+            <Text style={styles.text1} allowFontScaling={false}>
+              ALL
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1} allowFontScaling={false}>1:1</Text>
+            <Text style={styles.text1} allowFontScaling={false}>
+              1:1
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1} allowFontScaling={false}>4:6</Text>
+            <Text style={styles.text1} allowFontScaling={false}>
+              4:6
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size2}>
-            <Text style={styles.text1} allowFontScaling={false}>5:7</Text>
+            <Text style={styles.text1} allowFontScaling={false}>
+              5:7
+            </Text>
           </TouchableOpacity>
 
           <TouchableOpacity style={styles.size3}>
-            <Text style={styles.text1} allowFontScaling={false}>8:10</Text>
+            <Text style={styles.text1} allowFontScaling={false}>
+              8:10
+            </Text>
           </TouchableOpacity>
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery 
-            photos={photos} 
-            navigation = {navigation}
-          />
+          <Gallery photos={photos} navigation={navigation} />
         </View>
-
 
         {/* bottom screen */}
 
-        
         {/* Navigation */}
-        <View style={styles.navigationStyle}>
-          {/* friends */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Friend")}
-          >
-            <SimpleLineIcons name="people" size={28} color="black" />
-          </TouchableOpacity>
-          {/* files */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Gallery")}
-          >
-            <SimpleLineIcons name="picture" size={28} color="black" />
-          </TouchableOpacity>
-          {/* print */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Snapfish")}
-          >
-            <AntDesign name="printer" size={28} color="black" />
-          </TouchableOpacity>
-
-          {/* space */}
-
-          <View />
-          <View />
-          {/* flash */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Folder")}
-          >
-            <Ionicons name="ios-add-sharp" size={28} color="black" />
-          </TouchableOpacity>
-
-          {/* HDR */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Friends")}
-          >
-            <Ionicons name="paper-plane-outline" size={28} color="black" />
-          </TouchableOpacity>
-
-          {/* camera angle */}
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Camera")}
-          >
-            <Ionicons name="ios-camera-outline" size={30} color="black" />
-          </TouchableOpacity>
-        </View>
+        <BottomNavbar navigation={navigation} />
       </View>
     </SafeAreaView>
   );

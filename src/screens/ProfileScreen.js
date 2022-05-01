@@ -2,13 +2,14 @@ import React from "react";
 import { StyleSheet, View, TouchableOpacity, Text, SafeAreaView } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import BottomNavbar from "../components/BottomNavbar";
+import RootNavigation from "../RootNavigation";
 
-const ProfileScreen = ({ navigation }) => {
+const ProfileScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.topStyle}>
-          <TouchableOpacity onPress={() => navigation.navigate("Friend")}>
+          <TouchableOpacity onPress={() => RootNavigation.navigate("Friend")}>
             <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
           </TouchableOpacity>
           <Text style={styles.titleStyle}>Edit Profile</Text>
@@ -16,7 +17,7 @@ const ProfileScreen = ({ navigation }) => {
           <View />
         </View>
         <View style={styles.photoContainer}></View>
-        <BottomNavbar navigation={navigation} />
+        <BottomNavbar />
       </View>
     </SafeAreaView>
   );

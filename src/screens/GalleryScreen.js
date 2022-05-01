@@ -11,6 +11,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Gallery from "../components/gallery";
 import { addPhoto, filterPhotos } from "../store/gallerySlice";
 import BottomNavbar from "../components/BottomNavbar";
+import RootNavigation from "../RootNavigation";
 
 const GalleryScreen = ({ navigation }) => {
   const { filteredPhotos } = useSelector((state) => state.gallery);
@@ -21,16 +22,8 @@ const GalleryScreen = ({ navigation }) => {
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.topStyle}>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.navigate("Photo")}
-          >
-            <Ionicons
-              name="chevron-back-outline"
-              size={45}
-              color="#189BF3"
-              style={styles.backIcon}
-            />
+          <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate("Photo")}>
+            <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
           </TouchableOpacity>
           <Text style={styles.titleStyle} allowFontScaling={false}>
             All Photos
@@ -87,13 +80,13 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery photos={filteredPhotos} navigation={navigation} />
+          <Gallery photos={photos} />
         </View>
 
         {/* bottom screen */}
 
         {/* Navigation */}
-        <BottomNavbar navigation={navigation} />
+        <BottomNavbar />
       </View>
     </SafeAreaView>
   );

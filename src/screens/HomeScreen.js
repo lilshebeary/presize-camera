@@ -9,8 +9,9 @@ import {
   StatusBar,
 } from "react-native";
 import logo2 from '../../assets/logo.png';
+import RootNavigation from "../RootNavigation";
 
-const HomeScreen = ({ navigation }) => {
+const HomeScreen = () => {
 
   return (
     <>
@@ -20,7 +21,7 @@ const HomeScreen = ({ navigation }) => {
         {/* navigation to camera screen from logo */}
         <TouchableOpacity
           style={styles.touchableStyle}
-          onPress={() => navigation.navigate("Camera")}
+          onPress={() => RootNavigation.navigate("Camera")}
         >
           <View style={styles.ViewStyle}>
             <Image source={logo2} style={styles.logo} />
@@ -31,14 +32,14 @@ const HomeScreen = ({ navigation }) => {
         <View style={styles.accountStyle}>
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate("Login")}
+            onPress={() => RootNavigation.navigate("Login")}
           >
             <Text style={styles.TextStyle} allowFontScaling={false} >Sign In</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
             style={styles.buttonStyle}
-            onPress={() => navigation.navigate("Create")}
+            onPress={() => RootNavigation.navigate("Create")}
             
           >
             <Text style={styles.TextStyle} allowFontScaling={false}>Sign Up</Text>

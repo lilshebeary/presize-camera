@@ -1,42 +1,64 @@
 import React from "react";
 import { AntDesign, Ionicons, SimpleLineIcons } from "@expo/vector-icons";
 import { StyleSheet, TouchableOpacity, View } from "react-native";
+import RootNavigation from "../RootNavigation";
 
-const BottomNavbar = ({ navigation }) => {
+const BottomNavbar = () => {
   return (
     <View style={styles.navigationStyle}>
       {/* friends */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Friend")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("Friend")}
+      >
         <SimpleLineIcons name="people" size={28} color="black" />
       </TouchableOpacity>
       {/* files */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Gallery")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("Gallery")}
+      >
         <SimpleLineIcons name="picture" size={28} color="black" />
       </TouchableOpacity>
       {/* print */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Snapfish")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("Snapfish")}
+      >
         <AntDesign name="printer" size={28} color="black" />
       </TouchableOpacity>
 
       {/* space */}
 
       <View />
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Home")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("Home")}
+      >
         <AntDesign name="home" size={28} color="black" />
       </TouchableOpacity>
       <View />
       {/* flash */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("FriendSearch")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("FriendSearch")}
+      >
         <Ionicons name="ios-add-sharp" size={28} color="black" />
       </TouchableOpacity>
 
       {/* HDR */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Profile")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("Profile")}
+      >
         <Ionicons name="person" size={28} color="black" />
       </TouchableOpacity>
 
       {/* camera angle */}
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Camera")}>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => RootNavigation.navigate("Camera")}
+      >
         <Ionicons name="ios-camera-outline" size={34} color="black" />
       </TouchableOpacity>
     </View>

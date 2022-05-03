@@ -6,11 +6,17 @@ import Gallery from "../components/gallery";
 import { addPhoto } from "../store/gallerySlice";
 import BottomNavbar from "../components/BottomNavbar";
 
-const GalleryScreen = ({ navigation }) => {
-  const { photos } = useSelector((state) => state.gallery);
-  const { size, setSize } = useState();
+const filter = require('lodash.filter');
 
-  //   clearPhotos();
+const GalleryScreen = ({ navigation }) => {
+  let { photos } = useSelector((state) => state.gallery);
+  let sortPhotos = filter(photos, {ratio: [1,1]})
+
+  const filterPhotos = (ratio) => {
+    sortPhotos = filter(photos, {ratio})
+    console.log(sortPhotos)
+  }
+    // clearPhotos();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
@@ -26,31 +32,31 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Sizes */}
         <View style={styles.sizeButtons}>
-          <TouchableOpacity style={styles.size1}>
+          <TouchableOpacity style={styles.size1} onPress={() => { sortPhotos = filter(photos) }}>
             <Text style={styles.text1} allowFontScaling={false}>
               ALL
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size2}>
+          <TouchableOpacity style={styles.size2} onPress={() => filterPhotos([1,1]) }>
             <Text style={styles.text1} allowFontScaling={false}>
               1:1
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size2}>
+          <TouchableOpacity style={styles.size2} onPress={() => filterPhotos([2,3])}>
             <Text style={styles.text1} allowFontScaling={false}>
               4:6
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size2}>
+          <TouchableOpacity style={styles.size2} onPress={() => filterPhotos([5,7])}>
             <Text style={styles.text1} allowFontScaling={false}>
               5:7
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size3}>
+          <TouchableOpacity style={styles.size3} onPress={() => filterPhotos([4,5])}>
             <Text style={styles.text1} allowFontScaling={false}>
               8:10
             </Text>
@@ -58,7 +64,7 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery photos={photos} navigation={navigation} />
+          <Gallery photos={sortPhotos} navigation={navigation} />
         </View>
 
         {/* bottom screen */}

@@ -1,28 +1,36 @@
-import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from "react-native";
+import React from "react";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { useSelector, useDispatch } from "react-redux";
 import Gallery from "../components/gallery";
-import { addPhoto } from "../store/gallerySlice";
+import { addPhoto, filterPhotos } from "../store/gallerySlice";
 import BottomNavbar from "../components/BottomNavbar";
 
-const filter = require('lodash.filter');
-
 const GalleryScreen = ({ navigation }) => {
-  let { photos } = useSelector((state) => state.gallery);
-  let sortPhotos = filter(photos, {ratio: [1,1]})
+  const { filteredPhotos } = useSelector((state) => state.gallery);
+  const dispatch = useDispatch();
 
-  const filterPhotos = (ratio) => {
-    sortPhotos = filter(photos, {ratio})
-    console.log(sortPhotos)
-  }
-    // clearPhotos();
+  // clearPhotos();
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.topStyle}>
-          <TouchableOpacity style={styles.button} onPress={() => navigation.navigate("Photo")}>
-            <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Photo")}
+          >
+            <Ionicons
+              name="chevron-back-outline"
+              size={45}
+              color="#189BF3"
+              style={styles.backIcon}
+            />
           </TouchableOpacity>
           <Text style={styles.titleStyle} allowFontScaling={false}>
             All Photos
@@ -32,31 +40,46 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Sizes */}
         <View style={styles.sizeButtons}>
-          <TouchableOpacity style={styles.size1} onPress={() => { sortPhotos = filter(photos) }}>
+          <TouchableOpacity
+            style={styles.size1}
+            onPress={async () => dispatch(filterPhotos())}
+          >
             <Text style={styles.text1} allowFontScaling={false}>
               ALL
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size2} onPress={() => filterPhotos([1,1]) }>
+          <TouchableOpacity
+            style={styles.size2}
+            onPress={async () => dispatch(filterPhotos([1, 1]))}
+          >
             <Text style={styles.text1} allowFontScaling={false}>
               1:1
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size2} onPress={() => filterPhotos([2,3])}>
+          <TouchableOpacity
+            style={styles.size2}
+            onPress={async () => dispatch(filterPhotos([2, 3]))}
+          >
             <Text style={styles.text1} allowFontScaling={false}>
               4:6
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size2} onPress={() => filterPhotos([5,7])}>
+          <TouchableOpacity
+            style={styles.size2}
+            onPress={async () => dispatch(filterPhotos([5, 7]))}
+          >
             <Text style={styles.text1} allowFontScaling={false}>
               5:7
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity style={styles.size3} onPress={() => filterPhotos([4,5])}>
+          <TouchableOpacity
+            style={styles.size3}
+            onPress={async () => dispatch(filterPhotos([4, 5]))}
+          >
             <Text style={styles.text1} allowFontScaling={false}>
               8:10
             </Text>
@@ -64,7 +87,7 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery photos={sortPhotos} navigation={navigation} />
+          <Gallery photos={filteredPhotos} navigation={navigation} />
         </View>
 
         {/* bottom screen */}

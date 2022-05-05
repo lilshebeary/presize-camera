@@ -5,6 +5,8 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createAppContainer, createSwitchNavigator } from "react-navigation";
 import { createStackNavigator } from "react-navigation-stack";
 import { createBottomTabNavigator } from "react-navigation-tabs";
+import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
+import { createMaterialBottomTabNavigator } from "@react-navigation/material-bottom-tabs";
 import Store from "./src/store";
 import { Provider } from "react-redux";
 import HomeScreen from "./src/screens/HomeScreen";
@@ -38,6 +40,9 @@ import { persistStore } from "redux-persist";
 //       tabBarIcon: <Feather name="list" size={20} color="black" />
 //     };
 //   };
+const AppBottomNavigator = createMaterialBottomTabNavigator();
+const AppTopNavigator = createMaterialTopTabNavigator();
+const Stack = createNativeStackNavigator();
 
 const switchNavigator = createSwitchNavigator({
   // ResolveAuth: ResolveAuthScreen,
@@ -46,10 +51,24 @@ const switchNavigator = createSwitchNavigator({
     Login: LoginScreen,
     Create: CreateScreen,
   }),
-  mainFlow: createBottomTabNavigator({
+  cameraFlow: createStackNavigator({
     Camera: CameraScreen,
-    
+    Photo: PhotoScreen,
+    Edit: EditScreen,
+    Gallery: GalleryScreen,
+    Folder: FolderScreen,
+    Print: PrintScreen,
+    PrintShop: PrintShopScreen,
+    Friend: FriendScreen,
+    Folder: FolderScreen,
+    EditUser: EditUserScreen,
+    Profile: ProfileScreen,
+    FriendSearch: FriendSearchScreen
   }),
+  cameraFlow: createMaterialBottomTabNavigator({
+    Photo: PhotoScreen,
+
+  })
 });
 
 const App = createAppContainer(switchNavigator);

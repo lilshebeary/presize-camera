@@ -49,7 +49,9 @@ const Gallery = ({ photos, navigation }) => {
     <FlatList
       style={styles.container}
       data={imageRows}
-      renderItem={({item}) => <GalleryRow row={item} navigation={navigation} />}
+      renderItem={({ item }) => (
+        <GalleryRow row={item} navigation={navigation} />
+      )}
       keyExtractor={(item) => item[0]?.id}
     ></FlatList>
   );

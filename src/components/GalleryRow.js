@@ -21,6 +21,7 @@ const GalleryRow = ({ row, navigation }) => {
             key={photo.id}
             navigation={navigation}
             id={photo.id}
+            ratio={photo.ratio}
           />
         ))}
 

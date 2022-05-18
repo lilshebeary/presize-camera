@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Store from "./src/store";
 import { Provider } from "react-redux";
+import { navigationRef } from "./src/RootNavigation";
 import HomeScreen from "./src/screens/HomeScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import CreateScreen from "./src/screens/CreateScreen";
@@ -14,7 +15,9 @@ import GalleryScreen from "./src/screens/GalleryScreen";
 import SnapfishScreen from "./src/screens/SnapfishScreen";
 import PrintShopScreen from "./src/screens/PrintShopScreen";
 import PrintScreen from "./src/screens/PrintScreen";
-import FriendScreen from "./src/screens/FriendScreen";
+import FriendScreen, {
+  HeaderRightFriendSettings,
+} from "./src/screens/FriendScreen";
 import FolderScreen from "./src/screens/FolderScreen";
 import EditUserScreen from "./src/screens/EditUserScreen";
 import FriendSearchScreen from "./src/screens/FriendSearchScreen";
@@ -33,7 +36,12 @@ function App() {
           <Stack.Navigator
             initialRouteName="Gallery"
             screenOptions={{
-              headerShown: false,
+              headerTitleStyle: {
+                fontSize: 22,
+                fontWeight: "bold",
+              },
+              headerShadowVisible: true,
+              headerShown: true,
             }}
           >
             <Stack.Screen name="Home" component={HomeScreen} />
@@ -42,11 +50,19 @@ function App() {
             <Stack.Screen name="Camera" component={CameraScreen} />
             <Stack.Screen name="Photo" component={PhotoScreen} />
             <Stack.Screen name="Edit" component={EditScreen} />
-            <Stack.Screen name="Gallery" component={GalleryScreen} />
+            <Stack.Screen
+              name="Gallery"
+              component={GalleryScreen}
+              options={{ title: "All Photos" }}
+            />
             <Stack.Screen name="Snapfish" component={SnapfishScreen} />
             <Stack.Screen name="PrintShop" component={PrintShopScreen} />
             <Stack.Screen name="Print" component={PrintScreen} />
-            <Stack.Screen name="Friend" component={FriendScreen} />
+            <Stack.Screen
+              name="Friend"
+              component={FriendScreen}
+              options={{ title: "Friends", headerRight: HeaderRightFriendSettings }}
+            />
             <Stack.Screen name="Folder" component={FolderScreen} />
             <Stack.Screen name="EditUser" component={EditUserScreen} />
             <Stack.Screen name="FriendSearch" component={FriendSearchScreen} />

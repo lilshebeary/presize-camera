@@ -1,25 +1,53 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  SafeAreaView,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Friend from "../components/friend";
 import BottomNavbar from "../components/BottomNavbar";
 import RootNavigation from "../RootNavigation";
 
+export const HeaderRightFriendSettings = () => {
+  const styles = StyleSheet.create({
+    settingsStyle: {
+      flex: 1,
+    },
+  });
+
+  return (
+    <TouchableOpacity onPress={() => RootNavigation.navigate("FriendSearch")}>
+      <Ionicons name="add-outline" size={30}></Ionicons>
+    </TouchableOpacity>
+  );
+};
+
 const FriendScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <View style={styles.topStyle}>
-          {/* <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('Friend')}>
+        {/* <View style={styles.topStyle}>
+          <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('Friend')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
-				</TouchableOpacity> */}
+				</TouchableOpacity>
           <Text style={styles.titleStyle}>Friends</Text>
-          <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate("EditUser")}>
-            <Ionicons name="settings-outline" size={30} color="black" style={styles.settingsStyle} />
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => RootNavigation.navigate("EditUser")}
+          >
+            <Ionicons
+              name="settings-outline"
+              size={30}
+              color="black"
+              style={styles.settingsStyle}
+            />
           </TouchableOpacity>
           <View />
           <View />
-        </View>
+        </View> */}
         {/* Sizes */}
 
         {/* Gallery */}

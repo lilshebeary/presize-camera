@@ -21,16 +21,24 @@ const GalleryScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <View style={styles.topStyle}>
-          <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate("Photo")}>
-            <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
+        {/* <View style={styles.topStyle}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => RootNavigation.navigate("Photo")}
+          >
+            <Ionicons
+              name="chevron-back-outline"
+              size={45}
+              color="#189BF3"
+              style={styles.backIcon}
+            />
           </TouchableOpacity>
           <Text style={styles.titleStyle} allowFontScaling={false}>
             All Photos
           </Text>
           <View />
           <View />
-        </View>
+        </View> */}
         {/* Sizes */}
         <View style={styles.sizeButtons}>
           <TouchableOpacity
@@ -80,7 +88,7 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery photos={photos} />
+          <Gallery photos={filteredPhotos} />
         </View>
 
         {/* bottom screen */}
@@ -95,6 +103,8 @@ const GalleryScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
+    marginTop: 10,
+
     backgroundColor: "white",
     // alignItems: 'center',
   },
@@ -104,6 +114,7 @@ const styles = StyleSheet.create({
   },
   topStyle: {
     display: "flex",
+
     flexDirection: "row",
     justifyContent: "space-between",
   },

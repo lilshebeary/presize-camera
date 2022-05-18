@@ -21,8 +21,9 @@ import {
 import { removePhoto } from "../store/gallerySlice";
 import { useSelector, useDispatch } from "react-redux";
 import { setLastImage } from "../store/cameraSlice";
+import RootNavigation from "../RootNavigation";
 
-const PhotoEditScreen = ({ navigation, route }) => {
+const PhotoEditScreen = ({ route }) => {
   const { lastImage } = useSelector((state) => state.camera);
   const { photos } = useSelector((state) => state.gallery);
   const [imageWidth, setImageWidth] = useState();
@@ -50,21 +51,21 @@ const PhotoEditScreen = ({ navigation, route }) => {
         {/* friends */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Friend")}
+          onPress={() => RootNavigation.navigate("Friend")}
         >
           <SimpleLineIcons name="people" size={28} color="white" />
         </TouchableOpacity>
         {/* files */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Gallery")}
+          onPress={() => RootNavigation.navigate("Gallery")}
         >
           <SimpleLineIcons name="picture" size={28} color="white" />
         </TouchableOpacity>
         {/* print */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("PrintShop")}
+          onPress={() => RootNavigation.navigate("PrintShop")}
         >
           <AntDesign name="printer" size={28} color="white" />
         </TouchableOpacity>
@@ -76,7 +77,7 @@ const PhotoEditScreen = ({ navigation, route }) => {
         {/* flash */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Folder")}
+          onPress={() => RootNavigation.navigate("Folder")}
         >
           <Ionicons name="ios-add-sharp" size={28} color="white" />
         </TouchableOpacity>
@@ -84,7 +85,7 @@ const PhotoEditScreen = ({ navigation, route }) => {
         {/* HDR */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Friends")}
+          onPress={() => RootNavigation.navigate("Friends")}
         >
           <Ionicons name="paper-plane-outline" size={28} color="white" />
         </TouchableOpacity>
@@ -92,7 +93,7 @@ const PhotoEditScreen = ({ navigation, route }) => {
         {/* camera angle */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate("Camera")}
+          onPress={() => RootNavigation.navigate("Camera")}
         >
           <Ionicons name="ios-camera-outline" size={30} color="white" />
         </TouchableOpacity>
@@ -138,7 +139,7 @@ const PhotoEditScreen = ({ navigation, route }) => {
           <TouchableOpacity
             onPress={() => {
               dispatch(removePhoto(lastImage.id));
-              navigation.goBack();
+              RootNavigation.goBack();
             }}
           >
             <FontAwesome name="trash-o" size={30} color="white" />

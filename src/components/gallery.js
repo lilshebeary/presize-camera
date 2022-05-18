@@ -2,7 +2,7 @@ import React from "react";
 import { StyleSheet, FlatList } from "react-native";
 import GalleryRow from "./GalleryRow";
 
-const Gallery = ({ photos, navigation }) => {
+const Gallery = ({ photos }) => {
   // orders photos by date taken so that they are ordered last, I may change so the first goes to the top
   const imageList = Object.keys(photos)
     .map((id) => photos[id])
@@ -49,9 +49,7 @@ const Gallery = ({ photos, navigation }) => {
     <FlatList
       style={styles.container}
       data={imageRows}
-      renderItem={({ item }) => (
-        <GalleryRow row={item} navigation={navigation} />
-      )}
+      renderItem={({item}) => <GalleryRow row={item} />}
       keyExtractor={(item) => item[0]?.id}
     ></FlatList>
   );

@@ -29,7 +29,7 @@ function App() {
   return (
     <Provider store={Store}>
       <PersistGate loading={null} persistor={persistor}>
-        <NavigationContainer>
+        <NavigationContainer ref={navigationRef}>
           <Stack.Navigator
             initialRouteName="Gallery"
             screenOptions={{

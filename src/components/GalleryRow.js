@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 import Photo from "./Photo";
 
 // sets row to 3 pictures keeps space with a placeholder until filled
-const GalleryRow = ({ row, navigation }) => {
+const GalleryRow = ({ row }) => {
   console.log(row);
   const placeholders = [];
   for (let i = 0; i < 3; i++) {
@@ -19,7 +19,6 @@ const GalleryRow = ({ row, navigation }) => {
           <Photo
             uri={photo.uri}
             key={photo.id}
-            navigation={navigation}
             id={photo.id}
             ratio={photo.ratio}
           />

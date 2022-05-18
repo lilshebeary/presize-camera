@@ -1,9 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, StatusBar, SafeAreaView } from 'react-native'
 import logo from '../../assets/logoBlue.png';
+import RootNavigation from '../RootNavigation';
 
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = () => {
    
     return (
 		<>
@@ -13,7 +14,7 @@ const LoginScreen = ({ navigation }) => {
 
         <View style={styles.viewStyle}>
 
-            <TouchableOpacity  onPress={() => navigation.navigate("Home")}>
+            <TouchableOpacity  onPress={() => RootNavigation.navigate("Home")}>
                 <Image 
                     source={logo} 
                     style={styles.logo} 
@@ -41,7 +42,7 @@ const LoginScreen = ({ navigation }) => {
                 
 				<TouchableOpacity 
 					style={styles.loginStyle}
-					onPress={() => navigation.navigate("Login")}
+					onPress={() => RootNavigation.navigate("Login")}
 				>
 					<Text style={styles.loginTextStyle}>Login</Text>
 				</TouchableOpacity>

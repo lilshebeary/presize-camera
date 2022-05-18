@@ -1,7 +1,8 @@
 import React from "react";
 import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import RootNavigation from "../RootNavigation";
 
-const Photo = ({ uri, placeholder, navigation, id }) => {
+const Photo = ({ uri, placeholder, id }) => {
   // console.error(uri)
   return (
     <View style={styles.container}>
@@ -9,7 +10,7 @@ const Photo = ({ uri, placeholder, navigation, id }) => {
         <View style={styles.placeholderStyle}></View>
       ) : (
         <TouchableOpacity
-          onPress={() => navigation.navigate("Photo", { imageId: id})}
+          onPress={() => RootNavigation.navigate("Photo", { imageId: id})}
         >
           <Image style={styles.photoStyle} source={{ uri }} />
         </TouchableOpacity>

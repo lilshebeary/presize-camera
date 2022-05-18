@@ -18,8 +18,9 @@ import * as SecureStore from "expo-secure-store";
 import { useDispatch, useSelector } from "react-redux";
 import { addPhoto } from "../store/gallerySlice";
 import { setLastImage } from "../store/cameraSlice";
+import RootNavigation from "../RootNavigation";
 
-const CameraScreen = ({ navigation }) => {
+const CameraScreen = () => {
   const { photos } = useSelector((state) => state.gallery);
   const dispatch = useDispatch();
   const [hasPermission, setHasPermission] = useState(null);
@@ -70,7 +71,7 @@ const toggleFlash = () => {
           {/* friends */}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => RootNavigation.navigate("Home")}
           >
             <SimpleLineIcons name="home" size={25} color="white" />
           </TouchableOpacity>
@@ -90,7 +91,7 @@ const toggleFlash = () => {
           {/* HDR */}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("Home")}
+            onPress={() => RootNavigation.navigate("Home")}
           >
             <MaterialIcons name="hdr-off" size={25} color="white" />
           </TouchableOpacity>
@@ -162,7 +163,7 @@ const toggleFlash = () => {
         <View style={styles.buttonContainer2}>
           <TouchableOpacity
             style={styles.imageWindowStyle}
-            onPress={() => navigation.navigate("Photo")}
+            onPress={() => RootNavigation.navigate("Photo")}
           >
             <Image style={styles.pictureStyle} source={lastImage} />
           </TouchableOpacity>

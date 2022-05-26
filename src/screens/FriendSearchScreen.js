@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import {
   StyleSheet,
   Text,
@@ -8,21 +8,21 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { TextInput } from "react-native-gesture-handler";
-import BottomNavbar from "../components/BottomNavbar";
-import RootNavigation from "../RootNavigation";
 
-const FriendSearchScreen = () => {
+
+
+const FriendSearchScreen = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
         <View style={styles.topStyle}>
-            <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('Friend')}>
+            <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
 				</TouchableOpacity>
           <Text style={styles.titleStyle}>Friend Search</Text>
           <TouchableOpacity
             style={styles.button}
-            onPress={() => RootNavigation.navigate("EditUser")}
+            onPress={() => navigation.navigate("EditUser")}
           >
             <Ionicons
               name="settings-outline"
@@ -44,19 +44,18 @@ const FriendSearchScreen = () => {
            <View style={styles.buttons}>
           <TouchableOpacity
             style={styles.addStyle}
-            onPress={() => RootNavigation.navigate("Friend")}
+            onPress={() => navigation.navigate("Friend")}
           >
             <Text style={styles.loginTextStyle}>Add</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.inviteStyle}
-            onPress={() => RootNavigation.navigate("Friend")}
+            onPress={() => navigation.navigate("Friend")}
           >
             <Text style={styles.loginTextStyle}>Invite</Text>
           </TouchableOpacity>
         </View>
         {/* Navigation */}
-        <BottomNavbar />
       </View>
     </SafeAreaView>
   );

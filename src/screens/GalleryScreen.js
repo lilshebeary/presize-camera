@@ -10,8 +10,8 @@ import { Ionicons } from "@expo/vector-icons";
 import { useSelector, useDispatch } from "react-redux";
 import Gallery from "../components/gallery";
 import { addPhoto, filterPhotos } from "../store/gallerySlice";
-import BottomNavbar from "../components/BottomNavbar";
-import RootNavigation from "../RootNavigation";
+
+
 
 const GalleryScreen = ({ navigation }) => {
   const { filteredPhotos } = useSelector((state) => state.gallery);
@@ -94,7 +94,57 @@ const GalleryScreen = ({ navigation }) => {
         {/* bottom screen */}
 
         {/* Navigation */}
-        <BottomNavbar />
+        <View style={styles.navigationStyle}>
+          {/* friends */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Friend")}
+          >
+            <SimpleLineIcons name="people" size={28} color="black" />
+          </TouchableOpacity>
+          {/* files */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Gallery")}
+          >
+            <SimpleLineIcons name="picture" size={28} color="black" />
+          </TouchableOpacity>
+          {/* print */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Snapfish")}
+          >
+            <AntDesign name="printer" size={28} color="black" />
+          </TouchableOpacity>
+
+          {/* space */}
+
+          <View />
+          <View />
+          {/* flash */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Folder")}
+          >
+            <Ionicons name="ios-add-sharp" size={28} color="black" />
+          </TouchableOpacity>
+
+          {/* HDR */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Friends")}
+          >
+            <Ionicons name="paper-plane-outline" size={28} color="black" />
+          </TouchableOpacity>
+
+          {/* camera angle */}
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate("Camera")}
+          >
+            <Ionicons name="ios-camera-outline" size={30} color="black" />
+          </TouchableOpacity>
+        </View>
       </View>
     </SafeAreaView>
   );

@@ -1,26 +1,38 @@
 import React from "react";
-import { StyleSheet, View, TouchableOpacity, Text, SafeAreaView } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import BottomNavbar from "../components/BottomNavbar";
-import RootNavigation from "../RootNavigation";
+import {
+  Image,
+  StyleSheet,
+  View,
+  TouchableOpacity,
+  Text,
+  SafeAreaView,
+  StatusBar,
+} from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
-const ProfileScreen = () => {
+
+
+const ProfileScreen = ({ navigation }) => {
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        <View style={styles.topStyle}>
-          <TouchableOpacity onPress={() => RootNavigation.navigate("Friend")}>
-            <Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
-          </TouchableOpacity>
-          <Text style={styles.titleStyle}>Edit Profile</Text>
-          <View />
-          <View />
-        </View>
-        <View style={styles.photoContainer}></View>
-        <BottomNavbar />
-      </View>
-    </SafeAreaView>
-  );
+		<SafeAreaView style={styles.safeArea}>
+			<View style={styles.container}>
+				<View style={styles.topStyle}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
+					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
+				</TouchableOpacity>
+					<Text style={styles.titleStyle}>Edit Profile</Text>
+					<View />
+					<View />
+				</View>
+          <View style={styles.photoContainer}>
+
+          </View>
+				
+			</View>
+		</SafeAreaView>
+	);
 };
 
 const styles = StyleSheet.create({

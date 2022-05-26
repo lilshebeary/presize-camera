@@ -11,14 +11,14 @@ import {
 import { Ionicons } from '@expo/vector-icons';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { AntDesign } from '@expo/vector-icons';
-import RootNavigation from "../RootNavigation";
 
-const EditUserScreen = () => {
+
+const EditUserScreen = ({ navigation }) => {
   return (
 		<SafeAreaView style={styles.safeArea}>
 			<View style={styles.container}>
 				<View style={styles.topStyle}>
-				<TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('Friend')}>
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
 				</TouchableOpacity>
 					<Text style={styles.titleStyle}>Edit Profile</Text>

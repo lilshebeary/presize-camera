@@ -1,10 +1,10 @@
 import React from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image, StatusBar, SafeAreaView } from 'react-native'
 import logo from '../../assets/logoBlue.png';
-import RootNavigation from '../RootNavigation';
+// import RootNavigation from '../RootNavigation';
 
 
-const CreateScreen = () => {
+const CreateScreen = ({ navigation }) => {
    
     return (
 		<>
@@ -13,7 +13,7 @@ const CreateScreen = () => {
             <StatusBar barStyle="light-content" backgroundColor="#fff" />
             
         <View style={styles.viewStyle}>
-            <TouchableOpacity  onPress={() => RootNavigation.navigate("Home")}>
+            <TouchableOpacity  onPress={() => navigation.navigate("Home")}>
                 <Image 
                     source={logo} 
                     style={styles.logo} 
@@ -43,7 +43,7 @@ const CreateScreen = () => {
                 style={styles.input}
                     // onChangeText={onChangeText}
                     // value={text}
-                    placeholder="jane@email.com"
+                    placeholder="jdoe@email.com"
                 />
 				<Text style={styles.label} allowFontScaling={false}>Phone</Text>
             <TextInput

@@ -4,7 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Store from "./src/store";
 import { Provider } from "react-redux";
-import { navigationRef } from "./src/RootNavigation";
+// import { navigationRef } from "./src/RootNavigation";
 import HomeScreen from "./src/screens/HomeScreen";
 import LoginScreen from "./src/screens/LoginScreen";
 import CreateScreen from "./src/screens/CreateScreen";
@@ -32,7 +32,7 @@ function App() {
   return (
     <Provider store={Store}>
       <PersistGate loading={null} persistor={persistor}>
-        <NavigationContainer ref={navigationRef}>
+        <NavigationContainer>
           <Stack.Navigator
             initialRouteName="Gallery"
             screenOptions={{

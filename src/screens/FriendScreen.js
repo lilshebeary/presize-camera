@@ -8,60 +8,89 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import Friend from "../components/friend";
-import BottomNavbar from "../components/BottomNavbar";
-import RootNavigation from "../RootNavigation";
 
-export const HeaderRightFriendSettings = () => {
-  const styles = StyleSheet.create({
-    settingsStyle: {
-      flex: 1,
-    },
-  });
 
-  return (
-    <TouchableOpacity onPress={() => RootNavigation.navigate("FriendSearch")}>
-      <Ionicons name="add-outline" size={30}></Ionicons>
-    </TouchableOpacity>
-  );
-};
 
-const FriendScreen = () => {
-  return (
-    <SafeAreaView style={styles.safeArea}>
-      <View style={styles.container}>
-        {/* <View style={styles.topStyle}>
-          <TouchableOpacity style={styles.button} onPress={() => RootNavigation.navigate('Friend')}>
+// export const HeaderRightFriendSettings = () => {
+//   const styles = StyleSheet.create({
+//     settingsStyle: {
+//       flex: 1,
+//     },
+//   });
+
+//   return (
+//     <TouchableOpacity onPress={() => navigation.navigate("FriendSearch")}>
+//       <Ionicons name="add-outline" size={30}></Ionicons>
+//     </TouchableOpacity>
+//   );
+// };
+
+const FriendScreen = ({ navigation }) => {
+	return (
+		<SafeAreaView style={styles.safeArea}>
+			<View style={styles.container}>
+				<View style={styles.topStyle}>
+				{/* <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Friend')}>
 					<Ionicons name="chevron-back-outline" size={45} color="#189BF3" style={styles.backIcon} />
+				</TouchableOpacity> */}
+					<Text style={styles.titleStyle}>Friends</Text>
+					<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditUser')}>
+					<Ionicons name="settings-outline" size={30} color="black" style={styles.settingsStyle} />
 				</TouchableOpacity>
-          <Text style={styles.titleStyle}>Friends</Text>
-          <TouchableOpacity
-            style={styles.button}
-            onPress={() => RootNavigation.navigate("EditUser")}
-          >
-            <Ionicons
-              name="settings-outline"
-              size={30}
-              color="black"
-              style={styles.settingsStyle}
-            />
-          </TouchableOpacity>
-          <View />
-          <View />
-        </View> */}
-        {/* Sizes */}
+					<View />
+					<View />
+				</View>
+{/* Sizes */}
+				
+{/* Gallery */}
+				<View style={styles.friendGrid}>
+					<Friend />
+					<Friend />
+					<Friend />	
+				</View>
+				
+{/* Navigation */}
+				<View style={styles.navigationStyle}>
+				
+					{/* friends */}
+				<TouchableOpacity
+            		style={styles.button}
+            		onPress={() => navigation.navigate("Home")}
+          		>
+            		<SimpleLineIcons name="home" size={28} color="black" />
+          		</TouchableOpacity>
+				{/* files */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Gallery')}>
+				<SimpleLineIcons name="picture" size={28} color="black" />
+				</TouchableOpacity>
+				{/* print */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Snapfish')}>
+					<AntDesign name="printer" size={28} color="black" />
+				</TouchableOpacity>
 
-        {/* Gallery */}
-        <View style={styles.friendGrid}>
-          <Friend />
-          <Friend />
-          <Friend />
-        </View>
+				{/* space */}
+				
+				<View />
+				<View />
+				{/* flash */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('FriendSearch')}>
+					<Ionicons name="ios-add-sharp" size={28} color="black" />
+				</TouchableOpacity>
 
-        {/* Navigation */}
-        <BottomNavbar />
-      </View>
-    </SafeAreaView>
-  );
+				{/* HDR */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('EditUser')}>
+					<Ionicons name="paper-plane-outline" size={28} color="black" />
+				</TouchableOpacity>
+
+				{/* camera angle */}
+				<TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Camera')}>
+					<Ionicons name="ios-camera-outline" size={34} color="black" />
+				</TouchableOpacity>
+	
+				</View>	
+			</View>
+		</SafeAreaView>
+	);
 };
 
 const styles = StyleSheet.create({

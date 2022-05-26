@@ -6,7 +6,10 @@ import {
   TouchableOpacity,
   SafeAreaView,
 } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons } from '@expo/vector-icons';
+import { SimpleLineIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+
 import { useSelector, useDispatch } from "react-redux";
 import Gallery from "../components/gallery";
 import { addPhoto, filterPhotos } from "../store/gallerySlice";
@@ -112,7 +115,7 @@ const GalleryScreen = ({ navigation }) => {
           {/* print */}
           <TouchableOpacity
             style={styles.button}
-            onPress={() => navigation.navigate("Snapfish")}
+            onPress={() => navigation.navigate("Print")}
           >
             <AntDesign name="printer" size={28} color="black" />
           </TouchableOpacity>

@@ -19,6 +19,7 @@ import FolderScreen from "./src/screens/FolderScreen";
 import EditUserScreen from "./src/screens/EditUserScreen";
 import FriendSearchScreen from "./src/screens/FriendSearchScreen";
 import ProfileScreen from "./src/screens/ProfileScreen";
+import { navigationRef } from "./src/RootNavigation";
 
 const Stack = createNativeStackNavigator();
 import { PersistGate } from "redux-persist/es/integration/react";

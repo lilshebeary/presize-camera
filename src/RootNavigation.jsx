@@ -16,4 +16,5 @@ export function goBack() {
   }
 }
 
-export default RootNavigation = { navigate, goBack};
+const RootNavigation = { navigate, goBack};
+export default RootNavigation;

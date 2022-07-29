@@ -13,7 +13,7 @@ import { addPhoto, filterPhotos } from "../store/gallerySlice";
 import BottomNavbar from "../components/BottomNavbar";
 import RootNavigation from "../RootNavigation";
 
-const GalleryScreen = ({ navigation }) => {
+const GalleryScreen = () => {
   const { filteredPhotos } = useSelector((state) => state.gallery);
   const dispatch = useDispatch();
 
@@ -80,7 +80,7 @@ const GalleryScreen = ({ navigation }) => {
         </View>
         {/* Gallery */}
         <View style={styles.galleryStyle}>
-          <Gallery photos={photos} />
+          <Gallery photos={filteredPhotos} />
         </View>
 
         {/* bottom screen */}
